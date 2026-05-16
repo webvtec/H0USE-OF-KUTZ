@@ -1943,11 +1943,15 @@ const firebaseConfig = {
     try {
       const SLOT_GRID = 10; // 10-minute grid for tight packing
       const snapshot = await db.collection("bookings").where("date", "==", date).get();
-      const bookings = snapshot.docs.map(doc => {
+
+      // Only count ACTIVE bookings — ignore cancelled ones
+      const bookings = [];
+      snapshot.docs.forEach(doc => {
         const d = doc.data();
+        if (d.status === 'Cancelled') return; // skip cancelled
         const bookedTime = convertToMinutes(normalizeTimeStr(d.time));
         const bookedDuration = d.duration || 30; // fallback for old bookings
-        return { start: bookedTime, end: bookedTime + bookedDuration };
+        bookings.push({ start: bookedTime, end: bookedTime + bookedDuration });
       });
 
       const unavailableSnapshot = await db.collection("unavailableDays").where("date", "==", date).get();
@@ -1978,16 +1982,27 @@ const firebaseConfig = {
       }
 
       let t = openMinutes;
-      while (t + duration <= closeMinutes + 1) {
+      while (t + duration <= closeMinutes) {
         const bookingEnd = t + duration;
 
+        // Skip past times today
         if (isToday && t <= currentMinutes) { t += SLOT_GRID; continue; }
 
-        const blockingRange = unavailableRanges.find(r => !(bookingEnd <= r.start || t >= r.end));
-        if (blockingRange) { t = Math.ceil(blockingRange.end / SLOT_GRID) * SLOT_GRID; continue; }
+        // Check unavailable ranges — full duration must be clear
+        const blockingRange = unavailableRanges.find(r => t < r.end && bookingEnd > r.start);
+        if (blockingRange) {
+          // Jump to the next grid point after the blocked range ends
+          t = Math.ceil(blockingRange.end / SLOT_GRID) * SLOT_GRID;
+          continue;
+        }
 
-        const bookedConflict = bookings.some(b => !(bookingEnd <= b.start || t >= b.end));
-        if (bookedConflict) { t += SLOT_GRID; continue; }
+        // Check existing bookings — full duration must not overlap any booking
+        const conflicting = bookings.find(b => t < b.end && bookingEnd > b.start);
+        if (conflicting) {
+          // Jump to the next grid point after this booking ends — no wasted time
+          t = Math.ceil(conflicting.end / SLOT_GRID) * SLOT_GRID;
+          continue;
+        }
 
         const label = `${formatMins(t)} - ${formatMins(bookingEnd)}`;
         let option = document.createElement("option");
@@ -2034,25 +2049,27 @@ const firebaseConfig = {
     const selectedMinutes = convertToMinutes(selectedTime);
     const openMinutes = convertToMinutes(business.open);
     const closeMinutes = convertToMinutes(business.close);
+    const newDuration = getSelectedServiceDuration();
+    const newEndTime = selectedMinutes + newDuration;
 
-    if (selectedMinutes < openMinutes || selectedMinutes >= closeMinutes) {
-      alert(`Please choose a time within business hours (${business.open} – ${business.close})`);
+    if (selectedMinutes < openMinutes || newEndTime > closeMinutes) {
+      alert(`This service (${newDuration} mins) doesn't fit within business hours (${business.open} – ${business.close}). Please choose an earlier time.`);
       return Promise.resolve(false);
     }
 
-    const newDuration = getSelectedServiceDuration();
-
     return db.collection('unavailableDays').where('date', '==', date).get()
       .then((unavailableSnapshot) => {
+        // Check full duration range against every unavailable window
         let isUnavailable = false;
         unavailableSnapshot.forEach((doc) => {
           const data = doc.data();
           if (data.allDay) {
             isUnavailable = true;
           } else {
-            const startMinutes = convertToMinutes(normalizeTimeStr(data.startTime));
-            const endMinutes = convertToMinutes(normalizeTimeStr(data.endTime));
-            if (selectedMinutes >= startMinutes && selectedMinutes <= endMinutes) isUnavailable = true;
+            const blockStart = convertToMinutes(normalizeTimeStr(data.startTime));
+            const blockEnd = convertToMinutes(normalizeTimeStr(data.endTime));
+            // Overlap: new service starts before block ends AND ends after block starts
+            if (selectedMinutes < blockEnd && newEndTime > blockStart) isUnavailable = true;
           }
         });
 
@@ -2060,15 +2077,18 @@ const firebaseConfig = {
 
         return db.collection('bookings').where('date', '==', date).get()
           .then((querySnapshot) => {
-            const newServiceEndTime = selectedMinutes + newDuration;
-
             for (let doc of querySnapshot.docs) {
-              let bookedTime = doc.data().time.trim().replace(/\s+/g, ' ');
+              const d = doc.data();
+              // Skip cancelled bookings — they don't block
+              if (d.status === 'Cancelled') continue;
+
+              let bookedTime = d.time.trim().replace(/\s+/g, ' ');
               let bookedMinutes = convertToMinutes(bookedTime);
-              let bookedDuration = doc.data().duration || 30; // fallback for old bookings
+              let bookedDuration = d.duration || 30;
               let bookedEndTime = bookedMinutes + bookedDuration;
 
-              if (selectedMinutes < bookedEndTime && bookedMinutes < newServiceEndTime) return false;
+              // Overlap: new starts before existing ends AND new ends after existing starts
+              if (selectedMinutes < bookedEndTime && newEndTime > bookedMinutes) return false;
             }
             return true;
           });
@@ -2079,8 +2099,12 @@ const firebaseConfig = {
       });
   }
 
+  let bookingInProgress = false; // prevents double-submit race condition
+
   function submitBooking(event) {
     event.preventDefault();
+
+    if (bookingInProgress) return; // block rapid double-clicks
 
     const user = firebase.auth().currentUser;
     if (!user) {
@@ -2116,10 +2140,16 @@ const firebaseConfig = {
     const duration = getSelectedServiceDuration();
     const total = getSelectedTotal();
 
+    // Lock the button
+    bookingInProgress = true;
+    const submitBtn = document.querySelector('#bookingSection form button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'BOOKING...'; }
+
     validateTimeSlot(date, time)
       .then((isAvailable) => {
         if (!isAvailable) {
           alert('This time is not available. Please choose another time.');
+          loadAvailableSlots(); // refresh slots so taken one disappears
           return Promise.reject('Time slot not available');
         }
 
@@ -2194,6 +2224,11 @@ const firebaseConfig = {
         else if (err.code === 'unavailable') alert("Service temporarily unavailable. Please try again.");
         else if (err.code === 'network-request-failed') alert("Network error. Check your connection.");
         else alert("Failed to save booking. Please try again.");
+      })
+      .finally(() => {
+        bookingInProgress = false;
+        const submitBtn = document.querySelector('#bookingSection form button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'BOOK NOW ✂'; }
       });
   }
 
