@@ -309,6 +309,45 @@ body::after{opacity:.025}
 .top{background:rgba(9,9,11,.5)}.top.sc{background:rgba(7,7,9,.92)}
 footer{background:linear-gradient(180deg,#0c0c0e,#050506)}
 .band{background:radial-gradient(60% 130% at 50% 0,rgba(217,42,55,.18),transparent 70%),linear-gradient(115deg,#070708,#151518 50%,#070708)}
+/* ===== reviews: masonry quote cards, author at the bottom ===== */
+.gr{display:block;columns:3;column-gap:20px}
+.gc{position:relative;break-inside:avoid;margin-bottom:20px;padding:28px 26px 22px;border:1px solid rgba(255,255,255,.1);border-top:1px solid rgba(255,255,255,.1);border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));overflow:hidden}
+.gc::before{content:"\201C";position:absolute;top:6px;right:20px;font:120px/1 'Playfair Display',serif;color:rgba(217,42,55,.2);pointer-events:none}
+.gc:hover{transform:translateY(-3px);border-color:rgba(217,42,55,.45)}
+.gc-row{order:1;justify-content:flex-start;gap:12px;margin-bottom:12px}
+.gc-tx{order:2;flex:none;margin:0 0 20px;font:italic 500 16.5px/1.65 'Playfair Display',serif;color:#e8e9ee}
+.gc-pr{order:2}
+.gc-top{order:3;margin:0;padding-top:16px;border-top:1px solid var(--line)}
+.gc-av{border-radius:14px}
+.gc-rp{order:4;margin-top:16px;border:1px solid rgba(217,42,55,.28);border-left:1px solid rgba(217,42,55,.28);border-radius:16px 16px 16px 4px;background:rgba(217,42,55,.09)}
+@media(max-width:1000px){.gr{columns:2}}@media(max-width:700px){.gr{columns:1}}
+
+/* ===== barbers: portrait cards, name over the photo ===== */
+.barbers{gap:20px}
+.barber-profile{flex:0 0 250px;width:250px;position:relative;border-radius:10px;align-items:stretch;text-align:left}
+.barber-profile .certified-badge{position:absolute;top:12px;left:12px;z-index:2;width:auto;padding:6px 11px;border:1px solid rgba(255,255,255,.18);border-radius:20px;background:rgba(8,8,10,.62);backdrop-filter:blur(6px);font-size:9px;letter-spacing:.16em}
+.barber-profile .barber-avatar{width:100%;height:300px;margin:0;border:0;border-radius:0;box-shadow:none;object-fit:cover;filter:saturate(.9) contrast(1.04)}
+.barber-profile:hover .barber-avatar{box-shadow:none}
+.barber-profile h3{position:relative;z-index:1;margin:-86px 0 0;padding:56px 18px 16px;text-align:left;font-size:19px;letter-spacing:.14em;background:linear-gradient(180deg,transparent,rgba(8,8,10,.94))}
+.barber-profile .vac-badge{margin:12px 14px 0}
+.barber-profile .hrs-banner{border-radius:0}
+.barber-profile .btn-book{margin-top:auto;border-radius:0 0 10px 10px}
+.barber-profile:hover{transform:translateY(-6px)}
+
+/* ===== packages inside the booking popup: compact ===== */
+.bbox{width:min(94%,640px);padding:22px 20px}
+.bbox .bbhead{padding-bottom:12px;margin-bottom:14px}.bbox .barber-avatar{width:76px;height:76px}.bbox h3{margin-top:10px;font-size:22px}
+.bbh{margin:0 0 10px;font-size:11px}
+.bbox .pks{gap:10px;margin-bottom:18px;padding-top:4px}
+.bbox .pk-in{padding:14px 10px 12px}
+.bbox .pk-ic,.bbox .pk-sub{display:none}
+.bbox .pk h3{font-size:17px;margin-top:0}
+.bbox .pk-pr{font-size:28px;margin-top:6px}.bbox .pk-pr span{font-size:13px;top:4px;margin-right:2px}
+.bbox .pk ul{margin:8px 0 10px;padding-top:8px}
+.bbox .pk li{font-size:11.5px;padding:2px 0;gap:6px}.bbox .pk li svg{width:13px;height:13px}
+.bbox .pk .btn{padding:9px 6px!important;font-size:10px!important;letter-spacing:.1em!important}
+.bbox .pk-badge{position:static!important;display:inline-block;margin-bottom:6px;font-size:7.5px;padding:3px 7px}
+@media(max-width:900px){.bbox .pk{flex:0 0 58%}.bbox .pks{margin:0 -6px 16px;padding:4px 6px 8px}}
 .hrs-banner{width:100%;padding:7px 12px;background:rgba(217,42,55,.12);border-bottom:1px solid rgba(217,42,55,.25);color:#ff8d96;font:600 10px 'Barlow';letter-spacing:.14em;text-transform:uppercase;text-align:center}
 </style>
 </head>
