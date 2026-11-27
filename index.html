@@ -141,7 +141,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 .content-section{padding-top:112px}.content-section.active:not(#homeSection)>.wrap{animation:up .6s both}
 @keyframes up{from{opacity:0;transform:translateY(22px)}}@keyframes kb{to{transform:scale(1.09)}}
 .cine{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}
-.cine .bg{position:absolute;inset:0;z-index:-2;background:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg) center/cover;animation:kb 26s ease-in-out infinite alternate}
+
 .cine::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,13,.6),rgba(11,10,13,.35) 38%,rgba(11,10,13,.94) 94%),radial-gradient(70% 55% at 15% 100%,rgba(122,15,28,.55),transparent 70%)}
 .cine-in{width:100%;max-width:1180px;margin:0 auto;padding:130px 24px 52px;display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:end}
 .cine h1{font-size:clamp(40px,6.4vw,94px);font-weight:700;line-height:1.02;letter-spacing:-.015em}.cine h1 i{font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -166,6 +166,18 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 .info2{grid-template-columns:1fr}.mapc,.mapc iframe{min-height:300px}.faq{columns:1}}
 @media(min-width:1280px){.cine-in{padding-bottom:70px}.pan{height:460px}}
 @media(prefers-reduced-motion:reduce){.cine .bg,.cm>*,.cmedal{animation:none}.js .rev{opacity:1;transform:none}}
+.slides{position:absolute;inset:0;z-index:-2;background:#0b0a0d}.sl{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease}.sl.on{opacity:1;animation:kb 10s ease-out forwards}.sl.prev{transform:scale(1.08)}
+.faq{margin-top:0}
+.pks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pk{position:relative;border-radius:8px;padding:1px;background:linear-gradient(160deg,rgba(255,255,255,.38),rgba(255,255,255,.05) 40%,rgba(255,255,255,.2));transition:transform .45s ease,box-shadow .45s ease}.pk:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.pk-in{position:relative;overflow:hidden;height:100%;display:flex;flex-direction:column;border-radius:7px;padding:40px 30px 30px;text-align:center;background:linear-gradient(180deg,#1b181f,#101014)}.pk-in::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 55% at 50% 0,var(--glow,rgba(255,255,255,.08)),transparent 70%);pointer-events:none}.pk-in::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.08),transparent);transform:skewX(-20deg);transition:left .9s}.pk:hover .pk-in::after{left:130%}.pk-in>*{position:relative;z-index:1}
+.pk.gold{--glow:rgba(227,189,98,.2);--c:#e3bd62}.pk.silv{--glow:rgba(200,204,214,.15);--c:#c8ccd6}.pk.plat{--glow:rgba(214,36,50,.34);--c:#fff;background:linear-gradient(160deg,#fff,#c8202c 35%,rgba(255,255,255,.25) 70%,#8c0c16);box-shadow:0 30px 80px rgba(179,18,31,.32)}.pk.plat .pk-in{background:linear-gradient(180deg,#2b1017,#12080b)}
+.pk-badge{position:absolute!important;top:16px;right:16px;padding:5px 11px;border:1px solid rgba(255,255,255,.4);border-radius:20px;background:rgba(200,32,44,.3);font:600 9.5px 'Barlow';letter-spacing:.2em;text-transform:uppercase}
+.pk-ic{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--c);color:var(--c);background:rgba(255,255,255,.04)}.pk-ic svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
+.pk h3{font-size:30px}.pk-pr{font:700 60px/1 'Barlow';letter-spacing:-.02em;margin-top:18px}.pk-pr span{font-size:24px;vertical-align:top;position:relative;top:9px;margin-right:3px;color:var(--c)}.pk-sub{color:var(--dim);font-size:13px;margin:8px 0 24px}
+.pk ul{list-style:none;margin:0 0 28px;padding:20px 0 0;border-top:1px solid var(--line);flex:1;text-align:left}.pk li{display:flex;gap:12px;align-items:center;padding:7px 0;font-size:14.5px;color:#dcdfe8}.pk li svg{flex:none;width:18px;height:18px;stroke:var(--c);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.pk li.opt{color:var(--dim)}.pk .btn{width:100%}
+@media(min-width:901px){.pks .gold{order:1}.pks .plat{order:2;transform:translateY(-16px)}.pks .silv{order:3}.pks .plat:hover{transform:translateY(-24px)}}
+@media(max-width:900px){.pks{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -22px;padding:8px 22px 16px;scrollbar-width:none}.pk{flex:0 0 82%;scroll-snap-align:center}.pk:hover{transform:none}.pk-pr{font-size:52px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -173,8 +185,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 
 <script>document.documentElement.classList.add("js")</script>
 <header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><div><span>House of Kutz</span><small>Barbershop</small></div></a>
-<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="jump('sec-about')">About</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('sec-visit')">Contact</a></nav>
-<button class="btn btn-red sm" onclick="go('bookingSection')">Book now</button>
+<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="jump('sec-about')">About</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
 <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
 <aside class="menu" id="menu" aria-label="Menu">
 <a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
@@ -203,7 +214,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
   </div></div></aside>
 <main>
 <section class="content-section active" id="homeSection">
-<div class="cine"><div class="bg"></div><div class="cine-in"><div class="cm"><div class="rule"></div><h1>Precision Kutz.<br><i>Finished With Care.</i></h1>
+<div class="cine"><div class="slides" id="slides"></div><div class="cine-in"><div class="cm"><div class="rule"></div><h1>Precision Kutz.<br><i>Finished With Care.</i></h1>
 <p>Fades, shaves and beard work for men, women and children. Book a chair online or walk in any day.</p>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button><button class="btn btn-chrome" onclick="jump('sec-services')">View our services</button></div></div>
 <div class="cmedal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
@@ -214,13 +225,11 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <div><div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><h3 id="svcTitle" class="svc-t"></h3><div class="menu2" id="svcList"></div>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book a service</button></div></div></div></div></div>
 
-<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="tiers" id="homeTiers"></div></div></div>
+<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="pks" id="homeTiers"></div></div></div>
 
 <div class="sec" id="sec-about"><div class="wrap"><div class="split"><div><div class="rule"></div><h2 class="big">A Chair for Everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p><div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div>
 <div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg" alt="House of Kutz barbershop" loading="lazy"></div></div>
-<div class="pans"><div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg);--pos:20% 40%"></div><div class="pt"><h3>Men</h3><p>Fades, tapers, line ups, classic shaves and beard grooming.</p></div></div>
-<div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg);--pos:80% 50%"></div><div class="pt"><h3>Women</h3><p>Hairkuts and styling for any occasion.</p></div></div>
-<div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg);--pos:70% 75%"></div><div class="pt"><h3>Children</h3><p>Gentle kuts, including first hairkuts.</p></div></div></div></div></div>
+</div></div>
 
 <div class="sec" id="sec-booking"><div class="wrap"><div class="bk"><div class="sh"><h2>Booking made easy</h2></div><div class="tl">
 <div class="s4"><div class="n">1</div><div><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div></div>
@@ -232,13 +241,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
 <div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
 
-<div class="sec" id="sec-visit"><div class="wrap"><div class="sh"><h2>Visit House of Kutz</h2></div>
-<div class="info2"><div class="box"><div class="k">Opening hours</div><div class="hrow" data-d="mon"><span>Monday to Saturday</span><b>8:00 AM – 9:00 PM</b></div><div class="hrow" data-d="sun"><span>Sunday</span><b>11:00 AM – 6:30 PM</b></div>
-<div class="k" style="margin-top:22px">Appointments</div><p class="lead" style="margin:0">Appointments and walk-ins are open every day. Arrive within 10 minutes of your slot or it is released.</p>
-<div class="k" style="margin-top:22px">Find us</div><p class="lead" style="margin:0">Upper West Henderson Blvd, St. Catherine, Jamaica</p>
-<div class="cta"><a class="btn btn-red" href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Get directions</a><a class="btn btn-chrome" href="tel:+18762086156">Call the shop</a></div></div>
-<div class="mapc"><iframe title="Map of House of Kutz" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Upper+West+Henderson+Blvd,+St.+Catherine,+Jamaica&output=embed"></iframe></div></div>
-<div class="faq"><details><summary>Do you take walk-ins?</summary><p>Yes. Walk-ins and appointments are both open every day during opening hours.</p></details>
+<div class="sec" id="sec-visit"><div class="wrap"><div class="sh"><h2>Questions</h2></div><div class="faq"><details><summary>Do you take walk-ins?</summary><p>Yes. Walk-ins and appointments are both open every day during opening hours.</p></details>
 <details><summary>What if I am late?</summary><p>There is a 10-minute grace period. After that the slot is released to the next client.</p></details>
 <details><summary>How do I pay?</summary><p>Bank transfer details are under Payment info in the menu. Use your booking number as the reference.</p></details>
 <details><summary>Can I cancel a booking?</summary><p>Call +1 (876) 208-6156, or cancel from My bookings in the menu.</p></details></div></div></div>
@@ -249,7 +252,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <div class="cols who"><div class="box"><h3>Men</h3><p>Precision hairkuts, trendy fades, classic shaves and expert beard grooming, whether you want something fresh or timeless.</p></div><div class="box"><h3>Women</h3><p>Hairkuts and styling for any occasion, so you leave looking and feeling your best.</p></div><div class="box"><h3>Children</h3><p>Gentle, friendly kuts for kids of every age, including first hairkuts worth remembering.</p></div></div>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></section>
 <section class="content-section" id="walkInPriceSection"><div class="wrap"><h1 class="page-h">Price list</h1><p class="lead">Prices in Jamaican dollars. A plus sign means the final price depends on the work. Appointments daily: Mon–Sat 8:00 AM – 9:00 PM, Sun 11:00 AM – 6:30 PM.</p>
-<div class="tiers" id="priceTiers"></div><div class="cols pl" id="priceLists" style="margin-top:36px"></div>
+<div class="pks" id="priceTiers"></div><div class="cols pl" id="priceLists" style="margin-top:36px"></div>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></section>
 <section class="content-section" id="gallerySection"><div class="wrap"><h1 class="page-h">Gallery</h1><p class="lead">Recent work from the chair.</p><div id="galleryDisplay"></div></div></section>
 <section class="content-section" id="bookingSection"><div class="wrap"><h1 class="page-h">Book your kutz</h1><p class="lead">Choose a service, a date and a time. You will sign in with Google to confirm.</p>
@@ -285,7 +288,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
       <select id="packageService" onchange="onServiceChange();">
         <option value="NONE">— Select a package —</option>
         <option value="Platinum Package">Platinum — $2,000</option>
-        <option value="Gold Package">Gold — $1,700</option>
+        <option value="Gold Package">Gold — $1,800</option>
         <option value="Silver Package">Silver — $1,500</option>
       </select>
     </div>
@@ -295,15 +298,15 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
       <label for="adultService">Adult Service</label>
       <select id="adultService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
-        <option value="Adult Trim n Shave">Trim n Shave — $1,500</option>
-        <option value="Adult Trim">Trim — $1,200</option>
+        <option value="Adult Trim n Shave">Trim n Shave — $1,800</option>
+        <option value="Adult Trim">Trim — $1,500</option>
         <option value="Adult Shave Only">Shave Only — $800</option>
         <option value="Adult Line Up Only">Line Up Only — $800</option>
-        <option value="Adult Line Up and Shave">Line Up and Shave — $1,000</option>
+        <option value="Adult Line Up and Shave">Line Up and Shave — $1,200</option>
         <option value="Adult Trim Shave Hot Towel Beard Oil">Trim &amp; Shave + Hot Towel &amp; Beard Oil — $2,000</option>
         <option value="Adult Trim Shave Spray Tint Hot Towel">Trim &amp; Shave + Spray Tint Hair Line &amp; Hot Towel — $2,500</option>
-        <option value="Adult Ladies Kut">Ladies Kut — $1,200+</option>
-        <option value="Adult Scissors Kut">Scissors Kut — $2,000+</option>
+        <option value="Adult Ladies Kut">Ladies Kut — $1,500</option>
+        <option value="Adult Scissors Kut">Scissors Kut — $2,500</option>
         <option value="Adult Ladies Scissors Kut">Ladies Scissors Kut — $2,000+</option>
         <option value="Adult Color Beard Only">Color Beard Only — $800</option>
       </select>
@@ -315,12 +318,12 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
       <select id="teenService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
         <option value="Teen Trim n Shave">Trim n Shave — $1,200</option>
-        <option value="Teen Trim">Trim — $1,000</option>
+        <option value="Teen Trim">Trim — $1,200</option>
         <option value="Teen Shave Only">Shave Only — $700</option>
         <option value="Teen Line Up Only">Line Up Only — $700</option>
         <option value="Teen Line Up and Shave">Line Up and Shave — $1,000</option>
-        <option value="Teen Ladies Kut">Ladies Kut — $1,200+</option>
-        <option value="Teen Scissors Kut">Scissors Kut — $2,000+</option>
+        <option value="Teen Ladies Kut">Ladies Kut — $1,500</option>
+        <option value="Teen Scissors Kut">Scissors Kut — $2,500</option>
         <option value="Teen Ladies Scissors Kut">Ladies Scissors Kut — $2,000+</option>
         <option value="Teen Color Beard Only">Color Beard Only — $800</option>
       </select>
@@ -332,7 +335,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
       <select id="kidsService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
         <option value="Kids Boyz Kut">Boyz Kut — $1,000</option>
-        <option value="Kids Scissors Kut">Scissors Kut — $2,000+</option>
+        <option value="Kids Scissors Kut">Scissors Kut — $2,500</option>
       </select>
     </div>
 
@@ -357,7 +360,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <form id="reviewForm" class="box"><label for="reviewName">Your name</label><input id="reviewName" placeholder="Your name" required type="text"><label for="reviewComment">Your review</label><textarea id="reviewComment" placeholder="Tell us about your kut" required rows="4"></textarea><label>Rating</label><div id="starRating"><span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span></div><button class="btn btn-red wide" type="submit">Submit review</button></form>
 <p id="reviewSubmitMsg" style="color:#5fd38a"></p><div id="reviewsContainer"></div></div></section>
 </main>
-<footer><div class="wrap"><div class="foot"><div><h3>House of Kutz</h3><p>Barbershop</p><p>Upper West Henderson Blvd, St. Catherine, Jamaica</p></div>
+<footer id="contact"><div class="wrap"><div class="foot"><div><h3>House of Kutz</h3><p>Barbershop</p><p>Upper West Henderson Blvd, St. Catherine, Jamaica</p></div>
 <div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM</p><p>Sunday 11:00 AM – 6:30 PM</p><p><a href="tel:+18762086156">+1 (876) 208-6156</a></p></div>
 <div><div class="k">Follow</div><p><a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://tiktok.com/@richkidkyhouseofkutz" target="_blank" rel="noopener">TikTok</a></p><p><a href="javascript:void(0)" onclick="showPaymentInfo()">Payment info</a></p></div></div>
 <div class="credit"><a href="https://webvtec.com" target="_blank" rel="noopener">Request your own website at webvtec.com</a></div></div></footer>
@@ -848,9 +851,9 @@ const firebaseConfig = {
     },
 
     "Gold Package": {
-      label: "🥇 Gold Package ($1,700)",
-      basePrice: 1700,
-      html: () => buildPricingCard('🥇 GOLD PACKAGE &nbsp;|&nbsp; $1,700 &nbsp;|&nbsp; 30 mins', [
+      label: "🥇 Gold Package ($1,800)",
+      basePrice: 1800,
+      html: () => buildPricingCard('🥇 GOLD PACKAGE &nbsp;|&nbsp; $1,800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Included — No Extra Cost:', items: [
           {name:'Trim n Shave',price:'INCLUDED',isAddon:true},
           {name:'Beard Oil',price:'INCLUDED',isAddon:true},
@@ -872,9 +875,9 @@ const firebaseConfig = {
 
     // ========== ADULTS ==========
     "Adult Trim n Shave": {
-      label: "Adult — Trim n Shave ($1,500)",
-      basePrice: 1500,
-      html: () => buildPricingCard('👨 ADULT — TRIM N SHAVE &nbsp;|&nbsp; $1,500 &nbsp;|&nbsp; 30 mins', [
+      label: "Adult — Trim n Shave ($1,800)",
+      basePrice: 1800,
+      html: () => buildPricingCard('👨 ADULT — TRIM N SHAVE &nbsp;|&nbsp; $1,800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -889,9 +892,9 @@ const firebaseConfig = {
       ])
     },
     "Adult Trim": {
-      label: "Adult — Trim ($1,200)",
-      basePrice: 1200,
-      html: () => buildPricingCard('👨 ADULT — TRIM &nbsp;|&nbsp; $1,200 &nbsp;|&nbsp; 30 mins', [
+      label: "Adult — Trim ($1,500)",
+      basePrice: 1500,
+      html: () => buildPricingCard('👨 ADULT — TRIM &nbsp;|&nbsp; $1,500 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -940,9 +943,9 @@ const firebaseConfig = {
       ])
     },
     "Adult Line Up and Shave": {
-      label: "Adult — Line Up and Shave ($1,000)",
-      basePrice: 1000,
-      html: () => buildPricingCard('👨 ADULT — LINE UP AND SHAVE &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 30 mins', [
+      label: "Adult — Line Up and Shave ($1,200)",
+      basePrice: 1200,
+      html: () => buildPricingCard('👨 ADULT — LINE UP AND SHAVE &nbsp;|&nbsp; $1,200 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -991,9 +994,9 @@ const firebaseConfig = {
       ])
     },
     "Adult Ladies Kut": {
-      label: "Adult — Ladies Kut ($1,200+)",
-      basePrice: 1200,
-      html: () => buildPricingCard('👨 ADULT — LADIES KUT &nbsp;|&nbsp; $1,200+ &nbsp;|&nbsp; 30 mins', [
+      label: "Adult — Ladies Kut ($1,500)",
+      basePrice: 1500,
+      html: () => buildPricingCard('👨 ADULT — LADIES KUT &nbsp;|&nbsp; $1,500 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1059,9 +1062,9 @@ const firebaseConfig = {
       ])
     },
     "Teen Trim": {
-      label: "Teen — Trim ($1,000)",
-      basePrice: 1000,
-      html: () => buildPricingCard('🧑 TEEN — TRIM &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 30 mins', [
+      label: "Teen — Trim ($1,200)",
+      basePrice: 1200,
+      html: () => buildPricingCard('🧑 TEEN — TRIM &nbsp;|&nbsp; $1,200 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1123,9 +1126,9 @@ const firebaseConfig = {
       ])
     },
     "Teen Ladies Kut": {
-      label: "Teen — Ladies Kut ($1,200+)",
-      basePrice: 1200,
-      html: () => buildPricingCard('🧑 TEEN — LADIES KUT &nbsp;|&nbsp; $1,200+ &nbsp;|&nbsp; 30 mins', [
+      label: "Teen — Ladies Kut ($1,500)",
+      basePrice: 1500,
+      html: () => buildPricingCard('🧑 TEEN — LADIES KUT &nbsp;|&nbsp; $1,500 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1869,17 +1872,29 @@ new MutationObserver(()=>mb.classList.toggle('open',mn.classList.contains('show'
 const els=document.querySelectorAll('#homeSection .sec>.wrap,#homeSection .band');
 if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});els.forEach(e=>{e.classList.add('rev');io.observe(e)})}
 const d=new Date().getDay();document.querySelectorAll('.hrow[data-d]').forEach(r=>{if(r.dataset.d==='sun'?d===0:d>0)r.classList.add('today')})})();
+
+(function(){const ad=[['Hot Towel','$500'],['Beard Oil','$500'],['Eyebrow','$500'],['Eyebrow Tinting','$1,200'],['Spray Tint Hair Line','$500'],['Designs','$800'],['Color Hair Only','$800'],['Color Beard Only','$800'],['Color Hair and Beard','$1,500']];
+['Adult','Teen','Kids'].forEach(g=>{const it=(g==='Kids'?[['Designs','$800']]:ad).map(a=>({name:a[0],price:a[1],isAddon:true}));pricingCardDefs[g+' Scissors Kut']={label:g+' — Scissors Kut ($2,500)',basePrice:2500,html:()=>buildPricingCard(g.toUpperCase()+' — SCISSORS KUT &nbsp;|&nbsp; $2,500 &nbsp;|&nbsp; 30 mins',[{title:'Optional Add-Ons (tick what you want):',items:it}])}})})();
+(function(){const box=document.getElementById('slides');if(!box)return;
+const ids=['photo-1503951914875-452162b0f3f1','photo-1585747860715-2ba37e788b70','photo-1621605815971-fbc98d665033','photo-1599351431202-1e0f0137899a','photo-1622286342621-4bd786c2447c','photo-1605497788044-5a32c7078486','photo-1532710093739-9470acff878f'];
+const els=[];let cur=-1,done=0;
+function show(n){const o=els[cur],e=els[n];if(o&&o!==e){o.classList.remove('on');o.classList.add('prev');setTimeout(()=>o.classList.remove('prev'),2000)}e.classList.remove('prev');e.classList.add('on');cur=n}
+function add(u){const d=document.createElement('div');d.className='sl';d.style.backgroundImage='url('+u+')';box.appendChild(d);els.push(d);if(els.length===1)show(0)}
+ids.forEach(i=>{const u='https://images.unsplash.com/'+i+'?auto=format&fit=crop&w=1800&q=70',im=new Image();im.onload=()=>{add(u);done++};im.onerror=()=>{done++;if(done===ids.length&&!els.length)add('https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg')};im.src=u});
+setInterval(()=>{if(els.length>1&&!document.hidden)show((cur+1)%els.length)},6500);})();
 function go(id,e){if(e)e.preventDefault();showSection(id);closeMenu();}
 function bookPackage(p){showSection('bookingSection');document.getElementById('ageGroup').value='package';onAgeGroupChange();document.getElementById('packageService').value=p;onServiceChange();}
-try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);const t3=d.filter(i=>i.url).slice(5,8);if(t3.length===3)document.querySelectorAll('.pan .pi').forEach((p,n)=>p.style.setProperty('--img','url('+t3[n].url+')'));if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
+try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
 try{db.collection('reviews').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));const t=r=>r.timestamp&&r.timestamp.toDate?r.timestamp.toDate().getTime():0;d.sort((a,c)=>t(c)-t(a));const el=document.getElementById('homeReviews'),e=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const s=d.filter(r=>r.rating>=4&&r.comment).slice(0,3);if(!s.length){el.closest('.sec').style.display='none';return}el.innerHTML=s.map(r=>`<div class="rc"><div class="st">${'★'.repeat(r.rating)}</div><p>${e(r.comment)}</p><b>${e(r.name)}</b></div>`).join('')}).catch(()=>{})}catch(x){}
 (function(){
-const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,700',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
-const html=T.map(t=>`<div class="tier ${t[1]}"><div class="tier-top"><span class="tag">${t[1]=='plat'?'Signature':''}</span><h3>${t[0]}</h3><div class="pr">${t[2]}</div></div><ul>${t[3].map(i=>`<li>${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${i}</li>`).join('')}</ul><button class="btn ${t[1]=='plat'?'btn-red':'btn-chrome'}" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div>`).join('');
+const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,800',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
+const IC={plat:'<path d=\"M6 4h12l4 5-10 11L2 9z\"/><path d=\"M2 9h20M9 4l-2 5 5 11 5-11-2-5\"/>',gold:'<path d=\"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z\"/>',silv:'<path d=\"M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5 5-5\"/>'};
+const CK='<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9"/><path d="M6 10.5l2.8 2.8L14 7.5"/></svg>',PL='<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9"/><path d="M10 6v8M6 10h8"/></svg>';
+const html=T.map(t=>`<div class="pk ${t[1]}"><div class="pk-in">${t[1]=='plat'?'<span class="pk-badge">Most complete</span>':''}<div class="pk-ic"><svg viewBox="0 0 24 24">${IC[t[1]]}</svg></div><h3>${t[0]}</h3><div class="pk-pr"><span>$</span>${t[2].slice(1)}</div><div class="pk-sub">30-minute visit</div><ul>${t[3].map(i=>`<li>${CK}${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${PL}${i}</li>`).join('')}</ul><button class="btn ${t[1]=='plat'?'btn-red':'btn-chrome'}" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div></div>`).join('');
 document.getElementById('homeTiers').innerHTML=html;document.getElementById('priceTiers').innerHTML=html;
-const L={Adults:'Trim n Shave|$1,500;Trim|$1,200;Shave Only|$800;Scissors Kut|$2,000+;Line Up Only|$800;Line Up and Shave|$1,000;Hot Towel Only|$500;Trim & Shave + Hot Towel & Beard Oil|$2,000;Trim & Shave + Spray Tint Hair Line & Hot Towel|$2,500;Eyebrow Tinting|$1,200;Eyebrow|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Designs|$800+;Spray Tint Hair Line|$500;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
-Teens:'Trim n Shave|$1,200;Trim|$1,000;Shave Only|$700;Scissors Kut|$2,000+;Line Up Only|$700;Line Up and Shave|$1,000;Hot Towel Only|$500;Eyebrow|$500;Eyebrow Tinting|$1,200;Designs|$800+;Spray Tint Hair Line|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
-Kids:'Boyz Kut|$1,000;Scissors Kut|$2,000+;Designs|$800+'};
+const L={Adults:'Trim n Shave|$1,800;Trim|$1,500;Shave Only|$800;Scissors Kut|$2,500;Line Up Only|$800;Line Up and Shave|$1,200;Hot Towel Only|$500;Trim & Shave + Hot Towel & Beard Oil|$2,000;Trim & Shave + Spray Tint Hair Line & Hot Towel|$2,500;Eyebrow Tinting|$1,200;Eyebrow|$500;Ladies Kut|$1,500;Ladies Scissors Kut|$2,000+;Designs|$800;Spray Tint Hair Line|$500;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
+Teens:'Trim n Shave|$1,200;Trim|$1,200;Shave Only|$700;Scissors Kut|$2,500;Line Up Only|$700;Line Up and Shave|$1,000;Hot Towel Only|$500;Eyebrow|$500;Eyebrow Tinting|$1,200;Designs|$800;Spray Tint Hair Line|$500;Ladies Kut|$1,500;Ladies Scissors Kut|$2,000+;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
+Kids:'Boyz Kut|$1,000;Scissors Kut|$2,500;Designs|$800'};
 const rows=s=>s.split(';').map(r=>{const p=r.split('|');return `<div class="row"><span>${p[0].replace(/&/g,'&amp;')}</span><i></i><b>${p[1]}</b></div>`}).join('');
 document.getElementById('priceLists').innerHTML=Object.keys(L).map(k=>`<div><h3>${k}</h3>${rows(L[k])}</div>`).join('');
 const N={Adults:'Adult services',Teens:'Teen services',Kids:'Kids services'};window.svcTab=function(k,btn){document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===btn));const l=document.getElementById('svcList');l.style.animation='none';l.offsetHeight;l.style.animation='';l.innerHTML=rows(L[k]);document.getElementById('svcTitle').textContent=N[k]};svcTab('Adults',document.querySelector('.tabs button'));
