@@ -265,6 +265,25 @@ footer{padding-bottom:34px!important}
 .gc-tx{margin:0;flex:1;font-size:14.5px;line-height:1.7;color:#d6d8df}.gc-pr{display:inline-block;margin-top:10px;font-size:12px;color:var(--dim)}
 .gc-rp{display:flex;gap:10px;margin-top:18px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:2px solid var(--accent);font-size:13px;line-height:1.55;color:var(--dim)}.gc-rp img{width:24px;height:24px;border-radius:50%;flex:none;object-fit:cover;background:#000}.gc-rp b{color:#fff;font-weight:600}.gc-rp small{display:block;font-size:11px;margin-top:4px;opacity:.75}
 @media(max-width:1000px){.gr{grid-template-columns:1fr 1fr}}@media(max-width:700px){.gr{grid-template-columns:1fr}}
+.fu{font:700 18px 'Playfair Display',serif!important;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 20px}
+.soc{display:flex;gap:14px}.soc a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#18181b;border:1px solid var(--line);transition:transform .3s,border-color .3s,box-shadow .3s}.soc a:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 26px rgba(217,42,55,.3)}.soc a[hidden]{display:none}
+
+/* gallery: 3 photos */
+.mosaic{grid-template-columns:2fr 1fr!important;grid-auto-rows:250px!important;gap:6px}.mosaic div:first-child{grid-column:1!important;grid-row:span 2!important}
+@media(max-width:900px){.mosaic{grid-template-columns:1fr 1fr!important;grid-auto-rows:150px!important}.mosaic div:first-child{grid-column:1/-1!important;grid-row:span 2!important}}
+/* metallic always-on bar */
+:root{--wvh:36px}body{padding-bottom:var(--wvh)}footer{padding-bottom:34px!important}
+.wvbar{position:fixed;left:0;right:0;bottom:0;z-index:1000;height:var(--wvh);display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;text-decoration:none;color:#15161a;font:600 10.5px 'Barlow',sans-serif;letter-spacing:.22em;text-transform:uppercase;padding:0 12px;
+background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%,#e6e8ec 100%);border-top:1px solid rgba(255,255,255,.85);box-shadow:0 -8px 24px rgba(0,0,0,.55),inset 0 -1px 0 rgba(0,0,0,.25)}
+.wvbar b{font-weight:800;color:#8c0c16;letter-spacing:.2em}
+.wvbar::after{content:"";position:absolute;top:0;bottom:0;width:30%;left:-40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);transition:left .9s}.wvbar:hover::after{left:120%}
+#selectionSummary{bottom:48px!important}
+@media(max-width:600px){.wvbar{font-size:9px;letter-spacing:.12em}}
+.wvbar{color:#fff!important;background:linear-gradient(180deg,#868b96 0%,#656a75 46%,#4c505a 52%,#60656f 80%,#7b808b 100%)!important;border-top:1px solid rgba(255,255,255,.4)!important;box-shadow:0 -8px 24px rgba(0,0,0,.55),inset 0 -1px 0 rgba(0,0,0,.35)!important;text-shadow:0 1px 1px rgba(0,0,0,.45)}
+.wvbar b{color:#fff!important;font-weight:800}.wvbar::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent)!important}
+:root{--wvh:28px}.wvbar{font-size:12.5px!important;letter-spacing:.16em!important;padding:0 10px!important;line-height:1}#selectionSummary{bottom:40px!important}
+@media(max-width:600px){.wvbar{font-size:10.5px!important;letter-spacing:.05em!important}}
+:root{--wvh:22px}.wvbar{padding:0 10px!important}#selectionSummary{bottom:34px!important}
 </style>
 </head>
 <body>
@@ -440,8 +459,9 @@ footer{padding-bottom:34px!important}
 </main>
 <footer id="contact"><div class="wrap"><div class="foot"><div><h3>House of Kutz</h3><p>Barbershop</p><p>Upper West Henderson Blvd, St. Catherine, Jamaica</p></div>
 <div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM</p><p>Sunday 11:00 AM – 6:30 PM</p><p><a href="tel:+18762086156">+1 (876) 208-6156</a></p></div>
-<div><div class="k">Follow</div><p><a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://tiktok.com/@richkidkyhouseofkutz" target="_blank" rel="noopener">TikTok</a></p><p><a href="javascript:void(0)" onclick="showPaymentInfo()">Payment info</a></p></div></div>
-<div class="credit"><a href="https://webvtec.com" target="_blank" rel="noopener">Request your own website at webvtec.com</a></div></div></footer>
+<div><h3 class="fu">Follow Us</h3><div class="soc"><a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24"><defs><linearGradient id="igf" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ffc107"/><stop offset="50%" stop-color="#e91e63"/><stop offset="100%" stop-color="#673ab7"/></linearGradient></defs><path fill="url(#igf)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a id="fbLink" href="#" target="_blank" rel="noopener" aria-label="Facebook" hidden><svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M16.671 15.469l.547-3.469h-3.328V9.75c0-.949.465-1.875 1.956-1.875h1.513V4.922s-1.373-.234-2.686-.234c-2.741 0-4.533 1.662-4.533 4.669V12H7.078v3.469h3.058v8.385a12.1 12.1 0 003.75 0v-8.385z"/></svg></a><a href="https://tiktok.com/@richkidkyhouseofkutz" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 448 512" width="22" height="22"><path fill="#ff0050" transform="translate(9,9)" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/><path fill="#25f4ee" transform="translate(-9,-9)" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/><path fill="#fff" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg></a></div><p style="margin-top:20px"><a href="javascript:void(0)" onclick="showPaymentInfo()">Payment info</a></p></div></div>
+</div></footer>
+<a class="wvbar" href="https://webvtec.com" target="_blank" rel="noopener">Click to request your own website &nbsp;·&nbsp; <b>webvtec.com</b></a>
 <div id="bookingModal" class="modal" style="display:none"><div class="mbox clear"><h3 id="bookingModalTitle">Booking confirmation</h3><p id="bookingModalContent"></p></div></div>
 <div id="myBookingsModal" class="modal" style="display:none"><div class="mbox" id="myBookingsBox"><button class="x" aria-label="Close" onclick="closeMyBookings()">✕</button><h3>My last 5 bookings</h3><div id="myBookingsContent"></div></div></div>
 <div id="paymentInfoModal" class="modal" style="display:none"><div class="mbox" id="paymentInfoBox"><button class="x" aria-label="Close" onclick="closePaymentInfo()">✕</button><h3>Payment info</h3><p><b>Bank:</b> Scotiabank</p><p><b>First name:</b> RICHARD</p><p><b>Last name:</b> CUNNINGHAM</p><p><b>Branch/Transit:</b> 95505</p><p><b>Account type:</b> CHEQUING</p><p><b>Account number:</b> 95505 000305129 <button class="copy" onclick="copyAcct(this)">Copy</button></p><p><b>Currency:</b> JMD</p></div></div>
@@ -1964,7 +1984,7 @@ ids.forEach(i=>{const u='https://images.unsplash.com/'+i+'?auto=format&fit=crop&
 setInterval(()=>{if(els.length>1&&!document.hidden)show((cur+1)%els.length)},6500);})();
 function go(id,e){if(e)e.preventDefault();showSection(id);closeMenu();}
 function bookPackage(p){showSection('bookingSection');document.getElementById('ageGroup').value='package';onAgeGroupChange();document.getElementById('packageService').value=p;onServiceChange();}
-try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
+try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,3);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
 (function(){
 const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,800',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
 const IC={plat:'<path d=\"M6 4h12l4 5-10 11L2 9z\"/><path d=\"M2 9h20M9 4l-2 5 5 11 5-11-2-5\"/>',gold:'<path d=\"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z\"/>',silv:'<path d=\"M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5 5-5\"/>'};
@@ -2061,6 +2081,11 @@ let m=(n.getFullYear()-d.getFullYear())*12+n.getMonth()-d.getMonth()-(n.getDate(
 function draw(){const el=document.getElementById('homeReviews');if(!el)return;el.innerHTML=R.map(r=>'<div class="gc"><div class="gc-top"><div class="gc-av" style="background:'+r[7]+'">'+esc(r[0][0])+'</div><div><div class="gc-nm">'+esc(r[0])+'</div><div class="gc-mt">'+esc(r[1])+'</div></div></div><div class="gc-row"><span class="gc-st">★★★★★</span><span class="gc-dt">'+ago(r[2])+'</span></div><p class="gc-tx">'+esc(r[4])+'</p>'+(r[3]?'<span class="gc-pr">'+esc(r[3])+' per person</span>':'')+'<div class="gc-rp"><img src="'+LOGO+'" alt="House of Kutz"><div><b>Owner reply:</b> '+esc(r[6])+'<small>'+ago(r[5])+'</small></div></div></div>').join('')}
 draw();setInterval(draw,36e5);
 })();
+</script>
+<script>
+/* Paste your Facebook page link here and the Facebook icon will appear in the footer */
+const FB_URL='';
+(function(){const a=document.getElementById('fbLink');if(a&&FB_URL){a.href=FB_URL;a.hidden=false}})();
 </script>
 </body>
 </html>
