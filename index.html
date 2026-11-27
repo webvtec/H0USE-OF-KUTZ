@@ -348,6 +348,40 @@ footer{background:linear-gradient(180deg,#0c0c0e,#050506)}
 .bbox .pk .btn{padding:9px 6px!important;font-size:10px!important;letter-spacing:.1em!important}
 .bbox .pk-badge{position:static!important;display:inline-block;margin-bottom:6px;font-size:7.5px;padding:3px 7px}
 @media(max-width:900px){.bbox .pk{flex:0 0 58%}.bbox .pks{margin:0 -6px 16px;padding:4px 6px 8px}}
+/* ===== barber card: compact profile ===== */
+.barbers{gap:16px}
+.barber-profile{flex:0 0 200px;width:200px;align-items:center;text-align:center;border-radius:12px}
+.barber-profile .certified-badge{position:static;width:100%;padding:9px 10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:#0b0b0d;backdrop-filter:none;font-size:9px}
+.barber-profile .barber-avatar{width:104px;height:104px;margin:20px 0 0;border:3px solid rgba(217,42,55,.65);border-radius:50%;box-shadow:0 0 22px rgba(217,42,55,.35);object-fit:cover;filter:none}
+.barber-profile:hover .barber-avatar{box-shadow:0 0 32px rgba(217,42,55,.55)}
+.barber-profile h3{position:static;margin:14px 0 0;padding:0 14px 20px;text-align:center;font-size:17px;letter-spacing:.1em;background:none}
+.barber-profile .vac-badge{margin:-6px 12px 16px}
+.barber-profile .btn-book{border-radius:0;padding:13px}
+
+/* ===== reviews: name first, compact ===== */
+.gr{column-gap:14px}
+.gc{padding:16px 16px 14px;margin-bottom:14px;border-radius:14px}
+.gc::before{font-size:64px;top:2px;right:12px}
+.gc-top{order:1;border:0;padding:0;margin:0 0 8px;gap:10px}
+.gc-av{width:34px;height:34px;font-size:15px;border-radius:10px}
+.gc-nm{font-size:12px}.gc-mt{font-size:11px}
+.gc-row{order:2;margin-bottom:6px}.gc-st{font-size:13px;letter-spacing:2px}.gc-dt{font-size:11px}
+.gc-tx{order:3;margin:0;font:400 13.5px/1.55 'Barlow',sans-serif;color:#d6d8df}
+.gc-rp{order:4;margin-top:12px;padding:8px 10px;gap:8px;font-size:12px;border-radius:12px 12px 12px 3px}.gc-rp img{width:20px;height:20px}
+
+/* ===== full calendar ===== */
+#dateQuick{display:none!important}
+#date{position:absolute;opacity:0;pointer-events:none;width:0;height:0;padding:0;border:0}
+.cal{margin-top:8px;padding:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cal-h b{font:600 13px 'Barlow',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.cal-n{width:34px;height:34px;border:1px solid var(--line);background:none;color:#fff;font-size:20px;line-height:1;cursor:pointer}.cal-n:hover:not(:disabled){border-color:#c8ccd6}.cal-n:disabled{opacity:.25;cursor:default}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-w{text-align:center;padding:4px 0;font:600 10px 'Barlow',sans-serif;letter-spacing:.1em;color:var(--dim)}
+.cal-d{aspect-ratio:1;border:1px solid transparent;border-radius:0;background:rgba(255,255,255,.05);color:#fff;font:600 13px 'Barlow',sans-serif;cursor:pointer;padding:0}
+.cal-d:hover:not(:disabled){border-color:#c8ccd6}.cal-d:disabled{opacity:.22;cursor:default;background:none}
+.cal-d.today{border-color:rgba(217,42,55,.65)}
+.cal-d.on{background:linear-gradient(180deg,#e2323f,#9c1019);border-color:rgba(255,255,255,.4)}
 .hrs-banner{width:100%;padding:7px 12px;background:rgba(217,42,55,.12);border-bottom:1px solid rgba(217,42,55,.25);color:#ff8d96;font:600 10px 'Barlow';letter-spacing:.14em;text-transform:uppercase;text-align:center}
 </style>
 </head>
@@ -418,21 +452,7 @@ footer{background:linear-gradient(180deg,#0c0c0e,#050506)}
 <section class="content-section" id="bookingSection"><div class="wrap"><h1 class="page-h">Book your kutz</h1><p class="lead">Choose a service, a date and a time. You will sign in with Google to confirm.</p>
 <div class="book"><aside class="box"><div class="k">Appointments and walk-ins</div><p><b>Every day</b></p><div class="k">Hours</div><p><b>Mon–Sat</b> 8:00 AM – 9:00 PM<br><b>Sunday</b> 11:00 AM – 6:30 PM</p><div class="k">Grace period</div><p>Arrive within 10 minutes of your time or the slot is released.</p></aside>
 <div class="box" id="bkFormBox"><form onsubmit="submitBooking(event)">
-    <label for="name">Name</label>
-    <input id="name" required type="text" placeholder="Your full name"/>
-
-    <label for="phone">Phone Number</label>
-    <input id="phone" type="tel" inputmode="numeric" maxlength="14" placeholder="eg... (876) 123-4567" required/>
-
-    <label for="date">Preferred Date</label>
-    <input id="date" min="" onchange="loadAvailableSlots()" required type="date"/><div id="dateQuick" class="chips"></div>
-
-    <label for="selectedTime">Available Times</label>
-    <select id="selectedTime" style="display:none">
-      <option value="">COMPLETE FORM TO SEE AVAILABLE SLOTS</option>
-    </select><div id="timeChips" class="chips"></div>
-
-    <!-- Service Type -->
+    <!-- Service Type (step 1) -->
     <label for="ageGroup">Service Type</label>
     <select id="ageGroup" onchange="onAgeGroupChange();">
       <option value="NONE">— Select Service Type —</option>
@@ -2039,7 +2059,7 @@ if(e.key==='Escape'){lb.classList.remove('on');closeMenu();document.querySelecto
 })();
 </script>
 
-<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><div id="bbNotice"></div></div><h4 class="bbh">Packages</h4><div class="pks" id="bbPackages"></div><h4 class="bbh">Book your kut</h4><div id="bbBody"></div></div></div>
+<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><div id="bbNotice"></div></div><div id="bbBody"></div></div></div>
 <script>
 (function(){
 const LOGO='https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg';
@@ -2065,7 +2085,6 @@ function render(){grid.innerHTML=list().map(b=>'<div class="barber-profile"><div
 window.renderBarbersGrid=render;render();
 db.collection('barbers').where('active','==',true).onSnapshot(q=>{hokBarbers=q.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.name);render()},()=>render());
 body.appendChild(document.getElementById('bkFormBox'));
-document.getElementById('bbPackages').innerHTML=window.PKHTML||'';
 window.bookPackage=function(p){
  if(modal.style.display!=='flex'){showSection('bookingSection');return}
  document.getElementById('ageGroup').value='package';onAgeGroupChange();
