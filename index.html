@@ -179,6 +179,67 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 @media(min-width:901px){.pks .gold{order:1}.pks .plat{order:2;transform:translateY(-16px)}.pks .silv{order:3}.pks .plat:hover{transform:translateY(-24px)}}
 @media(max-width:900px){.pks{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -22px;padding:8px 22px 16px;scrollbar-width:none}.pk{flex:0 0 82%;scroll-snap-align:center}.pk:hover{transform:none}.pk-pr{font-size:52px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.hbook{padding:11px 20px!important}.hint{color:var(--dim);font-size:13.5px;margin:8px 0 0}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:8px;margin-top:10px}.chips:empty{display:none}
+.chip{padding:11px 6px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:var(--text);font:600 13px 'Barlow',sans-serif;border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}.chip:hover{border-color:#c8ccd6;transform:translateY(-1px)}.chip.on{background:linear-gradient(180deg,#b8141f,#8c0c16);border-color:rgba(255,255,255,.4);color:#fff}
+.chips .hint{grid-column:1/-1;margin:0}
+.open-pill{display:inline-flex;align-items:center;gap:7px;margin-left:10px;padding:2px 10px;border:1px solid var(--line);border-radius:20px;font:600 10px 'Barlow';letter-spacing:.14em;color:var(--c)}.open-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}
+#serviceIncludesCard{border-radius:4px!important}#serviceIncludesCard .cut-item,#serviceIncludesCard .addon-item{padding:13px 12px;border-bottom:1px solid var(--line);border-radius:0}
+#serviceIncludesCard .cut-item:hover,#serviceIncludesCard .addon-item:hover{background:rgba(255,255,255,.05)}
+#serviceIncludesCard .cut-item.selected,#serviceIncludesCard .addon-item.selected{background:rgba(226,58,71,.14);border-left:3px solid var(--accent)}
+#serviceIncludesCard .item-label{flex:1;font-size:14px;color:var(--text)}#serviceIncludesCard .item-price{margin-left:auto;color:#c8ccd6}#serviceIncludesCard .item-dot{display:none}#serviceIncludesCard .card-section-title{color:var(--dim);font-size:11px;letter-spacing:.16em;margin:14px 0 4px}
+#selectionSummary{position:sticky;bottom:12px;z-index:5;box-shadow:0 14px 40px rgba(0,0,0,.6);background:#131116!important;border-radius:4px!important}
+.copy{margin-left:8px;padding:3px 10px;border:1px solid var(--line);border-radius:2px;background:none;color:var(--text);font:600 11px 'Barlow';letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.copy:hover{border-color:#c8ccd6}
+.gallery-grid img,.mosaic img{cursor:zoom-in;transition:transform .6s}.gallery-grid>div:hover img,.mosaic div:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;z-index:12000;display:none;place-items:center;background:rgba(8,6,12,.94)}.lb.on{display:grid}.lb img{max-width:92vw;max-height:86vh;border-radius:3px;box-shadow:0 30px 80px #000}
+.lb button{position:absolute;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;width:46px;height:46px;border-radius:50%;font-size:24px;cursor:pointer}.lbx{top:16px;right:16px}.lbn.p{left:14px}.lbn.n{right:14px}
+.mbar{display:none}
+@media(max-width:900px){.top{gap:12px}.hbook{padding:10px 14px!important;font-size:11px!important}.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:900;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(14,13,17,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.mbar .btn{flex:1;padding:12px 10px!important}.mbar .btn-chrome{flex:.5}body.nobar .mbar{display:none}footer{padding-bottom:84px}}
+
+/* ===== RED + CHARCOAL LUXE ===== */
+:root{--ink:#0d0d0f;--panel:#161618;--line:rgba(255,255,255,.09);--accent:#d92a37;--accent2:#8c0c16;--rg:rgba(217,42,55,.35);--metal:linear-gradient(180deg,#fff,#cfd2da 45%,#8b8f9b 55%,#e8eaef)}
+::selection{background:#d92a37;color:#fff}
+body{background:radial-gradient(70% 45% at 50% 0,rgba(217,42,55,.11),transparent 70%),radial-gradient(50% 40% at 0 100%,rgba(217,42,55,.06),transparent 70%),linear-gradient(180deg,#101012,#0b0b0d);background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.top{background:rgba(13,13,15,.76);border-bottom:0}.top.sc{background:rgba(11,11,13,.96)}.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),rgba(255,255,255,.4),var(--accent),transparent);opacity:.75}
+.brand img{border:1px solid #c8ccd6;padding:2px;background:#000}.brand span{letter-spacing:.3em}.brand small{color:var(--accent);letter-spacing:.5em}
+.links a{position:relative;padding:6px 0;letter-spacing:.22em}.links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .35s}.links a:hover::after{right:0}
+.menu{background:#0e0e10}.menu>a:not(.acct){font:500 22px 'Playfair Display',serif;padding:14px 0}
+.btn{border-radius:0;letter-spacing:.24em;padding:15px 30px;position:relative;overflow:hidden}
+.btn-red,.book-now-btn{background:linear-gradient(180deg,#e2323f,#b0141f 55%,#8c0c16)!important;color:#fff!important;border:1px solid rgba(255,255,255,.4)!important;border-radius:0!important;letter-spacing:.24em!important;font-weight:700!important;padding:15px 30px!important;box-shadow:0 10px 30px rgba(217,42,55,.28)}
+.btn-red:hover,.book-now-btn:hover{background:linear-gradient(180deg,#ee3d4a,#c4182a 55%,#9c1019)!important;box-shadow:0 14px 38px rgba(217,42,55,.5)}
+.btn-red::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);transition:left .7s}.btn-red:hover::after{left:130%}
+.btn-chrome{border-color:#aeb2be;color:#fff}.btn-chrome:hover{background:#fff;color:#111;border-color:#fff}
+.eyebrow{display:flex;align-items:center;gap:16px;font:600 11px 'Barlow';letter-spacing:.42em;text-transform:uppercase;color:#d7dae2;margin-bottom:22px}.eyebrow::before{content:"";width:48px;height:2px;background:var(--accent)}
+.cine::before{background:linear-gradient(180deg,rgba(13,13,15,.72),rgba(13,13,15,.3) 38%,rgba(13,13,15,.96) 94%),radial-gradient(70% 55% at 15% 100%,rgba(217,42,55,.4),transparent 70%)}
+.cine h1{font-weight:500;letter-spacing:-.02em}.cine p{color:#cfd1d9}
+.cmedal,.medal{box-shadow:0 0 0 8px rgba(217,42,55,.16),0 0 0 9px rgba(217,42,55,.5),0 28px 70px rgba(0,0,0,.8)}
+.dock{background:rgba(13,13,15,.82);border-top:1px solid var(--line)}.k{color:var(--accent);letter-spacing:.3em}
+.tick{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:#09090b;padding:20px 0}.tick>div{display:inline-block;animation:tk 40s linear infinite;font:500 24px 'Playfair Display',serif;letter-spacing:.2em;text-transform:uppercase;color:#c3c6cf}.tick i{color:var(--accent);font-style:normal;margin:0 30px;font-size:14px}@keyframes tk{to{transform:translateX(-50%)}}
+.sh{flex-direction:column;align-items:center;text-align:center;gap:14px;border:0;margin-bottom:44px}.sh h2{font-weight:500}.sh h2::after{content:"";display:block;width:56px;height:2px;margin:18px auto 0;background:var(--accent)}.sh a{color:#c3c6cf;letter-spacing:.24em;border-bottom:1px solid var(--accent);padding-bottom:3px}.sh a:hover{color:#fff}
+.page-h,.page-h+.lead{text-align:center}.page-h+.lead{margin-left:auto;margin-right:auto}.rule{background:var(--accent);width:56px;height:2px}
+.sec{padding-top:110px}#sec-packages{margin-top:70px;padding:90px 0 100px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.03) 18%,rgba(255,255,255,.03) 82%,transparent)}
+.pk{background:linear-gradient(160deg,rgba(255,255,255,.45),rgba(255,255,255,.05) 40%,rgba(255,255,255,.22));border-radius:2px}.pk-in{border-radius:1px;background:linear-gradient(180deg,#1d1d20,#111113)}
+.pk.gold,.pk.silv{--c:#cfd2da;--glow:rgba(255,255,255,.09)}.pk.plat{--c:#fff}.pk.plat{background:linear-gradient(160deg,#fff,#d92a37 35%,rgba(255,255,255,.25) 70%,#8c0c16);box-shadow:0 30px 90px rgba(217,42,55,.3)}
+.pk-pr{font:500 64px/1 'Playfair Display',serif}.pk h3{letter-spacing:.06em}
+.row b{color:#fff}.row i{border-color:rgba(255,255,255,.22)}.tabs button.on{color:#fff;border-color:var(--accent)}
+.ph,.pan,.box,.rc,.mosaic div,.gallery-grid>div{border:1px solid var(--line);border-radius:0}.box,.rc{background:linear-gradient(180deg,#1a1a1d,#121214)}.ph::after{background:linear-gradient(180deg,transparent 40%,rgba(13,13,15,.95))}
+.mosaic div,.gallery-grid>div{position:relative}.mosaic div::after,.gallery-grid>div::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s;pointer-events:none}.mosaic div:hover::after,.gallery-grid>div:hover::after{transform:scaleX(1)}
+.frame::before{border-color:var(--accent)}.frame img{filter:saturate(.7) contrast(1.05)}
+.bk{background:linear-gradient(135deg,rgba(217,42,55,.16),rgba(18,18,20,.96) 60%);border:1px solid var(--line);border-radius:0}.n{border-color:#c8ccd6;background:#0e0e10;box-shadow:0 0 0 6px #111113,0 0 0 7px rgba(217,42,55,.5)}.tl::before{background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.rc{padding:30px 26px;border-top:2px solid var(--accent)}.rc::before{content:"“";display:block;font:72px/.8 'Playfair Display',serif;color:var(--accent);height:34px}.rc p{font:italic 500 18px/1.55 'Playfair Display',serif;color:#e6e7ec}.rc b{letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+summary::after{color:var(--accent);font-size:24px}
+.band{margin-top:120px;padding:100px 22px;border-color:var(--line);background:radial-gradient(60% 130% at 50% 0,rgba(217,42,55,.26),transparent 70%),#0b0b0d}.band h2{font-size:clamp(36px,5vw,64px)}.band h2::before{content:"";display:block;width:2px;height:46px;margin:0 auto 24px;background:linear-gradient(180deg,transparent,var(--accent))}
+footer{background:#08080a;margin-top:0;padding-top:56px;border-top:0;position:relative}footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),rgba(255,255,255,.4),var(--accent),transparent)}.foot h3{letter-spacing:.3em}.foot a:hover{color:#fff}
+input,select,textarea{border-radius:0}input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(217,42,55,.18)}
+.chip{border-radius:0}.chip.on{background:linear-gradient(180deg,#e2323f,#9c1019);border-color:rgba(255,255,255,.4);color:#fff}.chip:hover{border-color:#c8ccd6}
+#serviceIncludesCard{border-radius:0!important}#serviceIncludesCard .cut-item.selected,#serviceIncludesCard .addon-item.selected{background:rgba(217,42,55,.16);border-left:3px solid var(--accent)}#serviceIncludesCard .item-price{color:#cfd2da}#selectionSummary{border-radius:0!important}
+.mbox{border-radius:0;background:#111113}.swal2-popup{border-radius:0!important}.mosaic img,.gallery-grid img{filter:saturate(.85) contrast(1.04)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#0b0b0d}::-webkit-scrollbar-thumb{background:#2b2b30;border:2px solid #0b0b0d}::-webkit-scrollbar-thumb:hover{background:var(--accent2)}
+footer{padding-bottom:34px!important}
+@media(prefers-reduced-motion:reduce){.tick>div{animation:none}}
+@media(max-width:900px){.sec{padding-top:72px}#sec-packages{margin-top:40px;padding:60px 0 70px}.eyebrow{letter-spacing:.3em;font-size:10px}.sh{margin-bottom:30px}.pk-pr{font-size:54px}.tick>div{font-size:18px}.band{margin-top:72px;padding:64px 22px}}
 </style>
 </head>
 <body>
@@ -188,7 +249,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="jump('sec-about')">About</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
 <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
 <aside class="menu" id="menu" aria-label="Menu">
-<a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
+<a onclick="go('bookingSection')" style="color:#fff;font-weight:600">Book now</a><a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
 <h4>Hours</h4><p>Mon–Sat: 8:00 AM – 9:00 PM</p><p>Sunday: 11:00 AM – 6:30 PM</p>
 <a class="acct" onclick="showUserBookings(); closeMenu();">My bookings</a><a class="acct" onclick="showPaymentInfo(); closeMenu();">Payment info</a><a class="acct" id="authMenuBtn" onclick="handleAuthButtonClick(); closeMenu();">Log in</a><a class="acct admin-button" onclick="login(); closeMenu();">Admin</a>
 <div style="margin-top:20px"><div style="display:flex; justify-content:center; gap:28px; margin-top:18px;">
@@ -214,11 +275,13 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
   </div></div></aside>
 <main>
 <section class="content-section active" id="homeSection">
-<div class="cine"><div class="slides" id="slides"></div><div class="cine-in"><div class="cm"><div class="rule"></div><h1>Precision Kutz.<br><i>Finished With Care.</i></h1>
+<div class="cine"><div class="slides" id="slides"></div><div class="cine-in"><div class="cm"><div class="eyebrow">Barbershop · St. Catherine, Jamaica</div><h1>Precision Kutz.<br><i>Finished With Care.</i></h1>
 <p>Fades, shaves and beard work for men, women and children. Book a chair online or walk in any day.</p>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button><button class="btn btn-chrome" onclick="jump('sec-services')">View our services</button></div></div>
 <div class="cmedal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
 <div class="dock"><div class="sw"><div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM<br>Sunday 11:00 AM – 6:30 PM</p></div><div><div class="k">Location</div><p>Upper West Henderson Blvd, St. Catherine<br><a href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Open in Maps</a></p></div><div><div class="k">Appointments</div><p>Appointments and walk-ins, every day.<br>10-minute grace period.</p></div></div></div></div>
+
+<div class="tick" aria-hidden="true"><div><span>Fades</span><i>◆</i><span>Skin Fades</span><i>◆</i><span>Beard Work</span><i>◆</i><span>Line Ups</span><i>◆</i><span>Hot Towel Shaves</span><i>◆</i><span>Kids Kutz</span><i>◆</i><span>Designs</span><i>◆</i><span>Ladies Kuts</span><i>◆</i><span>Fades</span><i>◆</i><span>Skin Fades</span><i>◆</i><span>Beard Work</span><i>◆</i><span>Line Ups</span><i>◆</i><span>Hot Towel Shaves</span><i>◆</i><span>Kids Kutz</span><i>◆</i><span>Designs</span><i>◆</i><span>Ladies Kuts</span><i>◆</i></div></div>
 
 <div class="sec" id="sec-services"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div>
 <div class="svc"><div class="ph"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg)"></div><div class="cap">Appointments and walk-ins, every day</div></div>
@@ -265,12 +328,12 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
     <input id="phone" type="tel" inputmode="numeric" maxlength="14" placeholder="eg... (876) 123-4567" required/>
 
     <label for="date">Preferred Date</label>
-    <input id="date" min="" onchange="loadAvailableSlots()" required type="date"/>
+    <input id="date" min="" onchange="loadAvailableSlots()" required type="date"/><div id="dateQuick" class="chips"></div>
 
     <label for="selectedTime">Available Times</label>
-    <select id="selectedTime" required>
+    <select id="selectedTime" style="display:none">
       <option value="">COMPLETE FORM TO SEE AVAILABLE SLOTS</option>
-    </select>
+    </select><div id="timeChips" class="chips"></div>
 
     <!-- Service Type -->
     <label for="ageGroup">Service Type</label>
@@ -353,7 +416,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 
     <p id="estimateTimeMessage" style="display:none;"></p>
 
-    <button type="submit" class="btn btn-red wide">Confirm booking</button>
+    <button type="submit" class="btn btn-red wide">Confirm booking</button><p class="hint" style="text-align:center;margin:12px 0 0">You will sign in with Google to confirm. Payment is by bank transfer afterwards.</p>
   </form><p id="bookingMessage"></p></div></div></div></section>
 <section class="content-section" id="reviewsSection"><div class="wrap"><h1 class="page-h">Client reviews</h1><p class="lead">What clients say about their kutz.</p>
 <div id="reviewPrompt" class="box" style="display:none;margin-bottom:20px">How was your kutz? Leave us a review.</div>
@@ -366,7 +429,7 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
 <div class="credit"><a href="https://webvtec.com" target="_blank" rel="noopener">Request your own website at webvtec.com</a></div></div></footer>
 <div id="bookingModal" class="modal" style="display:none"><div class="mbox clear"><h3 id="bookingModalTitle">Booking confirmation</h3><p id="bookingModalContent"></p></div></div>
 <div id="myBookingsModal" class="modal" style="display:none"><div class="mbox" id="myBookingsBox"><button class="x" aria-label="Close" onclick="closeMyBookings()">✕</button><h3>My last 5 bookings</h3><div id="myBookingsContent"></div></div></div>
-<div id="paymentInfoModal" class="modal" style="display:none"><div class="mbox" id="paymentInfoBox"><button class="x" aria-label="Close" onclick="closePaymentInfo()">✕</button><h3>Payment info</h3><p><b>Bank:</b> Scotiabank</p><p><b>First name:</b> RICHARD</p><p><b>Last name:</b> CUNNINGHAM</p><p><b>Branch/Transit:</b> 95505</p><p><b>Account type:</b> CHEQUING</p><p><b>Account number:</b> 95505 000305129</p><p><b>Currency:</b> JMD</p></div></div>
+<div id="paymentInfoModal" class="modal" style="display:none"><div class="mbox" id="paymentInfoBox"><button class="x" aria-label="Close" onclick="closePaymentInfo()">✕</button><h3>Payment info</h3><p><b>Bank:</b> Scotiabank</p><p><b>First name:</b> RICHARD</p><p><b>Last name:</b> CUNNINGHAM</p><p><b>Branch/Transit:</b> 95505</p><p><b>Account type:</b> CHEQUING</p><p><b>Account number:</b> 95505 000305129 <button class="copy" onclick="copyAcct(this)">Copy</button></p><p><b>Currency:</b> JMD</p></div></div>
 <div id="adminLoginModal" class="modal" style="display:none"><div class="mbox" style="text-align:center"><button class="x" aria-label="Close" onclick="closeAdminModal()">✕</button><h3>Admin access</h3><p>Sign in with the authorised Google account to continue.</p><button class="gbtn" onclick="adminGoogleSignIn()" style="margin-top:14px"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Sign in with Google</button><p id="adminLoginMsg" style="color:#ff7676;display:none"></p></div></div>
 
 <script>
@@ -1540,8 +1603,8 @@ const firebaseConfig = {
             <hr style="margin:15px 0; border:0; height:1px; background:rgba(255,255,255,.14);">
             <p style="font-size:15px; margin:10px 0;">Thanks for booking with HOUSE OF KUTZ! We'll see you soon. 💈</p>
             <hr style="margin:15px 0; border:0; height:1px; background:rgba(255,255,255,.14);">
-            <p style="font-size:13px; color:#b8bbc6; margin:15px 0; text-align:left; line-height:1.5;">ℹ️ For online payment, tap the <b>menu icon</b> (top left) and view <b>PAYMENT INFO</b>. Use your booking number as the reference.</p>
-            <button onclick="closeBookingModal()" style="margin-top:15px; padding:10px 25px; background:linear-gradient(180deg,#ee4553,#a8101c); color:#fff; border:none; border-radius:10px; font-size:15px; cursor:pointer; font-weight:bold; font-family:'Barlow',sans-serif;">OK</button>
+            <p style="font-size:13px; color:#b8bbc6; margin:15px 0; text-align:left; line-height:1.5;">ℹ️ For online payment, tap the <b>menu icon</b> (top right) and view <b>PAYMENT INFO</b>. Use your booking number as the reference.</p>
+            <a href="${calUrl(date,time,services)}" target="_blank" rel="noopener" style="display:block;margin-top:14px;font-size:13px;color:#c8ccd6;text-decoration:underline">Add to Google Calendar</a><button onclick="closeBookingModal()" style="margin-top:15px; padding:10px 25px; background:linear-gradient(180deg,#ee4553,#a8101c); color:#fff; border:none; border-radius:10px; font-size:15px; cursor:pointer; font-weight:bold; font-family:'Barlow',sans-serif;">OK</button>
           </div>
         `;
         document.getElementById('bookingModal').style.display = 'flex';
@@ -1652,11 +1715,11 @@ const firebaseConfig = {
         container.innerHTML += `
           <div style="background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.12); padding:18px; margin-bottom:12px; border-radius:16px; border-left:3px solid var(--accent);">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong style="font-size:15px; color:#eceef3;">${d.name}</strong>
+              <strong style="font-size:15px; color:#eceef3;">${esc(d.name)}</strong>
               <small style="color:#aaa; font-style:italic;">${dateString}</small>
             </div>
             <div style="margin:4px 0; font-size:18px;">${stars}</div>
-            <div style="font-size:14px; color:#b8bbc6; line-height:1.5;">${d.comment}</div>
+            <div style="font-size:14px; color:#b8bbc6; line-height:1.5;">${esc(d.comment)}</div>
             ${isOwner ? `<button onclick="deleteReview('${d.id}')" style="color:red; cursor:pointer; background:none; border:none; font-size:13px; padding:0; margin-top:6px;">Delete</button>` : ''}
           </div>
         `;
@@ -1898,6 +1961,49 @@ Kids:'Boyz Kut|$1,000;Scissors Kut|$2,500;Designs|$800'};
 const rows=s=>s.split(';').map(r=>{const p=r.split('|');return `<div class="row"><span>${p[0].replace(/&/g,'&amp;')}</span><i></i><b>${p[1]}</b></div>`}).join('');
 document.getElementById('priceLists').innerHTML=Object.keys(L).map(k=>`<div><h3>${k}</h3>${rows(L[k])}</div>`).join('');
 const N={Adults:'Adult services',Teens:'Teen services',Kids:'Kids services'};window.svcTab=function(k,btn){document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===btn));const l=document.getElementById('svcList');l.style.animation='none';l.offsetHeight;l.style.animation='';l.innerHTML=rows(L[k]);document.getElementById('svcTitle').textContent=N[k]};svcTab('Adults',document.querySelector('.tabs button'));
+})();
+</script>
+
+<script>
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+window.alert=function(m){Swal.fire({toast:true,position:'top',showConfirmButton:false,timer:3800,timerProgressBar:true,icon:'info',title:m,background:'#17151b',color:'#eceef3'})};
+function calUrl(date,time,svc){const s=convertToMinutes(time),d=date.replace(/-/g,''),f=m=>String(Math.floor(m/60)).padStart(2,'0')+String(m%60).padStart(2,'0')+'00';return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('House of Kutz: '+svc.split(' | ')[0])+'&dates='+d+'T'+f(s)+'/'+d+'T'+f(s+30)+'&location='+encodeURIComponent('House of Kutz, Upper West Henderson Blvd, St. Catherine')+'&details='+encodeURIComponent('Arrive within 10 minutes of your slot.')}
+function copyAcct(b){const t=document.getElementById('paymentInfoBox').innerText.match(/Account number:\s*([\d ]+)/);const v=t?t[1].trim():'';(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>{b.textContent='Copied'},()=>{b.textContent='Copy failed'});setTimeout(()=>{b.textContent='Copy'},1800)}
+(function(){
+const _ss=showSection;window.showSection=function(id){_ss(id);document.body.classList.toggle('nobar',id==='bookingSection')};
+/* time chips */
+const sel=document.getElementById('selectedTime'),tc=document.getElementById('timeChips');
+function chips(){const o=[...sel.options].filter(x=>x.value);if(!o.length){const m=(sel.options[sel.options.length-1]||{}).textContent||'';tc.innerHTML='<p class="hint">'+(/COMPLETE|Pick date/i.test(m)?'Choose a service and a date to see open times.':/^--/.test(m)?'Loading times…':esc(m))+'</p>';return}tc.innerHTML=o.map(x=>'<button type="button" class="chip" data-v="'+esc(x.value)+'">'+esc(x.value)+'</button>').join('')}
+new MutationObserver(chips).observe(sel,{childList:true});chips();
+tc.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;sel.value=b.dataset.v;tc.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b))});
+/* date chips */
+const dq=document.getElementById('dateQuick'),di=document.getElementById('date');
+dq.innerHTML=[0,1,2,3,4].map(i=>{const d=new Date();d.setDate(d.getDate()+i);return '<button type="button" class="chip" data-v="'+d.toLocaleDateString('en-CA')+'">'+(i==0?'Today':i==1?'Tomorrow':d.toLocaleDateString('en-US',{weekday:'short',day:'numeric'}))+'</button>'}).join('');
+const sync=()=>dq.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x.dataset.v===di.value));
+dq.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;di.value=b.dataset.v;di.dispatchEvent(new Event('change'));sync()});di.addEventListener('change',sync);di.form.addEventListener('reset',()=>setTimeout(()=>{sync();chips()}));
+/* sign in inline, then confirm; guard double taps */
+const _sb=submitBooking;
+window.submitBooking=async function(ev){ev.preventDefault();const btn=ev.target.querySelector('[type=submit]');
+if(!firebase.auth().currentUser){try{const p=new firebase.auth.GoogleAuthProvider();p.setCustomParameters({prompt:'select_account'});await firebase.auth().signInWithPopup(p)}catch(e){if(e.code!=='auth/popup-closed-by-user')alert('Sign-in failed. Please try again.');return}}
+if(!sel.value){alert('Please choose a time slot.');return}
+btn.disabled=true;btn.textContent='Confirming…';setTimeout(()=>{btn.disabled=false;btn.textContent='Confirm booking'},4500);_sb(ev)};
+/* remember details */
+const nm=document.getElementById('name'),ph=document.getElementById('phone');
+const g=k=>{try{return localStorage.getItem(k)||''}catch(e){return ''}},st=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+nm.addEventListener('input',()=>st('hk_n',nm.value));ph.addEventListener('input',()=>st('hk_p',ph.value));
+if(g('hk_p'))ph.value=g('hk_p');
+firebase.auth().onAuthStateChanged(u=>{if(!nm.value)nm.value=g('hk_n')||(u&&u.displayName)||''});
+/* open now */
+try{const n=new Date(),b=businessHours[n.toLocaleDateString('en-US',{weekday:'long'})],m=n.getHours()*60+n.getMinutes(),o=m>=convertToMinutes(b.open)&&m<convertToMinutes(b.close);const k=document.querySelector('.dock .k');k.insertAdjacentHTML('beforeend','<span class="open-pill" style="--c:'+(o?'#5fd38a':'#ff7676')+'">'+(o?'Open now':'Closed now')+'</span>')}catch(e){}
+/* lightbox */
+const lb=document.createElement('div');lb.className='lb';lb.innerHTML='<button class="lbx" aria-label="Close">✕</button><button class="lbn p" aria-label="Previous">‹</button><img alt=""><button class="lbn n" aria-label="Next">›</button>';document.body.appendChild(lb);
+let set=[],ix=0;const im=lb.querySelector('img');const show=i=>{ix=(i+set.length)%set.length;im.src=set[ix].src;lb.classList.add('on')};
+document.addEventListener('click',e=>{const t=e.target.closest('.gallery-grid img,.mosaic img');if(t){set=[...t.closest('.gallery-grid,.mosaic').querySelectorAll('img')];show(set.indexOf(t));return}
+if(e.target.closest('.lbx')||e.target===lb)lb.classList.remove('on');else if(e.target.closest('.lbn.p'))show(ix-1);else if(e.target.closest('.lbn.n'))show(ix+1);
+if(e.target.classList&&e.target.classList.contains('modal'))e.target.style.display='none'});
+/* keyboard */
+document.addEventListener('keydown',e=>{if(lb.classList.contains('on')){if(e.key==='ArrowLeft')show(ix-1);if(e.key==='ArrowRight')show(ix+1)}
+if(e.key==='Escape'){lb.classList.remove('on');closeMenu();document.querySelectorAll('.modal').forEach(x=>x.style.display='none')}});
 })();
 </script>
 </body>
