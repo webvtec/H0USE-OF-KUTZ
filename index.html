@@ -255,13 +255,14 @@ footer{padding-bottom:34px!important}
 .btn-book{width:100%;margin-top:auto;padding:16px;border:0;cursor:pointer;color:#fff;font:700 12px 'Barlow';letter-spacing:.3em;text-transform:uppercase;background:linear-gradient(180deg,#d01e2b,#a00d18);transition:background .3s,box-shadow .3s}.btn-book:hover{background:linear-gradient(180deg,#ee3d4a,#b8121f);box-shadow:0 -6px 26px rgba(217,42,55,.45)}
 #barberBookingModal{z-index:9990}.bbox{width:min(94%,680px);max-height:92vh;padding:30px 28px;border-radius:14px}.bbox .barber-avatar{width:104px;height:104px;margin:0 auto}.bbox h3{margin-top:16px;letter-spacing:.1em;text-transform:uppercase}.bbhead{text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line)}.bbhead p{margin:4px 0 0;color:var(--dim);font-size:13.5px}
 #bbBody>.box{border:0;background:none;padding:0}
+.svc{grid-template-columns:1fr!important;max-width:860px;margin:0 auto}
 </style>
 </head>
 <body>
 
 <script>document.documentElement.classList.add("js")</script>
 <header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><div><span>House of Kutz</span><small>Barbershop</small></div></a>
-<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="jump('sec-about')">About</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
+<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
 <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
 <aside class="menu" id="menu" aria-label="Menu">
 <a onclick="go('bookingSection')" style="color:#fff;font-weight:600">Book now</a><a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
@@ -305,16 +306,12 @@ footer{padding-bottom:34px!important}
 
 <div class="sec" id="sec-barbers"><div class="wrap"><div class="sh"><h2>Barbers</h2></div><div class="barbers" id="barbersGrid"></div></div></div>
 
-<div class="sec" id="sec-services"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div>
-<div class="svc"><div class="ph"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg)"></div><div class="cap">Appointments and walk-ins, every day</div></div>
+<div class="sec" id="sec-services"><div class="wrap"><div class="sh"><h2>Services and pricing</h2></div>
+<div class="svc">
 <div><div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><h3 id="svcTitle" class="svc-t"></h3><div class="menu2" id="svcList"></div>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book a service</button></div></div></div></div></div>
 
-<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="pks" id="homeTiers"></div></div></div>
-
-<div class="sec" id="sec-about"><div class="wrap"><div class="split"><div><div class="rule"></div><h2 class="big">A Chair for Everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p><div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div>
-<div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg" alt="House of Kutz barbershop" loading="lazy"></div></div>
-</div></div>
+<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2></div><div class="pks" id="homeTiers"></div></div></div>
 
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
 <div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
