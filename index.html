@@ -7,7 +7,7 @@
 <!-- Crawling & Indexing -->
 <meta name="robots" content="index, follow, max-image-preview:large">
 <!-- SEO & Description -->
-<meta name="description" content="HOUSE OF KUTZ – Professional barber offering precision fades, skin fades, beard work, kids kutz and special designs. Book your appointment today.">
+<meta name="description" content="HOUSE OF KUTZ – Professional barber offering precision fades, skin fades, beard work, kids kutz and special designs. Book your appointment today. DIGITAL SOLUTIONS & WEBSITE CREATED BY WEBV TEC.">
 <meta name="keywords" content="HOUSE OF KUTZ, HOUSE OF KUTZ Jamaica, HOUSE OF KUTZ Portmore, celebrity barber Jamaica, best barber Portmore Jamaica, barber shop Portmore, barber near me Portmore, men haircut Jamaica, fade haircut Jamaica, skin fade Portmore, taper fade Jamaica, bald fade Jamaica, lineup Jamaica, shape up Portmore, edge up Jamaica, beard trim Jamaica, beard grooming Portmore, kids haircut Jamaica, boys fade Portmore, book barber Jamaica, barber appointment Portmore, hair design Jamaica, waves haircut Jamaica, barber Independence City, barber Madrid Ave, barber Portmore, walk in barber Jamaica">
 <meta name="author" content="HOUSE OF KUTZ">
 <link rel="canonical" href="https://houseofkutz.com/">
@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="HOUSE OF KUTZ">
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://houseofcutz.com">
+<meta name="twitter:url" content="https://houseofkutz.com">
 <meta name="twitter:title" content="HOUSE OF KUTZ – Book Your Kutz Today">
 <meta name="twitter:description" content="HOUSE OF KUTZ – Precision fades, skin fades, beard work, kids kutz and special designs. Book your appointment online now.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg">
@@ -67,572 +67,88 @@
 <!-- Google Sign-In -->
 <meta name="google-signin-client_id" content="345703317013.apps.googleusercontent.com">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet"/>
+<meta name="theme-color" content="#15131a">
 <style>
-  :root {
-    --primary: #0f0f0f;
-    --accent: #c1272d;
-    --accent2: #7a0f14;
-    --gold: #d4a24c;
-    --cream: #f5ead3;
-    --bg: #000000;
-    --white: #ffffff;
-    --text: #f0f0f0;
-  }
-
-  body {
-    font-family: 'Barlow', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg);
-    background-image: url('https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: var(--text);
-  }
-
-  /* Classic barber pole stripe — used as a decorative detail */
-  .barber-pole-stripe {
-    height: 4px;
-    background: repeating-linear-gradient(
-      45deg,
-      #c1272d 0,
-      #c1272d 10px,
-      #ffffff 10px,
-      #ffffff 20px,
-      #0f0f0f 20px,
-      #0f0f0f 30px
-    );
-  }
-
-  .header-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 52px;
-    background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    border-bottom: 1px solid var(--gold);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-  }
-
-  .header-bar::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 3px;
-    background: repeating-linear-gradient(
-      45deg,
-      #c1272d 0,
-      #c1272d 8px,
-      #ffffff 8px,
-      #ffffff 16px,
-      #0f0f0f 16px,
-      #0f0f0f 24px
-    );
-  }
-
-  .header-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 26px;
-    letter-spacing: 4px;
-    color: var(--cream);
-    text-align: center;
-    white-space: nowrap;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-  }
-
-  .header-title span.scissors {
-    color: var(--gold);
-    margin-left: 6px;
-  }
-
-  .menu-button {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--accent);
-    color: var(--cream);
-    border: none;
-    border-right: 1px solid var(--gold);
-    border-radius: 0px;
-    cursor: pointer;
-    height: 52px;
-    width: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    padding: 0;
-    transition: background 0.2s;
-  }
-
-  .menu-button:hover { background-color: var(--accent2); }
-
-  .menu {
-    position: fixed;
-    top: 52px;
-    left: 0;
-    width: 300px;
-    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
-    color: var(--white);
-    padding: 28px 20px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    height: calc(100vh - 52px);
-    overflow-y: auto;
-    box-sizing: border-box;
-    z-index: 999;
-    border-right: 1px solid var(--gold);
-    box-shadow: 4px 0 20px rgba(0,0,0,0.5);
-  }
-
-  .menu.show { transform: translateX(0); }
-
-  .menu a {
-    display: block;
-    color: var(--cream);
-    margin-bottom: 18px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: color 0.2s;
-  }
-
-  .menu a:hover { color: var(--accent); }
-
-  h1 {
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    color: var(--primary);
-    margin-top: 80px;
-    font-size: 38px;
-    letter-spacing: 3px;
-    position: relative;
-    padding-bottom: 12px;
-  }
-
-  h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 10px auto 0;
-    border-radius: 2px;
-  }
-
-  form {
-    max-width: 420px;
-    margin: 0 auto;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-    padding: 28px 24px;
-    border-radius: 10px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-    border-top: 3px solid var(--accent);
-    border-bottom: 1px solid var(--gold);
-    position: relative;
-  }
-
-  form::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: repeating-linear-gradient(
-      45deg,
-      #c1272d 0,
-      #c1272d 8px,
-      #ffffff 8px,
-      #ffffff 16px,
-      #0f0f0f 16px,
-      #0f0f0f 24px
-    );
-  }
-
-  form label {
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
-    margin-bottom: 4px;
-    color: #ccc;
-  }
-
-  form input,
-  form select,
-  form button {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 14px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-family: 'Barlow', sans-serif;
-    font-size: 14px;
-    background-color: #2b2b2b;
-    color: #f0f0f0;
-  }
-
-  form input:focus, form select:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(193,39,45,0.2);
-  }
-
-  form button {
-    background-color: var(--accent);
-    color: var(--cream);
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 1.5px;
-    border-radius: 6px;
-    transition: background 0.2s, transform 0.1s;
-    text-decoration: none;
-    text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(193,39,45,0.3);
-  }
-
-  form button:hover { background-color: var(--accent2); transform: translateY(-1px); }
-
-  #bookingMessage {
-    text-align: center;
-    font-weight: bold;
-    color: green;
-    margin-top: 20px;
-  }
-
-  .gallery-category { margin-top: 40px; }
-
-  .gallery-category h3 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-family: 'Bebas Neue', cursive;
-    color: var(--accent);
-    padding-bottom: 8px;
-    position: relative;
-  }
-
-  .gallery-category h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: var(--accent);
-  }
-
-  .gallery-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
-  }
-
-  .gallery-grid img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    height: 320px;
-    object-fit: cover;
-    transition: transform 0.2s;
-  }
-
-  .gallery-grid img:hover { transform: scale(1.02); }
-
-  .content-section { display: none; }
-  .content-section.active { display: block; }
-
-  .menu a.admin-button {
-    background-color: #333;
-    color: var(--accent);
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    display: block;
-    margin: 8px auto 0;
-    cursor: pointer;
-    text-align: center;
-    width: fit-content;
-    border: 1px solid var(--accent);
-    font-size: 16px;
-  }
-
-  .location-button {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--accent);
-    color: var(--cream);
-    border: none;
-    border-left: 1px solid var(--gold);
-    padding: 0;
-    border-radius: 0px;
-    cursor: pointer;
-    height: 52px;
-    width: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .location-button:hover { background-color: var(--accent2); }
-
-  .opening-hours {
-    font-family: 'Barlow', sans-serif;
-    padding: 10px 0;
-    border-top: 1px solid rgba(193,39,45,0.3);
-    border-bottom: 1px solid rgba(193,39,45,0.3);
-  }
-
-  .opening-hours h3 {
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color: var(--accent);
-  }
-
-  .opening-hours p {
-    font-size: 15px;
-    margin: 4px 0;
-    color: #ccc;
-  }
-
-  .location-info {
-    font-family: 'Barlow', sans-serif;
-    padding: 10px 0;
-  }
-
-  .location-info h3 {
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color: var(--accent);
-  }
-
-  .location-info p {
-    font-size: 14px;
-    margin: 0;
-    color: rgba(255,255,255,0.7);
-  }
-
-  .separator-line {
-    height: 1px;
-    background-color: rgba(193,39,45,0.3);
-    margin: 8px 0;
-  }
-
-  #myBookingsModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  #myBookingsBox {
-    background: #fff;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    border-radius: 12px;
-    overflow-y: auto;
-    position: relative;
-    padding: 20px;
-    border-top: 4px solid var(--accent);
-  }
-
-  #closeBookings {
-    position: sticky;
-    top: 0;
-    float: right;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10000;
-    color: #999;
-  }
-
-  .book-now-btn {
-    background: var(--accent);
-    color: var(--cream);
-    font-weight: 700;
-    padding: 10px 24px;
-    border: 2px solid var(--accent);
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    transition: all 0.2s;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(193,39,45,0.3);
-  }
-
-  .book-now-btn:hover {
-    background: var(--accent2);
-    border-color: var(--accent2);
-    color: var(--cream);
-    transform: translateY(-1px);
-  }
-
-  /* Sidebar menu action buttons */
-  .menu-action-btn {
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    margin: 10px auto;
-    padding: 10px 12px;
-    background-color: #333;
-    color: var(--accent);
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    width: 90%;
-    font-weight: bold;
-    border: 1px solid var(--accent);
-    letter-spacing: 0.5px;
-  }
-
-  .menu-action-btn:hover { background-color: var(--accent); color: var(--cream); }
-
-  /* Price List page specific background */
-  body.price-list-bg {
-    background-image: url('https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg') !important;
-  }
-
-  /* Sidebar HOME PAGE button - featured top-of-menu link */
-  .home-page-btn {
-    display: block;
-    text-align: center;
-    margin: 14px auto 18px;
-    padding: 13px 16px;
-    width: 90%;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 19px;
-    letter-spacing: 3px;
-    color: var(--cream);
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-    border: 2px solid var(--gold);
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.1);
-    transition: all 0.2s ease;
-  }
-
-  .home-page-btn:hover {
-    background: linear-gradient(135deg, var(--accent2) 0%, #4a0a0e 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
-  }
+:root{--ink:#0e0d11;--panel:#17151b;--line:rgba(255,255,255,.1);--text:#eceef2;--dim:#a6a9b5;--accent:#e23a47;--accent2:#a3121d;--primary:#0e0d11;--gold:#c8ccd6;--cream:#f4f5f8;--white:#fff;--metal:linear-gradient(180deg,#fff,#c8ccd6 45%,#8d919d 55%,#e4e6ec)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 15.5px/1.6 'Barlow',system-ui,sans-serif;color:var(--text);min-height:100vh;background:radial-gradient(70% 35% at 0 0,rgba(52,40,104,.38),transparent 70%),radial-gradient(60% 35% at 100% 100%,rgba(110,24,66,.3),transparent 70%),var(--ink);background-attachment:fixed}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;margin:0}a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn{font:600 12px 'Barlow',sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:13px 24px;border-radius:2px;border:1px solid;cursor:pointer;display:inline-block;text-decoration:none;text-align:center;transition:background .2s,color .2s,border-color .2s}
+.btn.sm{padding:10px 18px}.btn.wide{width:100%;margin-top:20px}
+.btn-red,.book-now-btn{background:linear-gradient(180deg,#b8141f,#8c0c16)!important;color:#fff!important;border:1px solid rgba(255,255,255,.35)!important;border-radius:2px!important;font:600 12px 'Barlow',sans-serif!important;letter-spacing:.16em!important;text-transform:uppercase;padding:13px 24px!important;cursor:pointer}.btn-red:hover,.book-now-btn:hover{background:#c8202c!important}
+.btn-chrome{background:transparent;color:var(--text);border-color:#9a9eaa}.btn-chrome:hover{background:var(--text);color:#111}
+.top{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;align-items:center;gap:26px;padding:0 clamp(16px,4vw,40px);background:rgba(14,13,17,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;cursor:pointer}.brand img{width:34px;height:34px;border-radius:50%;border:1px solid #c8ccd6}
+.brand span{font:600 19px 'Cormorant Garamond',serif;letter-spacing:.2em;text-transform:uppercase;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:28px}.links a{font:500 12px 'Barlow';letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--dim);cursor:pointer;transition:color .2s}.links a:hover{color:#fff}
+.menu-button{width:40px;height:40px;border:1px solid var(--line);border-radius:2px;background:none;cursor:pointer;display:grid;place-content:center;gap:5px}.menu-button span{display:block;width:18px;height:1.5px;background:#dfe1e8}
+.menu{position:fixed;top:0;right:0;bottom:0;width:min(86vw,320px);z-index:1100;padding:76px 24px 24px;background:#131116;border-left:1px solid var(--line);transform:translateX(105%);transition:transform .3s;overflow-y:auto}.menu.show{transform:none}
+.menu>a{display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:15px;cursor:pointer}.menu h4{margin:20px 0 4px;font:500 12px 'Barlow';letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}.menu p{margin:2px 0;color:var(--dim);font-size:14px}
+.menu .acct{margin-top:10px;text-align:center;border:1px solid var(--line);border-radius:2px;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase}.menu #authMenuBtn.on{border-color:#8c0c16;color:#ff9aa2}
+.content-section{display:none;padding:96px 0 40px}.content-section.active{display:block}#homeSection{padding:0}
+.hero-wrap{position:relative;isolation:isolate;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,13,17,.96) 20%,rgba(14,13,17,.7)),url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg) center/cover;filter:saturate(.7)}
+.hero{max-width:1100px;margin:0 auto;padding:116px 22px 60px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:500;letter-spacing:-.01em}.hero p{max-width:30em;color:var(--dim);font-size:16px;margin:16px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.hrs{margin-top:22px;font-size:13px;color:var(--dim);letter-spacing:.02em}
+.medal{width:min(100%,290px);aspect-ratio:1;margin:0 0 0 auto;padding:5px;border-radius:50%;background:linear-gradient(145deg,#f4f5f9,#767a86 45%,#dadde5 70%,#686c77);box-shadow:0 24px 60px rgba(0,0,0,.65)}.medal img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;transform:scale(1.03);box-shadow:0 0 0 1px #000}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}.strip>div{padding:18px 22px;border-right:1px solid var(--line)}.strip>div:last-child{border:0}
+.k{font:500 11px 'Barlow';letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}.strip p{margin:0;font-size:15px}.strip a{text-decoration:underline;text-underline-offset:3px}
+.sec{padding-top:54px}.sh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:22px}.sh h2{font-size:clamp(28px,3.4vw,38px)}.sh a{font:500 11px 'Barlow';letter-spacing:.16em;text-transform:uppercase;color:var(--dim);cursor:pointer;text-decoration:none;white-space:nowrap}.sh a:hover{color:#fff}
+.page-h{font-size:clamp(34px,4.4vw,48px);font-weight:500}.lead{color:var(--dim);max-width:40em;margin:8px 0 0;font-size:15px}.page-h+.lead{margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--line);max-width:none}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}.tier::before{content:"";height:3px;background:var(--m)}
+.plat{--m:linear-gradient(90deg,#f6f7fa,#9a9eaa,#f6f7fa)}.gold{--m:linear-gradient(90deg,#f1d98f,#b88a2c,#f1d98f)}.silv{--m:linear-gradient(90deg,#dadce1,#7c7f88,#dadce1)}
+.tier-top{display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px 6px}.tier-top h3{font-size:28px}.tier-top b{font:600 17px 'Barlow'}
+.tier ul{list-style:none;margin:0;padding:6px 18px 14px;flex:1}.tier li{padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;color:#d6d9e2}.tier li:last-child{border:0}.tier li.opt{color:var(--dim)}.tier li.opt::before{content:"Optional: ";font-size:12px}
+.tier .btn{margin:0 18px 18px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}.cols.two{grid-template-columns:repeat(2,1fr)}
+.row{display:flex;align-items:baseline;gap:8px;padding:6px 0;font-size:15px}.row i{flex:1;border-bottom:1px dotted rgba(255,255,255,.28);transform:translateY(-4px)}.row b{font-weight:600;white-space:nowrap}
+.cols h3{font-size:26px;margin-bottom:6px}.pl h3{padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--accent2)}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}.mosaic div{aspect-ratio:3/4;overflow:hidden;background:var(--panel);border-radius:2px}.mosaic img,.gallery-grid img{width:100%;height:100%;object-fit:cover;display:block;margin:0!important}
+.who p{margin:4px 0 0;color:var(--dim);font-size:14.5px}.who h3{font-size:26px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px}.gallery-grid>div{aspect-ratio:3/4;overflow:hidden;border-radius:2px;background:var(--panel)}
+.book{display:grid;grid-template-columns:.7fr 1.3fr;gap:20px;align-items:start}.box{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:22px}.book aside p{margin:0 0 14px;color:var(--dim);font-size:14.5px}.book aside b{color:#fff;font-weight:600}
+label{display:block;margin:14px 0 5px;font-size:13px;color:var(--dim)}label:first-child{margin-top:0}
+input,select,textarea{width:100%;font:inherit;font-size:15px;color:#f3f4f7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);border-radius:2px;padding:11px 12px;color-scheme:dark}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#c8ccd6}select option{background:#17151b}::placeholder{color:#7f8290}
+#bookingMessage{color:var(--dim)}#starRating{font-size:26px;cursor:pointer}#reviewForm{max-width:560px;margin-bottom:26px}#reviewsContainer{max-width:720px}
+.modal{position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(8,6,12,.78);backdrop-filter:blur(5px)}
+.mbox{position:relative;width:min(92%,420px);max-height:86vh;overflow:auto;padding:24px;border-radius:4px;border:1px solid var(--line);background:#17151b;box-shadow:0 30px 80px rgba(0,0,0,.65)}.mbox.clear{background:none;border:0;padding:0;box-shadow:none;overflow:visible}
+.mbox h3{font-size:28px;text-align:center;margin-bottom:14px}.x{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--dim);font-size:22px;cursor:pointer}.mbox p{margin:5px 0;color:var(--dim)}.mbox p b{color:#fff;font-weight:600}
+.gbtn{display:flex;gap:10px;justify-content:center;align-items:center;width:100%;padding:12px;border-radius:2px;border:0;background:#fff;color:#333;font:600 14px 'Barlow';cursor:pointer}
+.swal2-popup{background:#17151b!important;border:1px solid var(--line)!important;border-radius:4px!important}.swal2-title,.swal2-html-container{color:#eceef3!important}
+footer{margin-top:64px;padding:34px 0 24px;border-top:1px solid var(--line);background:rgba(0,0,0,.3)}.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}.foot h3{font-size:26px;letter-spacing:.14em;text-transform:uppercase}.foot p{margin:3px 0;color:var(--dim);font-size:14px}.foot a{text-decoration:none}.foot a:hover{color:#fff}.credit{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:#7f8290}.credit a{text-decoration:underline}
+.rule{width:44px;height:2px;background:var(--metal);margin-bottom:18px}
+.hero{min-height:calc(86svh - 70px)}.hero-wrap .hero-bg{background-position:center}
+.dock{background:rgba(14,13,17,.74);backdrop-filter:blur(10px);border-top:1px solid var(--line)}.dock .sw{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}.dock .sw>div{padding:16px 22px;border-right:1px solid var(--line)}.dock .sw>div:last-child{border:0}.dock p{margin:0;font-size:14.5px}.dock a{text-decoration:underline;text-underline-offset:3px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--panel)}.step{padding:26px 22px;border-right:1px solid var(--line)}.step:last-child{border:0}.step em{display:block;font:500 46px/1 'Cormorant Garamond',serif;font-style:normal;margin-bottom:14px;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}.step h3{font-size:22px}.step p{margin:6px 0 0;color:var(--dim);font-size:14px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.frame{position:relative;isolation:isolate;margin:0 16px 16px 0}.frame::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid #9a9eaa;z-index:-1}.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:saturate(.8)}
+.big{font-size:clamp(34px,4.4vw,54px);font-weight:500}.split .lead{margin:14px 0 0}.facts{list-style:none;margin:22px 0 0;padding:0}.facts li{display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.facts b{font:600 20px 'Cormorant Garamond';min-width:86px}.facts span{color:var(--dim);font-size:14.5px}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:12px}.tabs button{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--dim);font:600 12px 'Barlow';letter-spacing:.16em;text-transform:uppercase;padding:12px 22px;cursor:pointer}.tabs button.on{color:#fff;border-color:var(--accent)}.menu2{columns:2;column-gap:56px}.menu2 .row{break-inside:avoid}
+.mosaic{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}.mosaic div{aspect-ratio:auto}.mosaic div:first-child{grid-column:span 2;grid-row:span 2}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.rc{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:22px}.rc .st{color:#e9b949;letter-spacing:3px}.rc p{margin:10px 0 14px;font-size:15px;color:#d6d9e2}.rc b{font-weight:600}
+.hrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}.hrow b{font-weight:600}.split .sh{margin-bottom:6px}
+details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font:600 21px 'Cormorant Garamond',serif}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--dim)}details[open] summary::after{content:"–"}details p{margin:8px 0 0;color:var(--dim);font-size:14.5px}
+.band{margin-top:70px;padding:58px 22px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}.band h2{font-size:clamp(32px,4.4vw,52px);font-weight:500}.band p{color:var(--dim);margin:8px 0 22px}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.split,.rv{grid-template-columns:1fr}.split{gap:34px}.menu2{columns:1}.dock .sw{grid-template-columns:1fr}.dock .sw>div{border-right:0;border-bottom:1px solid var(--line)}.mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.tabs button{padding:12px 14px}.hero{min-height:0}}
+@media(max-width:900px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:92px;gap:26px}.medal{order:-1;margin:0;width:150px}.tiers,.cols,.cols.two,.book,.foot{grid-template-columns:1fr}.cols{gap:26px}.strip{grid-template-columns:1fr}.strip>div{border-right:0;border-bottom:1px solid var(--line)}.mosaic{grid-template-columns:repeat(3,1fr)}.sec{padding-top:42px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="header-bar">
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
-  <div class="header-title">HOUSE OF KUTZ<span class="scissors"></span></div>
-  <a class="location-button" href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank">📍</a>
-</div>
-
-<!-- Home Section (logo only, default landing page) -->
-<div class="content-section active" id="homeSection">
-  <div style="text-align:left; padding-top: 90px; padding-bottom: 20px; padding-left: 20px;">
-    <img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Logo" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 3px solid var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.5); background: #0f0f0f;">
-  </div>
-</div>
-
-<!-- About Us Section -->
-<div class="content-section" id="aboutUsSection">
-  <div style="max-width:600px; margin:0 auto; padding:80px 20px 60px;">
-    <h1 style="color:#ffffff; font-family:'Bebas Neue',cursive; font-size:36px; letter-spacing:3px; text-align:center; margin-bottom:30px;">OUR SERVICES</h1>
-
-    <div style="background:linear-gradient(180deg,#1a1a1a 0%,#0f0f0f 100%); border-radius:10px; border-top:3px solid var(--accent); border-bottom:1px solid var(--gold); padding:22px 24px; margin-bottom:20px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">
-      <h2 style="font-family:'Bebas Neue',cursive; color:var(--accent); letter-spacing:2px; font-size:22px; margin:0 0 10px;">✂ Men</h2>
-      <p style="color:#ccc; font-size:15px; line-height:1.7; margin:0;">Experience precision hairkuts, trendy fades, classic shaves, and expert beard grooming. Whether you're looking for a fresh style or a timeless look, our barbers have you covered.</p>
-    </div>
-
-    <div style="background:linear-gradient(180deg,#1a1a1a 0%,#0f0f0f 100%); border-radius:10px; border-top:3px solid var(--accent); border-bottom:1px solid var(--gold); padding:22px 24px; margin-bottom:20px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">
-      <h2 style="font-family:'Bebas Neue',cursive; color:var(--accent); letter-spacing:2px; font-size:22px; margin:0 0 10px;">✂ Women</h2>
-      <p style="color:#ccc; font-size:15px; line-height:1.7; margin:0;">Indulge in our comprehensive hair services, from hairkuts and styling. We're here to help you look and feel your best for any occasion.</p>
-    </div>
-
-    <div style="background:linear-gradient(180deg,#1a1a1a 0%,#0f0f0f 100%); border-radius:10px; border-top:3px solid var(--accent); border-bottom:1px solid var(--gold); padding:22px 24px; margin-bottom:30px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">
-      <h2 style="font-family:'Bebas Neue',cursive; color:var(--accent); letter-spacing:2px; font-size:22px; margin:0 0 10px;">✂ Children</h2>
-      <p style="color:#ccc; font-size:15px; line-height:1.7; margin:0;">We specialize in making your little ones feel at ease. Our friendly barbers provide gentle and fun hairkuts for children of all ages, including first hairkuts to make cherished memories.</p>
-    </div>
-
-    <div style="text-align:center;">
-      <button onclick="showSection('bookingSection')" style="background:var(--accent); color:var(--cream); font-family:'Bebas Neue',cursive; font-size:18px; letter-spacing:2px; padding:13px 32px; border:2px solid var(--gold); border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.5);">✂ BOOK YOUR KUT NOW</button>
-    </div>
-  </div>
-</div>
-
-<!-- Gallery Section -->
-<div class="content-section" id="gallerySection">
-  <h1 style="color:#ffffff;">OUR KUTS</h1>
-  <div id="galleryDisplay"></div>
-</div>
-
-<!-- Side Menu -->
-<div class="menu" id="menu">
-  <a class="home-page-btn" onclick="showSection('homeSection'); closeMenu();">HOME PAGE</a>
-  <a onclick="showSection('walkInPriceSection'); closeMenu();">💰 Appointment Price List</a>
-  <a onclick="showSection('aboutUsSection'); closeMenu();">ℹ️ About Us</a>
-
-  <div class="opening-hours">
-    <h3>APPOINTMENTS &amp; WALK-INS:</h3>
-    <p>Mon–Sat: 8:00 AM – 9:00 PM</p>
-    <p>Sunday: 11:00 AM – 6:30 PM</p>
-  </div>
-
-  <a class="menu-action-btn" onclick="showUserBookings(); closeMenu();" href="javascript:void(0);">MY BOOKINGS</a>
-  <a onclick="showPaymentInfo(); closeMenu();" class="menu-action-btn" href="javascript:void(0);">PAYMENT INFO</a>
-  <a class="admin-button" onclick="login(); closeMenu();" style="display:block; text-align:center; margin:8px auto; padding:10px 12px; border-radius:6px; text-decoration:none; width:90%; font-weight:bold; font-size:16px;">ADMIN</a>
-
-  <div class="separator-line"></div>
-
-  <!-- Social Links -->
-  <div style="display:flex; justify-content:center; gap:28px; margin-top:18px;">
+<header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><span>House of Kutz</span></a>
+<nav class="links" aria-label="Main"><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a></nav>
+<button class="btn btn-red sm" onclick="go('bookingSection')">Book now</button>
+<button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
+<aside class="menu" id="menu" aria-label="Menu">
+<a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
+<h4>Hours</h4><p>Mon–Sat: 8:00 AM – 9:00 PM</p><p>Sunday: 11:00 AM – 6:30 PM</p>
+<a class="acct" onclick="showUserBookings(); closeMenu();">My bookings</a><a class="acct" onclick="showPaymentInfo(); closeMenu();">Payment info</a><a class="acct" id="authMenuBtn" onclick="handleAuthButtonClick(); closeMenu();">Log in</a><a class="acct admin-button" onclick="login(); closeMenu();">Admin</a>
+<div style="margin-top:20px"><div style="display:flex; justify-content:center; gap:28px; margin-top:18px;">
     <a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" style="display:inline-block;" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
         <defs>
@@ -652,103 +168,94 @@
         <path fill="#ffffff" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/>
       </svg>
     </a>
-  </div>
+  </div></div></aside>
+<main>
+<section class="content-section active" id="homeSection">
+<div class="hero-wrap"><div class="hero-bg"></div><div class="hero"><div><div class="rule"></div><h1>Precision kutz,<br>finished with care.</h1>
+<p>Fades, shaves and beard work for men, women and children. Book a chair online or walk in any day.</p>
+<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button><button class="btn btn-chrome" onclick="showSection('walkInPriceSection')">Price list</button></div></div>
+<div class="medal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
+<div class="dock"><div class="sw"><div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM<br>Sunday 11:00 AM – 6:30 PM</p></div><div><div class="k">Location</div><p>Upper West Henderson Blvd, St. Catherine<br><a href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Open in Maps</a></p></div><div><div class="k">Appointments</div><p>Appointments and walk-ins, every day.<br>10-minute grace period.</p></div></div></div></div>
 
-  <div class="separator-line" style="margin-top:18px;"></div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>Booking made easy</h2></div><div class="steps">
+<div class="step"><em>1</em><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div>
+<div class="step"><em>2</em><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div>
+<div class="step"><em>3</em><h3>Sign in and confirm</h3><p>Sign in with Google and you get a booking number straight away.</p></div>
+<div class="step"><em>4</em><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div></div>
 
-  <div class="location-info">
-    <h3>LOCATION:</h3>
-    <p>UPPER WEST HENDERSON BLV, ST. CATHERINE, JAMAICA</p>
-  </div>
+<div class="sec"><div class="wrap split"><div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg" alt="Inside House of Kutz" loading="lazy"></div>
+<div><div class="rule"></div><h2 class="big">A chair for everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p>
+<ul class="facts"><li><b>Men</b><span>Fades, tapers, line ups, classic shaves and beard grooming</span></li><li><b>Women</b><span>Hairkuts and styling for any occasion</span></li><li><b>Children</b><span>Gentle kuts, including first hairkuts</span></li></ul>
+<div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div></div></div>
 
-  <div class="separator-line"></div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="tiers" id="homeTiers"></div></div></div>
 
-  <a id="authMenuBtn" onclick="handleAuthButtonClick(); closeMenu();" style="display:block; text-align:center; margin:10px auto; padding:10px 12px; background-color:#333; color:var(--accent); border-radius:6px; cursor:pointer; text-decoration:none; width:90%; font-weight:bold; font-size:16px; border:1px solid var(--accent);">LOG IN</a>
-</div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">All services</a></div>
+<div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><div class="menu2" id="svcList"></div></div></div>
 
-<!-- Booking Confirmation Modal -->
-<div id="bookingModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;">
-  <div style="padding:20px; border-radius:12px; max-width:450px; width:90%; max-height:80vh; overflow-y:auto; box-shadow:0 4px 12px rgba(0,0,0,0.2); position:relative;">
-    <h3 id="bookingModalTitle" style="margin:10px 0; color:var(--accent); text-align:center; font-family:'Bebas Neue',cursive; letter-spacing:2px;">Booking Confirmation</h3>
-    <p id="bookingModalContent"></p>
-  </div>
-</div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
 
-<!-- My Bookings Modal -->
-<div id="myBookingsModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;">
-  <div id="myBookingsBox" style="background:#fff; padding:20px; border-radius:12px; max-width:400px; width:90%; max-height:80vh; overflow-y:auto; box-shadow:0 4px 12px rgba(0,0,0,0.2); position:relative; border-top:4px solid var(--accent);">
-    <button onclick="closeMyBookings()" style="position:sticky; top:0; right:0; float:right; background:#fff; border:none; font-size:24px; cursor:pointer; z-index:10001; color:#999;">✖</button>
-    <h3 style="margin:10px 0; color:var(--primary); text-align:center; font-family:'Bebas Neue',cursive; letter-spacing:2px;">My Last 5 Bookings</h3>
-    <div id="myBookingsContent"></div>
-  </div>
-</div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
 
-<!-- Payment Info Modal -->
-<div id="paymentInfoModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:10000;">
-  <div id="paymentInfoBox" style="background:#fff; padding:20px; border-radius:12px; max-width:400px; width:90%; max-height:80vh; overflow-y:auto; box-shadow:0 4px 12px rgba(0,0,0,0.2); position:relative; border-top:4px solid var(--accent);">
-    <button onclick="closePaymentInfo()" style="position:sticky; top:0; right:0; float:right; background:#fff; border:none; font-size:24px; cursor:pointer; z-index:10001; color:#999;">✖</button>
-    <h3 style="margin:10px 0 18px; color:#1a1a1a; text-align:center; font-family:'Bebas Neue',cursive; letter-spacing:2px;">PAYMENT INFO</h3>
-    <div style="border:1px solid #ddd; border-radius:10px; padding:14px; background:white; box-shadow:0 2px 5px rgba(0,0,0,0.08); border-left:4px solid var(--accent); color:#000;">
-      <h3 style="margin-top:0; color:#000; font-size:17px; font-family:'Bebas Neue',cursive; letter-spacing:1px;">🏦 Scotiabank Account Details</h3>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>👤 First Name:</strong> RICHARD</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>👤 Last Name:</strong> CUNNINGHAM</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>🏦 Bank Name:</strong> Scotiabank</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>🔢 Branch/Transit:</strong> 95505</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>💳 Account Type:</strong> CHEQUING</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>🔢 Account Number:</strong> 95505 000305129</p>
-      <p style="margin:6px 0; font-size:14px; color:#000;"><strong>💱 Account Currency:</strong> JMD</p>
-    </div>
-  </div>
-</div>
+<div class="sec"><div class="wrap split"><div><div class="sh"><h2>Visit us</h2></div>
+<div class="hrow"><span>Monday to Saturday</span><b>8:00 AM – 9:00 PM</b></div><div class="hrow"><span>Sunday</span><b>11:00 AM – 6:30 PM</b></div>
+<p class="lead">Upper West Henderson Blvd, St. Catherine, Jamaica</p><div class="cta"><a class="btn btn-chrome" href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Get directions</a><a class="btn btn-chrome" href="tel:+18762086156">Call the shop</a></div></div>
+<div><div class="sh"><h2>Questions</h2></div>
+<details><summary>Do you take walk-ins?</summary><p>Yes. Walk-ins and appointments are both open every day during opening hours.</p></details>
+<details><summary>What if I am late?</summary><p>There is a 10-minute grace period. After that the slot is released to the next client.</p></details>
+<details><summary>How do I pay?</summary><p>Bank transfer details are under Payment info in the menu. Use your booking number as the reference.</p></details>
+<details><summary>Can I cancel a booking?</summary><p>Call +1 (876) 208-6156, or cancel from My bookings in the menu.</p></details></div></div></div>
 
-<!-- Booking Section -->
-<div class="content-section" id="bookingSection">
-  <h1 style="color:#ffffff;">BOOK YOUR KUTZ</h1>
-  <div style="max-width:420px; margin:0 auto 16px; background:#1a1a1a; border-left:4px solid var(--accent); border-radius:6px; padding:12px 16px; font-size:13px; color:#ccc; line-height:1.6;">
-    📅 <strong style="color:var(--accent);">Appointments:</strong> Every Day<br>
-    🚶 <strong style="color:var(--accent);">Walk-ins:</strong> Every Day<br>
-    🕗 <strong style="color:var(--accent);">Hours:</strong> Mon–Sat: 8:00 AM – 9:00 PM &nbsp;|&nbsp; Sun: 11:00 AM – 6:30 PM<br>
-    ⏱ <strong style="color:#e74c3c;">10-minute grace period</strong> — late arrivals lose their spot
-  </div>
-  <form onsubmit="submitBooking(event)">
-    <label for="name">Name:</label>
+<div class="band"><h2>Your chair is ready.</h2><p>Pick a service and a time in under a minute.</p><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div>
+</section>
+<section class="content-section" id="aboutUsSection"><div class="wrap"><h1 class="page-h">Services</h1><p class="lead">Every kut gets the same care, whoever sits in the chair.</p>
+<div class="cols who"><div class="box"><h3>Men</h3><p>Precision hairkuts, trendy fades, classic shaves and expert beard grooming, whether you want something fresh or timeless.</p></div><div class="box"><h3>Women</h3><p>Hairkuts and styling for any occasion, so you leave looking and feeling your best.</p></div><div class="box"><h3>Children</h3><p>Gentle, friendly kuts for kids of every age, including first hairkuts worth remembering.</p></div></div>
+<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></section>
+<section class="content-section" id="walkInPriceSection"><div class="wrap"><h1 class="page-h">Price list</h1><p class="lead">Prices in Jamaican dollars. A plus sign means the final price depends on the work. Appointments daily: Mon–Sat 8:00 AM – 9:00 PM, Sun 11:00 AM – 6:30 PM.</p>
+<div class="tiers" id="priceTiers"></div><div class="cols pl" id="priceLists" style="margin-top:36px"></div>
+<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></section>
+<section class="content-section" id="gallerySection"><div class="wrap"><h1 class="page-h">Gallery</h1><p class="lead">Recent work from the chair.</p><div id="galleryDisplay"></div></div></section>
+<section class="content-section" id="bookingSection"><div class="wrap"><h1 class="page-h">Book your kutz</h1><p class="lead">Choose a service, a date and a time. You will sign in with Google to confirm.</p>
+<div class="book"><aside class="box"><div class="k">Appointments and walk-ins</div><p><b>Every day</b></p><div class="k">Hours</div><p><b>Mon–Sat</b> 8:00 AM – 9:00 PM<br><b>Sunday</b> 11:00 AM – 6:30 PM</p><div class="k">Grace period</div><p>Arrive within 10 minutes of your time or the slot is released.</p></aside>
+<div class="box"><form onsubmit="submitBooking(event)">
+    <label for="name">Name</label>
     <input id="name" required type="text" placeholder="Your full name"/>
 
-    <label for="phone">Phone Number:</label>
+    <label for="phone">Phone Number</label>
     <input id="phone" type="tel" inputmode="numeric" maxlength="14" placeholder="eg... (876) 123-4567" required/>
 
-    <label for="date">Preferred Date:</label>
+    <label for="date">Preferred Date</label>
     <input id="date" min="" onchange="loadAvailableSlots()" required type="date"/>
 
-    <label for="selectedTime">Available Times:</label>
-    <select id="selectedTime" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; font-family:'Barlow',sans-serif;">
+    <label for="selectedTime">Available Times</label>
+    <select id="selectedTime" required>
       <option value="">COMPLETE FORM TO SEE AVAILABLE SLOTS</option>
     </select>
 
     <!-- Service Type -->
-    <label for="ageGroup">Service Type:</label>
+    <label for="ageGroup">Service Type</label>
     <select id="ageGroup" onchange="onAgeGroupChange();">
       <option value="NONE">— Select Service Type —</option>
-      <option value="package">💎 PACKAGE DEALS</option>
-      <option value="adult">👨 ADULTS</option>
-      <option value="teen">🧑 TEENS</option>
-      <option value="kids">🧒 KIDS</option>
+      <option value="package">PACKAGE DEALS</option>
+      <option value="adult">ADULTS</option>
+      <option value="teen">TEENS</option>
+      <option value="kids">KIDS</option>
     </select>
 
     <!-- Package: picker -->
     <div id="packageServiceWrap" style="display:none;">
-      <label for="packageService">Choose Package:</label>
+      <label for="packageService">Choose Package</label>
       <select id="packageService" onchange="onServiceChange();">
         <option value="NONE">— Select a package —</option>
-        <option value="Platinum Package">💎 Platinum — $2,000</option>
-        <option value="Gold Package">🥇 Gold — $1,700</option>
-        <option value="Silver Package">🥈 Silver — $1,500</option>
+        <option value="Platinum Package">Platinum — $2,000</option>
+        <option value="Gold Package">Gold — $1,700</option>
+        <option value="Silver Package">Silver — $1,500</option>
       </select>
     </div>
 
     <!-- Adult: service picker -->
     <div id="adultServiceWrap" style="display:none;">
-      <label for="adultService">Adult Service:</label>
+      <label for="adultService">Adult Service</label>
       <select id="adultService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
         <option value="Adult Trim n Shave">Trim n Shave — $1,500</option>
@@ -767,7 +274,7 @@
 
     <!-- Teen: service picker -->
     <div id="teenServiceWrap" style="display:none;">
-      <label for="teenService">Teen Service:</label>
+      <label for="teenService">Teen Service</label>
       <select id="teenService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
         <option value="Teen Trim n Shave">Trim n Shave — $1,200</option>
@@ -784,7 +291,7 @@
 
     <!-- Kids: service picker -->
     <div id="kidsServiceWrap" style="display:none;">
-      <label for="kidsService">Kids Service:</label>
+      <label for="kidsService">Kids Service</label>
       <select id="kidsService" onchange="onServiceChange();">
         <option value="NONE">— Select a service —</option>
         <option value="Kids Boyz Kut">Boyz Kut — $1,000</option>
@@ -796,202 +303,34 @@
     <input type="hidden" id="haircutType" value="NONE"/>
 
     <!-- Service / Pricing Card -->
-    <div id="serviceIncludesCard" style="display:none; margin-bottom:8px; border-radius:8px; overflow:hidden; border:1px solid var(--accent); background:#1e1e1e;"></div>
+    <div id="serviceIncludesCard" style="display:none; margin-bottom:8px; border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.04);"></div>
 
     <!-- Selected items summary -->
     <div id="selectionSummary" style="display:none; margin-bottom:14px; padding:10px 12px; background:#111; border:1px solid var(--accent); border-radius:6px;">
-      <div id="selectionSummaryTitle" style="font-family:'Bebas Neue',cursive;letter-spacing:1.5px;font-size:13px;color:var(--accent);margin-bottom:5px;">✔ YOUR SELECTION:</div>
+      <div id="selectionSummaryTitle" style="font-family:'Bebas Neue',cursive;letter-spacing:1.5px;font-size:13px;color:var(--accent);margin-bottom:5px;">YOUR SELECTION:</div>
       <div id="selectionSummaryText"></div>
     </div>
 
     <p id="estimateTimeMessage" style="display:none;"></p>
 
-    <button type="submit">BOOK NOW ✂</button>
-  </form>
-  <p id="bookingMessage"></p>
-</div>
+    <button type="submit" class="btn btn-red wide">Confirm booking</button>
+  </form><p id="bookingMessage"></p></div></div></div></section>
+<section class="content-section" id="reviewsSection"><div class="wrap"><h1 class="page-h">Client reviews</h1><p class="lead">What clients say about their kutz.</p>
+<div id="reviewPrompt" class="box" style="display:none;margin-bottom:20px">How was your kutz? Leave us a review.</div>
+<form id="reviewForm" class="box"><label for="reviewName">Your name</label><input id="reviewName" placeholder="Your name" required type="text"><label for="reviewComment">Your review</label><textarea id="reviewComment" placeholder="Tell us about your kut" required rows="4"></textarea><label>Rating</label><div id="starRating"><span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span></div><button class="btn btn-red wide" type="submit">Submit review</button></form>
+<p id="reviewSubmitMsg" style="color:#5fd38a"></p><div id="reviewsContainer"></div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot"><div><h3>House of Kutz</h3><p>Barbershop</p><p>Upper West Henderson Blvd, St. Catherine, Jamaica</p></div>
+<div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM</p><p>Sunday 11:00 AM – 6:30 PM</p><p><a href="tel:+18762086156">+1 (876) 208-6156</a></p></div>
+<div><div class="k">Follow</div><p><a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" target="_blank" rel="noopener">Instagram</a></p><p><a href="https://tiktok.com/@richkidkyhouseofkutz" target="_blank" rel="noopener">TikTok</a></p><p><a href="javascript:void(0)" onclick="showPaymentInfo()">Payment info</a></p></div></div>
+<div class="credit"><a href="https://webvtec.com" target="_blank" rel="noopener">Request your own website at webvtec.com</a></div></div></footer>
+<div id="bookingModal" class="modal" style="display:none"><div class="mbox clear"><h3 id="bookingModalTitle">Booking confirmation</h3><p id="bookingModalContent"></p></div></div>
+<div id="myBookingsModal" class="modal" style="display:none"><div class="mbox" id="myBookingsBox"><button class="x" aria-label="Close" onclick="closeMyBookings()">✕</button><h3>My last 5 bookings</h3><div id="myBookingsContent"></div></div></div>
+<div id="paymentInfoModal" class="modal" style="display:none"><div class="mbox" id="paymentInfoBox"><button class="x" aria-label="Close" onclick="closePaymentInfo()">✕</button><h3>Payment info</h3><p><b>Bank:</b> Scotiabank</p><p><b>First name:</b> RICHARD</p><p><b>Last name:</b> CUNNINGHAM</p><p><b>Branch/Transit:</b> 95505</p><p><b>Account type:</b> CHEQUING</p><p><b>Account number:</b> 95505 000305129</p><p><b>Currency:</b> JMD</p></div></div>
+<div id="adminLoginModal" class="modal" style="display:none"><div class="mbox" style="text-align:center"><button class="x" aria-label="Close" onclick="closeAdminModal()">✕</button><h3>Admin access</h3><p>Sign in with the authorised Google account to continue.</p><button class="gbtn" onclick="adminGoogleSignIn()" style="margin-top:14px"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Sign in with Google</button><p id="adminLoginMsg" style="color:#ff7676;display:none"></p></div></div>
 
-<!-- Reviews Section -->
-<div class="content-section" id="reviewsSection">
-  <h1 style="font-family:'Bebas Neue',cursive; letter-spacing:2px; color:#ffffff;">CLIENT REVIEWS</h1>
-  <div id="reviewPrompt" style="display:none; max-width:500px; margin:20px auto; background-color:#f5f0e8; color:#444; border:1px solid var(--accent); border-radius:6px; padding:15px; text-align:center; font-weight:500;">
-    How was your kutz? Leave us a review!
-  </div>
-  <form id="reviewForm" style="max-width:85%; margin:10px auto; text-align:center;">
-    <div style="max-width:50%; margin:0 auto;">
-      <input id="reviewName" placeholder="Your Name" required style="width:100%; margin-bottom:10px; padding:10px; border-radius:6px; border:1px  solid black; font-family:'Barlow',sans-serif;" type="text"/>
-    </div>
-    <textarea id="reviewComment" placeholder="Write your review..." required style="width:90%; height:80px; margin-bottom:10px; padding:10px; border-radius:6px; border:1px solid #ddd; font-family:'Barlow',sans-serif; resize:vertical;"></textarea>
-    <div id="starRating" style="font-size:28px; margin-bottom:12px; cursor:pointer; color:#ccc;">
-      <span data-value="1">★</span>
-      <span data-value="2">★</span>
-      <span data-value="3">★</span>
-      <span data-value="4">★</span>
-      <span data-value="5">★</span>
-    </div>
-    <button style="background-color:var(--primary); color:var(--accent); border:none; padding:10px 24px; border-radius:6px; cursor:pointer; font-weight:700; font-family:'Barlow',sans-serif; letter-spacing:0.5px;" type="submit">SUBMIT REVIEW</button>
-  </form>
-  <p id="reviewSubmitMsg" style="text-align:center; color:green;"></p>
-  <div id="reviewsContainer" style="max-width:600px; margin:20px auto; padding:0 15px;"></div>
-</div>
-
-<!-- Appointment Price List Section -->
-<div class="content-section" id="walkInPriceSection">
-  <h1 style="font-family:'Bebas Neue',cursive; letter-spacing:2px; color:var(--accent); text-align:center; margin-top:80px; font-size:30px;">Appointment Price List</h1>
-  <div style="max-width:420px; margin:0 auto 24px; background:#1a1a1a; border-left:4px solid var(--accent); border-radius:6px; padding:10px 16px; font-size:13px; color:#ccc; line-height:1.6;">
-    📆 <strong style="color:var(--accent);">Appointments:</strong> Every Day &nbsp;|&nbsp; Mon–Sat: 8:00 AM – 9:00 PM &nbsp;|&nbsp; Sun: 11:00 AM – 6:30 PM
-  </div>
-
-  <div style="max-width:420px; margin:0 auto; padding:0 16px 80px;">
-
-    <!-- ========== PLATINUM PACKAGE ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:16px; border:2px solid #d4a24c; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-      <div style="background:linear-gradient(135deg, #4a4a4a 0%, #1a1a1a 100%); padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:18px; color:#e5e4e2;">💎 PLATINUM</span>
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:1px; font-size:18px; color:#d4a24c;">$2,000</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="margin-bottom:6px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#d4a24c;">Package Includes</div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim n Shave</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Hot Towel</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Beard Oil</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Eyebrow</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Hair Products</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="margin-top:10px; margin-bottom:4px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--accent);">Optional Extras</div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Colour Beard Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Colour Hair Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-      </div>
-    </div>
-
-    <!-- ========== GOLD PACKAGE ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:16px; border:2px solid #d4a24c; box-shadow:0 4px 12px rgba(0,0,0,0.12);">
-      <div style="background:linear-gradient(135deg, #d4a24c 0%, #8a6d2b 100%); padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:18px; color:#1a1a1a;">🥇 GOLD</span>
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:1px; font-size:18px; color:#1a1a1a;">$1,700</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="margin-bottom:6px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#8a6d2b;">Package Includes</div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim n Shave</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Beard Oil</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Hair Products</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-      </div>
-    </div>
-
-    <!-- ========== SILVER PACKAGE ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:20px; border:2px solid #c0c0c0; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-      <div style="background:linear-gradient(135deg, #c0c0c0 0%, #7a7a7a 100%); padding:14px 16px; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:18px; color:#1a1a1a;">🥈 SILVER</span>
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:1px; font-size:18px; color:#1a1a1a;">$1,500</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="margin-bottom:6px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#555;">Package Includes</div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim n Shave</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Beard Oil</span><span style="font-size:14px; color:#4caf50; font-weight:700; white-space:nowrap; margin-left:12px;">✓ INCLUDED</span></div>
-      </div>
-    </div>
-
-    <!-- Separator -->
-    <div style="text-align:center; margin:24px 0 16px; color:#fff; font-family:'Bebas Neue',cursive; letter-spacing:3px; font-size:18px; text-shadow:0 2px 6px rgba(0,0,0,0.8);">— INDIVIDUAL SERVICES —</div>
-
-    <!-- ========== ADULTS ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:16px; border:1px solid rgba(193,39,45,0.35); box-shadow:0 2px 6px rgba(0,0,0,0.06);">
-      <div style="background:var(--accent); padding:10px 16px;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:15px; color:#f5ead3;">👨 ADULTS</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim n Shave</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Shave Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Scissors Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000+</span></div>
-       <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Line Up Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Line Up and Shave</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,000</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Hot Towel Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim &amp; Shave + Hot Towel &amp; Beard Oil</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim &amp; Shave + Spray Tint Hair Line &amp; Hot Towel</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Eyebrow Tinting</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Eyebrow</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Ladies Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Ladies Scissors Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Designs</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Spray Tint Hair Line</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Color Hair Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Color Beard Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Color Hair and Beard</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,500</span></div>
-      </div>
-    </div>
-
-    <!-- ========== TEENS ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:16px; border:1px solid rgba(193,39,45,0.35); box-shadow:0 2px 6px rgba(0,0,0,0.06);">
-      <div style="background:var(--accent); padding:10px 16px;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:15px; color:#f5ead3;">🧑 TEENS</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim n Shave</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Trim</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,000</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Shave Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$700</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Scissors Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000+</span></div>
-       <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Line Up Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$700</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Line Up and Shave</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,000</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Hot Towel Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Eyebrow</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Eyebrow Tinting</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Designs</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Spray Tint Hair Line</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$500</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Ladies Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,200+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Ladies Scissors Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000+</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Color Hair Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Color Beard Only</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Color Hair and Beard</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,500</span></div>
-      </div>
-    </div>
-
-    <!-- ========== KIDS ========== -->
-    <div style="background:#fafafa; border-radius:10px; overflow:hidden; margin-bottom:16px; border:1px solid rgba(193,39,45,0.35); box-shadow:0 2px 6px rgba(0,0,0,0.06);">
-      <div style="background:var(--accent); padding:10px 16px;">
-        <span style="font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:15px; color:#f5ead3;">🧒 KIDS</span>
-      </div>
-      <div style="padding:12px 16px;">
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Boyz Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$1,000</span></div>
-        <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.07);"><span style="font-size:14px; color:#1a1a1a;">Scissors Kut</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$2,000+</span></div>
-       <div style="display:flex; justify-content:space-between; padding:8px 0;"><span style="font-size:14px; color:#1a1a1a;">Designs</span><span style="font-size:14px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:12px;">$800+</span></div>
-      </div>
-    </div>
-
-    <!-- BOOK NOW button -->
-    <div style="text-align:center; margin:20px 0 40px;">
-      <button onclick="showSection('bookingSection')" class="book-now-btn" style="font-size:18px; padding:13px 32px;">BOOK A KUTZ NOW</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- Admin Login Modal -->
-<div id="adminLoginModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.65); justify-content:center; align-items:center; z-index:10000;">
-  <div style="background:white; padding:30px 24px; border-radius:14px; text-align:center; max-width:320px; width:90%; box-shadow:0 8px 30px rgba(0,0,0,0.3); position:relative; border-top:4px solid var(--accent);">
-    <span onclick="closeAdminModal()" style="position:absolute; top:10px; right:14px; font-size:22px; cursor:pointer; color:#aaa; line-height:1;">×</span>
-    <div style="font-size:36px; margin-bottom:8px;">✂</div>
-    <h3 style="margin:0 0 6px; color:var(--primary); font-family:'Bebas Neue',cursive; letter-spacing:2px; font-size:22px;">ADMIN ACCESS</h3>
-    <p style="font-size:13px; color:#888; margin:0 0 22px;">Sign in with the authorised Google account to continue.</p>
-    <button onclick="adminGoogleSignIn()" style="
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      width:100%; padding:12px 16px;
-      background:#fff; color:#444;
-      border:1px solid #ddd; border-radius:8px;
-      cursor:pointer; font-family:'Barlow',sans-serif;
-      font-size:15px; font-weight:600;
-      box-shadow:0 1px 4px rgba(0,0,0,0.1);
-      transition:box-shadow 0.2s; margin-bottom:12px;
-    " onmouseover="this.style.boxShadow='0 3px 10px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)'">
-      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-      Sign in with Google
-    </button>
-    <p id="adminLoginMsg" style="color:red; font-size:13px; margin:0; display:none;"></p>
-    <button onclick="closeAdminModal()" style="background:none; border:none; color:#aaa; font-size:13px; cursor:pointer; margin-top:10px; padding:0; font-family:'Barlow',sans-serif;">Cancel</button>
-  </div>
-</div>
-
-<!-- Scripts -->
 <script>
+
   let currentUser = null;
 
 const firebaseConfig = {
@@ -1080,21 +419,7 @@ const firebaseConfig = {
     }
   }
 
-  function updateAuthButton(user) {
-    const btn = document.getElementById('authMenuBtn');
-    if (!btn) return;
-    if (user) {
-      btn.textContent = 'LOGOUT';
-      btn.style.backgroundColor = '#c0392b';
-      btn.style.color = 'white';
-      btn.style.border = '1px solid #c0392b';
-    } else {
-      btn.textContent = 'LOG IN';
-      btn.style.backgroundColor = '#333';
-      btn.style.color = 'var(--accent)';
-      btn.style.border = '1px solid var(--accent)';
-    }
-  }
+  function updateAuthButton(user){const b=document.getElementById('authMenuBtn');if(!b)return;b.textContent=user?'Log out':'Log in';b.classList.toggle('on',!!user);}
 
   // ========== MENU ==========
   function toggleMenu() {
@@ -1226,39 +551,34 @@ const firebaseConfig = {
   // Walk-in-only days (no online booking). Empty = online booking available every open day.
   const walkInDays = [];
 
-  // ========== SERVICE DURATIONS (variable) ==========
-  // Change any value below to adjust how long each service blocks the calendar.
-  // Slots are generated on a 10-minute grid so appointments pack tightly.
+  // ========== SERVICE DURATIONS (all 30 mins) ==========
   const serviceDurations = {
-    // Packages (40 mins — full premium experience)
-    "Platinum Package": 40,
-    "Gold Package": 40,
+    // Packages
+    "Platinum Package": 30,
+    "Gold Package": 30,
     "Silver Package": 30,
     // Adults
     "Adult Trim n Shave": 30,
     "Adult Trim": 30,
-    "Adult Shave Only": 20,
-    "Adult Scissors Kut": 40,
-    "Adult Line Up Only": 20,
-    "Adult Line Up and Shave": 20,
-    "Adult Trim Shave Hot Towel Beard Oil": 40,
-    "Adult Trim Shave Spray Tint Hot Towel": 40,
+    "Adult Shave Only": 30,
+    "Adult Line Up Only": 30,
+    "Adult Line Up and Shave": 30,
+    "Adult Trim Shave Hot Towel Beard Oil": 30,
+    "Adult Trim Shave Spray Tint Hot Towel": 30,
     "Adult Ladies Kut": 30,
-    "Adult Ladies Scissors Kut": 40,
-    "Adult Color Beard Only": 20,
+    "Adult Ladies Scissors Kut": 30,
+    "Adult Color Beard Only": 30,
     // Teens
     "Teen Trim n Shave": 30,
     "Teen Trim": 30,
-    "Teen Shave Only": 20,
-    "Teen Scissors Kut": 40,
-    "Teen Line Up Only": 20,
-    "Teen Line Up and Shave": 20,
+    "Teen Shave Only": 30,
+    "Teen Line Up Only": 30,
+    "Teen Line Up and Shave": 30,
     "Teen Ladies Kut": 30,
-    "Teen Ladies Scissors Kut": 40,
-    "Teen Color Beard Only": 20,
+    "Teen Ladies Scissors Kut": 30,
+    "Teen Color Beard Only": 30,
     // Kids
-    "Kids Boyz Kut": 20,
-    "Kids Scissors Kut": 30
+    "Kids Boyz Kut": 30
   };
 
   function getSelectedServices() {
@@ -1426,7 +746,7 @@ const firebaseConfig = {
       .item-price { font-size:12px; color:var(--accent); font-weight:700; white-space:nowrap; margin-left:8px; }
       .item-check { font-size:14px; margin-left:6px; color:var(--accent); }
       .card-section-title { margin:10px 0 4px; color:var(--accent); font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px; padding:0 2px; }
-      .tap-hint { font-size:11px; color:#888; text-align:center; padding:6px 0 2px; font-style:italic; }
+      .tap-hint { font-size:11px; color:#9a9ca8; text-align:center; padding:6px 0 2px; font-style:italic; }
       #selectionSummary { margin-top:8px; padding:10px 12px; background:#111; border:1px solid var(--accent); border-radius:6px; display:none; }
       #selectionSummaryTitle { font-family:'Bebas Neue',cursive; letter-spacing:1.5px; font-size:13px; color:var(--accent); margin-bottom:5px; }
     `;
@@ -1456,7 +776,7 @@ const firebaseConfig = {
 
   function buildPricingCard(headerHTML, sections) {
     // sections = [{title, items:[{name,price,isAddon}], isMutex}]
-    let html = `<div style="background:var(--accent);padding:10px 14px;">
+    let html = `<div style="background:linear-gradient(180deg,#f7f8fb,#c3c7d1 48%,#9a9eaa 52%,#d6d9e1);padding:10px 14px;">
       <span style="font-family:'Bebas Neue',cursive;letter-spacing:2px;font-size:14px;color:#1a1a1a;">${headerHTML}</span>
     </div>
     <div style="padding:8px 12px 10px;">
@@ -1475,7 +795,7 @@ const firebaseConfig = {
     "Platinum Package": {
       label: "💎 Platinum Package ($2,000)",
       basePrice: 2000,
-      html: () => buildPricingCard('💎 PLATINUM PACKAGE &nbsp;|&nbsp; $2,000 &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('💎 PLATINUM PACKAGE &nbsp;|&nbsp; $2,000 &nbsp;|&nbsp; 30 mins', [
         { title: 'Included — No Extra Cost:', items: [
           {name:'Trim n Shave',price:'INCLUDED',isAddon:true},
           {name:'Hot Towel',price:'INCLUDED',isAddon:true},
@@ -1493,7 +813,7 @@ const firebaseConfig = {
     "Gold Package": {
       label: "🥇 Gold Package ($1,700)",
       basePrice: 1700,
-      html: () => buildPricingCard('🥇 GOLD PACKAGE &nbsp;|&nbsp; $1,700 &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('🥇 GOLD PACKAGE &nbsp;|&nbsp; $1,700 &nbsp;|&nbsp; 30 mins', [
         { title: 'Included — No Extra Cost:', items: [
           {name:'Trim n Shave',price:'INCLUDED',isAddon:true},
           {name:'Beard Oil',price:'INCLUDED',isAddon:true},
@@ -1551,7 +871,7 @@ const firebaseConfig = {
     "Adult Shave Only": {
       label: "Adult — Shave Only ($800)",
       basePrice: 800,
-      html: () => buildPricingCard('👨 ADULT — SHAVE ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('👨 ADULT — SHAVE ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1568,7 +888,7 @@ const firebaseConfig = {
     "Adult Line Up Only": {
       label: "Adult — Line Up Only ($800)",
       basePrice: 800,
-      html: () => buildPricingCard('👨 ADULT — LINE UP ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('👨 ADULT — LINE UP ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1585,7 +905,7 @@ const firebaseConfig = {
     "Adult Line Up and Shave": {
       label: "Adult — Line Up and Shave ($1,000)",
       basePrice: 1000,
-      html: () => buildPricingCard('👨 ADULT — LINE UP AND SHAVE &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('👨 ADULT — LINE UP AND SHAVE &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1602,7 +922,7 @@ const firebaseConfig = {
     "Adult Trim Shave Hot Towel Beard Oil": {
       label: "Adult — Trim &amp; Shave + Hot Towel &amp; Beard Oil ($2,000)",
       basePrice: 2000,
-      html: () => buildPricingCard('👨 ADULT — TRIM &amp; SHAVE + HOT TOWEL &amp; BEARD OIL &nbsp;|&nbsp; $2,000 &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('👨 ADULT — TRIM &amp; SHAVE + HOT TOWEL &amp; BEARD OIL &nbsp;|&nbsp; $2,000 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1619,7 +939,7 @@ const firebaseConfig = {
     "Adult Trim Shave Spray Tint Hot Towel": {
       label: "Adult — Trim &amp; Shave + Spray Tint Hair Line &amp; Hot Towel ($2,500)",
       basePrice: 2500,
-      html: () => buildPricingCard('👨 ADULT — TRIM &amp; SHAVE + SPRAY TINT HAIR LINE &amp; HOT TOWEL &nbsp;|&nbsp; $2,500 &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('👨 ADULT — TRIM &amp; SHAVE + SPRAY TINT HAIR LINE &amp; HOT TOWEL &nbsp;|&nbsp; $2,500 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1653,7 +973,7 @@ const firebaseConfig = {
     "Adult Ladies Scissors Kut": {
       label: "Adult — Ladies Scissors Kut ($2,000+)",
       basePrice: 2000,
-      html: () => buildPricingCard('👨 ADULT — LADIES SCISSORS KUT &nbsp;|&nbsp; $2,000+ &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('👨 ADULT — LADIES SCISSORS KUT &nbsp;|&nbsp; $2,000+ &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1670,7 +990,7 @@ const firebaseConfig = {
     "Adult Color Beard Only": {
       label: "Adult — Color Beard Only ($800)",
       basePrice: 800,
-      html: () => buildPricingCard('👨 ADULT — COLOR BEARD ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('👨 ADULT — COLOR BEARD ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1720,7 +1040,7 @@ const firebaseConfig = {
     "Teen Shave Only": {
       label: "Teen — Shave Only ($700)",
       basePrice: 700,
-      html: () => buildPricingCard('🧑 TEEN — SHAVE ONLY &nbsp;|&nbsp; $700 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('🧑 TEEN — SHAVE ONLY &nbsp;|&nbsp; $700 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1736,7 +1056,7 @@ const firebaseConfig = {
     "Teen Line Up Only": {
       label: "Teen — Line Up Only ($700)",
       basePrice: 700,
-      html: () => buildPricingCard('🧑 TEEN — LINE UP ONLY &nbsp;|&nbsp; $700 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('🧑 TEEN — LINE UP ONLY &nbsp;|&nbsp; $700 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1752,7 +1072,7 @@ const firebaseConfig = {
     "Teen Line Up and Shave": {
       label: "Teen — Line Up and Shave ($1,000)",
       basePrice: 1000,
-      html: () => buildPricingCard('🧑 TEEN — LINE UP AND SHAVE &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('🧑 TEEN — LINE UP AND SHAVE &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1784,7 +1104,7 @@ const firebaseConfig = {
     "Teen Ladies Scissors Kut": {
       label: "Teen — Ladies Scissors Kut ($2,000+)",
       basePrice: 2000,
-      html: () => buildPricingCard('🧑 TEEN — LADIES SCISSORS KUT &nbsp;|&nbsp; $2,000+ &nbsp;|&nbsp; 40 mins', [
+      html: () => buildPricingCard('🧑 TEEN — LADIES SCISSORS KUT &nbsp;|&nbsp; $2,000+ &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1800,7 +1120,7 @@ const firebaseConfig = {
     "Teen Color Beard Only": {
       label: "Teen — Color Beard Only ($800)",
       basePrice: 800,
-      html: () => buildPricingCard('🧑 TEEN — COLOR BEARD ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('🧑 TEEN — COLOR BEARD ONLY &nbsp;|&nbsp; $800 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Hot Towel',price:'$500',isAddon:true},
           {name:'Beard Oil',price:'$500',isAddon:true},
@@ -1818,7 +1138,7 @@ const firebaseConfig = {
     "Kids Boyz Kut": {
       label: "Kids — Boyz Kut ($1,000)",
       basePrice: 1000,
-      html: () => buildPricingCard('🧒 KIDS — BOYZ KUT &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 20 mins', [
+      html: () => buildPricingCard('🧒 KIDS — BOYZ KUT &nbsp;|&nbsp; $1,000 &nbsp;|&nbsp; 30 mins', [
         { title: 'Optional Add-Ons (tick what you want):', items: [
           {name:'Designs',price:'$800',isAddon:true},
         ]}
@@ -1941,17 +1261,11 @@ const firebaseConfig = {
     const closeMinutes = convertToMinutes(business.close);
 
     try {
-      const SLOT_GRID = 10; // 10-minute grid for tight packing
+      const SLOT_INTERVAL = 30; // fixed 30-minute slot intervals
       const snapshot = await db.collection("bookings").where("date", "==", date).get();
-
-      // Only count ACTIVE bookings — ignore cancelled ones
-      const bookings = [];
-      snapshot.docs.forEach(doc => {
-        const d = doc.data();
-        if (d.status === 'Cancelled') return; // skip cancelled
-        const bookedTime = convertToMinutes(normalizeTimeStr(d.time));
-        const bookedDuration = d.duration || 30; // fallback for old bookings
-        bookings.push({ start: bookedTime, end: bookedTime + bookedDuration });
+      const bookings = snapshot.docs.map(doc => {
+        const bookedTime = convertToMinutes(normalizeTimeStr(doc.data().time));
+        return { start: bookedTime, end: bookedTime + SLOT_INTERVAL };
       });
 
       const unavailableSnapshot = await db.collection("unavailableDays").where("date", "==", date).get();
@@ -1981,36 +1295,27 @@ const firebaseConfig = {
         return `${displayH}:${min.toString().padStart(2, "0")} ${ampm}`;
       }
 
+      const SLOT_DISPLAY_DURATION = 30; // always show 30-min window on label
       let t = openMinutes;
-      while (t + duration <= closeMinutes) {
-        const bookingEnd = t + duration;
+      while (t + SLOT_INTERVAL <= closeMinutes + 1) {
+        const slotEnd = t + SLOT_DISPLAY_DURATION;
+        const bookingEnd = t + duration; // used only for conflict checking
 
-        // Skip past times today
-        if (isToday && t <= currentMinutes) { t += SLOT_GRID; continue; }
+        if (isToday && t <= currentMinutes) { t += SLOT_INTERVAL; continue; }
 
-        // Check unavailable ranges — full duration must be clear
-        const blockingRange = unavailableRanges.find(r => t < r.end && bookingEnd > r.start);
-        if (blockingRange) {
-          // Jump to the next grid point after the blocked range ends
-          t = Math.ceil(blockingRange.end / SLOT_GRID) * SLOT_GRID;
-          continue;
-        }
+        const blockingRange = unavailableRanges.find(r => !(bookingEnd <= r.start || t >= r.end));
+        if (blockingRange) { t = blockingRange.end; continue; }
 
-        // Check existing bookings — full duration must not overlap any booking
-        const conflicting = bookings.find(b => t < b.end && bookingEnd > b.start);
-        if (conflicting) {
-          // Jump to the next grid point after this booking ends — no wasted time
-          t = Math.ceil(conflicting.end / SLOT_GRID) * SLOT_GRID;
-          continue;
-        }
+        const bookedConflict = bookings.some(b => !(bookingEnd <= b.start || t >= b.end));
+        if (bookedConflict) { t += SLOT_INTERVAL; continue; }
 
-        const label = `${formatMins(t)} - ${formatMins(bookingEnd)}`;
+        const label = `${formatMins(t)} - ${formatMins(slotEnd)}`;
         let option = document.createElement("option");
         option.value = formatMins(t);
         option.textContent = label;
         timeSelect.appendChild(option);
 
-        t += SLOT_GRID;
+        t += SLOT_INTERVAL;
       }
 
       if (timeSelect.options.length === 1) {
@@ -2049,27 +1354,23 @@ const firebaseConfig = {
     const selectedMinutes = convertToMinutes(selectedTime);
     const openMinutes = convertToMinutes(business.open);
     const closeMinutes = convertToMinutes(business.close);
-    const newDuration = getSelectedServiceDuration();
-    const newEndTime = selectedMinutes + newDuration;
 
-    if (selectedMinutes < openMinutes || newEndTime > closeMinutes) {
-      alert(`This service (${newDuration} mins) doesn't fit within business hours (${business.open} – ${business.close}). Please choose an earlier time.`);
+    if (selectedMinutes < openMinutes || selectedMinutes >= closeMinutes) {
+      alert(`Please choose a time within business hours (${business.open} – ${business.close})`);
       return Promise.resolve(false);
     }
 
     return db.collection('unavailableDays').where('date', '==', date).get()
       .then((unavailableSnapshot) => {
-        // Check full duration range against every unavailable window
         let isUnavailable = false;
         unavailableSnapshot.forEach((doc) => {
           const data = doc.data();
           if (data.allDay) {
             isUnavailable = true;
           } else {
-            const blockStart = convertToMinutes(normalizeTimeStr(data.startTime));
-            const blockEnd = convertToMinutes(normalizeTimeStr(data.endTime));
-            // Overlap: new service starts before block ends AND ends after block starts
-            if (selectedMinutes < blockEnd && newEndTime > blockStart) isUnavailable = true;
+            const startMinutes = convertToMinutes(normalizeTimeStr(data.startTime));
+            const endMinutes = convertToMinutes(normalizeTimeStr(data.endTime));
+            if (selectedMinutes >= startMinutes && selectedMinutes <= endMinutes) isUnavailable = true;
           }
         });
 
@@ -2077,18 +1378,15 @@ const firebaseConfig = {
 
         return db.collection('bookings').where('date', '==', date).get()
           .then((querySnapshot) => {
+            const SLOT_INTERVAL = 30;
+            const newServiceEndTime = selectedMinutes + SLOT_INTERVAL;
+
             for (let doc of querySnapshot.docs) {
-              const d = doc.data();
-              // Skip cancelled bookings — they don't block
-              if (d.status === 'Cancelled') continue;
-
-              let bookedTime = d.time.trim().replace(/\s+/g, ' ');
+              let bookedTime = doc.data().time.trim().replace(/\s+/g, ' ');
               let bookedMinutes = convertToMinutes(bookedTime);
-              let bookedDuration = d.duration || 30;
-              let bookedEndTime = bookedMinutes + bookedDuration;
+              let bookedEndTime = bookedMinutes + SLOT_INTERVAL;
 
-              // Overlap: new starts before existing ends AND new ends after existing starts
-              if (selectedMinutes < bookedEndTime && newEndTime > bookedMinutes) return false;
+              if (selectedMinutes < bookedEndTime && bookedMinutes < newServiceEndTime) return false;
             }
             return true;
           });
@@ -2099,12 +1397,8 @@ const firebaseConfig = {
       });
   }
 
-  let bookingInProgress = false; // prevents double-submit race condition
-
   function submitBooking(event) {
     event.preventDefault();
-
-    if (bookingInProgress) return; // block rapid double-clicks
 
     const user = firebase.auth().currentUser;
     if (!user) {
@@ -2140,16 +1434,10 @@ const firebaseConfig = {
     const duration = getSelectedServiceDuration();
     const total = getSelectedTotal();
 
-    // Lock the button
-    bookingInProgress = true;
-    const submitBtn = document.querySelector('#bookingSection form button[type="submit"]');
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'BOOKING...'; }
-
     validateTimeSlot(date, time)
       .then((isAvailable) => {
         if (!isAvailable) {
           alert('This time is not available. Please choose another time.');
-          loadAvailableSlots(); // refresh slots so taken one disappears
           return Promise.reject('Time slot not available');
         }
 
@@ -2200,20 +1488,20 @@ const firebaseConfig = {
         document.getElementById("selectedTime").innerHTML = "<option value=''>Pick date & service first</option>";
         document.querySelector("#bookingModal h3").style.display = "none";
         document.querySelector("#bookingModal p").innerHTML = `
-          <div style="text-align:center; padding:20px; font-family:'Barlow',sans-serif; color:#333; max-width:420px; margin:0 auto; background:white; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.2); border-top:4px solid var(--accent);">
+          <div style="text-align:center; padding:20px; font-family:'Barlow',sans-serif; color:#e8e9ee; max-width:420px; margin:0 auto; background:linear-gradient(180deg,#26232f,#17141a); border-radius:20px; box-shadow:0 24px 60px rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.14); border-top:2px solid var(--accent);">
             <div style="width:70px; height:70px; border-radius:50%; background:#28a745; display:flex; align-items:center; justify-content:center; margin:0 auto 15px;">
               <span style="font-size:38px; color:white;">✔</span>
             </div>
             <h2 style="margin:0 0 12px; font-size:22px; font-weight:bold; font-family:'Bebas Neue',cursive; letter-spacing:2px;">BOOKING CONFIRMED</h2>
             <p style="font-size:16px; margin:0 0 6px;">Booking #: <strong>${bookingNumber}</strong></p>
-            <p style="font-size:14px; margin:0 0 6px; color:#555;">📅 ${formattedDate} &nbsp;|&nbsp; ⏰ ${time}</p>
-            <p style="font-size:14px; margin:0 0 12px; color:#555; text-align:left; line-height:1.5;">💈 ${services}</p>
-            ${total > 0 ? `<div style="background:#f9f4e8; border:1px solid var(--accent); border-radius:8px; padding:10px 16px; margin-bottom:14px; font-family:'Bebas Neue',cursive; letter-spacing:1.5px; font-size:18px; color:#1a1a1a;">💰 TOTAL: $${total.toLocaleString()}</div>` : ''}
-            <hr style="margin:15px 0; border:0; height:1px; background:#ddd;">
+            <p style="font-size:14px; margin:0 0 6px; color:#b8bbc6;">📅 ${formattedDate} &nbsp;|&nbsp; ⏰ ${time}</p>
+            <p style="font-size:14px; margin:0 0 12px; color:#b8bbc6; text-align:left; line-height:1.5;">💈 ${services}</p>
+            ${total > 0 ? `<div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:10px 16px; margin-bottom:14px; font-family:'Bebas Neue',cursive; letter-spacing:1.5px; font-size:18px; color:#fff;">💰 TOTAL: $${total.toLocaleString()}</div>` : ''}
+            <hr style="margin:15px 0; border:0; height:1px; background:rgba(255,255,255,.14);">
             <p style="font-size:15px; margin:10px 0;">Thanks for booking with HOUSE OF KUTZ! We'll see you soon. 💈</p>
-            <hr style="margin:15px 0; border:0; height:1px; background:#ddd;">
-            <p style="font-size:13px; color:#555; margin:15px 0; text-align:left; line-height:1.5;">ℹ️ For online payment, tap the <b>menu icon</b> (top left) and view <b>PAYMENT INFO</b>. Use your booking number as the reference.</p>
-            <button onclick="closeBookingModal()" style="margin-top:15px; padding:10px 25px; background:var(--primary); color:var(--accent); border:none; border-radius:6px; font-size:15px; cursor:pointer; font-weight:bold; font-family:'Barlow',sans-serif;">OK</button>
+            <hr style="margin:15px 0; border:0; height:1px; background:rgba(255,255,255,.14);">
+            <p style="font-size:13px; color:#b8bbc6; margin:15px 0; text-align:left; line-height:1.5;">ℹ️ For online payment, tap the <b>menu icon</b> (top left) and view <b>PAYMENT INFO</b>. Use your booking number as the reference.</p>
+            <button onclick="closeBookingModal()" style="margin-top:15px; padding:10px 25px; background:linear-gradient(180deg,#ee4553,#a8101c); color:#fff; border:none; border-radius:10px; font-size:15px; cursor:pointer; font-weight:bold; font-family:'Barlow',sans-serif;">OK</button>
           </div>
         `;
         document.getElementById('bookingModal').style.display = 'flex';
@@ -2224,11 +1512,6 @@ const firebaseConfig = {
         else if (err.code === 'unavailable') alert("Service temporarily unavailable. Please try again.");
         else if (err.code === 'network-request-failed') alert("Network error. Check your connection.");
         else alert("Failed to save booking. Please try again.");
-      })
-      .finally(() => {
-        bookingInProgress = false;
-        const submitBtn = document.querySelector('#bookingSection form button[type="submit"]');
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'BOOK NOW ✂'; }
       });
   }
 
@@ -2243,7 +1526,7 @@ const firebaseConfig = {
     star.addEventListener('click', () => {
       selectedRating = parseInt(star.getAttribute('data-value'));
       document.querySelectorAll('#starRating span').forEach(s => {
-        s.style.color = parseInt(s.getAttribute('data-value')) <= selectedRating ? '#f39c12' : '#ccc';
+        s.style.color = parseInt(s.getAttribute('data-value')) <= selectedRating ? '#e9b949' : '#4a4752';
       });
     });
   });
@@ -2273,7 +1556,7 @@ const firebaseConfig = {
       msg.textContent = "Thank you for your review!";
       document.getElementById('reviewForm').reset();
       selectedRating = 0;
-      document.querySelectorAll('#starRating span').forEach(s => s.style.color = '#ccc');
+      document.querySelectorAll('#starRating span').forEach(s => s.style.color = '#4a4752');
     } catch (error) {
       console.error("Error submitting review:", error);
       msg.style.color = "red";
@@ -2304,10 +1587,10 @@ const firebaseConfig = {
 
   function loadReviews(user) {
     const container = document.getElementById('reviewsContainer');
-    container.innerHTML = "<p style='text-align:center;color:#888;'>Loading reviews...</p>";
+    container.innerHTML = "<p style='text-align:center;color:#9a9ca8;'>Loading reviews...</p>";
 
     db.collection('reviews').get().then(snapshot => {
-      if (snapshot.empty) { container.innerHTML = "<p style='text-align:center;color:#888;'>No reviews yet.</p>"; return; }
+      if (snapshot.empty) { container.innerHTML = "<p style='text-align:center;color:#9a9ca8;'>No reviews yet.</p>"; return; }
 
       // Sort client-side by timestamp desc (avoids needing a Firestore composite index)
       const docs = [];
@@ -2324,16 +1607,16 @@ const firebaseConfig = {
         const dateString = formatReviewTime(d.timestamp);
         let stars = '';
         for (let i = 1; i <= 5; i++) {
-          stars += `<span style="color:${i <= d.rating ? '#f39c12' : '#ccc'};">★</span>`;
+          stars += `<span style="color:${i <= d.rating ? '#e9b949' : '#4a4752'};">★</span>`;
         }
         container.innerHTML += `
-          <div style="background:#fff; border:1px solid #eee; padding:14px; margin-bottom:12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); border-left:4px solid var(--accent);">
+          <div style="background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.12); padding:18px; margin-bottom:12px; border-radius:16px; border-left:3px solid var(--accent);">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong style="font-size:15px; color:#000;">${d.name}</strong>
+              <strong style="font-size:15px; color:#eceef3;">${d.name}</strong>
               <small style="color:#aaa; font-style:italic;">${dateString}</small>
             </div>
             <div style="margin:4px 0; font-size:18px;">${stars}</div>
-            <div style="font-size:14px; color:#555; line-height:1.5;">${d.comment}</div>
+            <div style="font-size:14px; color:#b8bbc6; line-height:1.5;">${d.comment}</div>
             ${isOwner ? `<button onclick="deleteReview('${d.id}')" style="color:red; cursor:pointer; background:none; border:none; font-size:13px; padding:0; margin-top:6px;">Delete</button>` : ''}
           </div>
         `;
@@ -2366,7 +1649,7 @@ const firebaseConfig = {
 
     document.getElementById('bookingModal').style.display = 'none';
     document.getElementById('adminLoginModal').style.display = 'none';
-    document.getElementById('myBookingsContent').innerHTML = '<p style="text-align:center; color:#888;">Loading your bookings...</p>';
+    document.getElementById('myBookingsContent').innerHTML = '<p style="text-align:center; color:#9a9ca8;">Loading your bookings...</p>';
     document.getElementById('myBookingsModal').style.display = 'flex';
 
     db.collection('bookings').where("uid", "==", user.uid).get().then(snapshot => {
@@ -2385,7 +1668,7 @@ const firebaseConfig = {
       if (bookings.length === 0) {
         bookingsHTML = `
           <div style="text-align:center; padding:20px;">
-            <p style="color:#666; font-size:16px;">You don't have any bookings yet.</p>
+            <p style="color:#b8bbc6; font-size:16px;">You don't have any bookings yet.</p>
             <button onclick="closeMyBookings(); showSection('bookingSection');" style="background-color:var(--primary); color:var(--accent); padding:10px 20px; border:none; border-radius:6px; cursor:pointer; margin-top:10px; font-family:'Barlow',sans-serif; font-weight:bold;">
               Book Your First Kutz
             </button>
@@ -2406,16 +1689,16 @@ const firebaseConfig = {
 
           const isCancelled = b.status === 'Cancelled';
           bookingsHTML += `
-            <div style="border:1px solid #ddd; border-radius:10px; padding:14px; margin-bottom:14px; background:${isCancelled ? '#fff5f5' : 'white'}; box-shadow:0 2px 5px rgba(0,0,0,0.08); border-left:4px solid ${isCancelled ? '#e53935' : 'var(--accent)'}; color:#000;">
-              <h3 style="margin-top:0; color:#000; font-size:17px; font-family:'Bebas Neue',cursive; letter-spacing:1px;">Booking #: ${b.bookingNumber || "N/A"}</h3>
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>👤 Name:</strong> ${b.name || "N/A"}</p>
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>📞 Phone:</strong> ${b.phone || "N/A"}</p>
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>📅 Date:</strong> ${bookingDate}</p>
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>⏰ Time:</strong> ${b.time || "N/A"}</p>
-              ${cleanService ? `<p style="margin:4px 0; font-size:14px; color:#000;"><strong>✂ Services:</strong> ${cleanService}</p>` : ''}
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>💵 Payment:</strong> <span style="color:${depositStatus ? 'green' : 'red'}; font-weight:bold;">${depositStatus ? 'Confirmed' : 'Pending'}</span></p>
-              ${b.total ? `<p style="margin:4px 0; font-size:14px; color:#000;"><strong>💰 Total:</strong> <span style="color:#1a1a1a; font-weight:bold;">$${Number(b.total).toLocaleString()}</span></p>` : ''}
-              <p style="margin:4px 0; font-size:14px; color:#000;"><strong>📌 Status:</strong> <span style="color:${isCancelled ? '#e53935' : '#2e7d32'}; font-weight:bold;">${isCancelled ? `❌ Cancelled — <strong>BY ${b.cancelledBy === 'client' ? 'CLIENT' : 'ADMIN'}</strong>` : '✅ Active'}</span></p>
+            <div style="border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:16px; margin-bottom:14px; background:${isCancelled ? 'rgba(229,57,53,.1)' : 'rgba(255,255,255,.04)'}; border-left:4px solid ${isCancelled ? '#e53935' : 'var(--accent)'}; color:#eceef3;">
+              <h3 style="margin-top:0; color:#eceef3; font-size:17px; font-family:'Bebas Neue',cursive; letter-spacing:1px;">Booking #: ${b.bookingNumber || "N/A"}</h3>
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>👤 Name:</strong> ${b.name || "N/A"}</p>
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>📞 Phone:</strong> ${b.phone || "N/A"}</p>
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>📅 Date:</strong> ${bookingDate}</p>
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>⏰ Time:</strong> ${b.time || "N/A"}</p>
+              ${cleanService ? `<p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>✂ Services:</strong> ${cleanService}</p>` : ''}
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>💵 Payment:</strong> <span style="color:${depositStatus ? '#5fd38a' : '#ff7676'}; font-weight:bold;">${depositStatus ? 'Confirmed' : 'Pending'}</span></p>
+              ${b.total ? `<p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>💰 Total:</strong> <span style="color:#fff; font-weight:bold;">$${Number(b.total).toLocaleString()}</span></p>` : ''}
+              <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>📌 Status:</strong> <span style="color:${isCancelled ? '#e53935' : '#5fd38a'}; font-weight:bold;">${isCancelled ? `❌ Cancelled — <strong>BY ${b.cancelledBy === 'client' ? 'CLIENT' : 'ADMIN'}</strong>` : '✅ Active'}</span></p>
               ${!isCancelled ? `
               <button onclick="cancelUserBooking('${b.id}', '${b.bookingNumber || 'N/A'}')" style="margin-top:10px; width:100%; padding:10px; background:#e53935; color:white; border:none; border-radius:6px; cursor:pointer; font-family:'Barlow',sans-serif; font-weight:700; font-size:14px; letter-spacing:0.5px; transition:background 0.2s;" onmouseover="this.style.background='#c62828'" onmouseout="this.style.background='#e53935'">
                 ✕ CANCEL BOOKING
@@ -2451,7 +1734,7 @@ const firebaseConfig = {
 
     Swal.fire({
       title: 'Want to Cancel?',
-      html: `<p style="font-family:'Barlow',sans-serif; color:#555; font-size:15px;">We'd prefer you call us to cancel <strong>Booking #${bookingNumber}</strong>:<br><br><a href="tel:+18762086156" style="font-size:20px; font-weight:700; color:#c1272d; text-decoration:none;">📞 +1 (876) 208-6156</a><br><br>Or you can still cancel below.</p>`,
+      html: `<p style="font-family:'Barlow',sans-serif; color:#b8bbc6; font-size:15px;">We'd prefer you call us to cancel <strong>Booking #${bookingNumber}</strong>:<br><br><a href="tel:+18762086156" style="font-size:20px; font-weight:700; color:#c1272d; text-decoration:none;">📞 +1 (876) 208-6156</a><br><br>Or you can still cancel below.</p>`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#e53935',
@@ -2495,7 +1778,7 @@ const firebaseConfig = {
     if (!container) return;
     const OPEN = 8 * 60;       // 8:00 AM in minutes
     const CLOSE = 21 * 60;     // 9:00 PM in minutes
-    const INTERVAL = 10;
+    const INTERVAL = 30;
     function fmt(m) {
       const h = Math.floor(m / 60);
       const min = m % 60;
@@ -2532,8 +1815,8 @@ const firebaseConfig = {
     }
   });
 
+
 </script>
-<!-- Unregister any service workers that block Firebase Storage images -->
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(registrations => {
@@ -2541,22 +1824,22 @@ const firebaseConfig = {
     });
   }
 </script>
-<!-- Footer Banner -->
-<div style="position:fixed;bottom:0;left:0;right:0;background-color:#1a1a1a;border-top:2px solid var(--accent);text-align:center;padding:5px 20px;font-family:Bebas Neue,cursive;font-size:13px;letter-spacing:2px;color:#aaa;z-index:1000;"><a href="https://webvtec.com" target="_blank" style="color:#aaa;text-decoration:underline;display:block;width:100%;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">CLICK TO REQUEST YOUR OWN WEBSITE. <span style="color:var(--accent);">webvtec.com</span></a></div>>
-
- 
- <div id="homeActionButtons" style="position:fixed; bottom:35px; left:0; right:0; z-index:999; display:flex; flex-direction:column; align-items:center; gap:8px; padding:12px 20px; pointer-events:none;">
-  <button onclick="showSection('bookingSection')" style="pointer-events:auto; width:100%; max-width:320px; background:var(--accent); color:var(--cream); font-family:'Bebas Neue',cursive; font-size:18px; letter-spacing:2px; padding:12px 24px; border:2px solid var(--gold); border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.5); transition:all 0.2s;" onmouseover="this.style.background='var(--accent2)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='var(--accent)'; this.style.transform='translateY(0)'">✂ BOOK YOUR KUT NOW</button>
-  <button onclick="showSection('gallerySection'); window.scrollTo({top: 0, behavior: 'smooth'});" style="pointer-events:auto; width:100%; max-width:320px; background:#1a1a1a; color:var(--cream); font-family:'Bebas Neue',cursive; font-size:18px; letter-spacing:2px; padding:12px 24px; border:2px solid var(--accent); border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.5); transition:all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#1a1a1a'; this.style.transform='translateY(0)'">📸 VIEW KUTS</button>
-  <button onclick="showSection('reviewsSection')" style="pointer-events:auto; width:100%; max-width:320px; background:#1a1a1a; color:var(--cream); font-family:'Bebas Neue',cursive; font-size:18px; letter-spacing:2px; padding:12px 24px; border:2px solid var(--gold); border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,0.5); transition:all 0.2s;" onmouseover="this.style.background='var(--gold)'; this.style.color='#1a1a1a'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#1a1a1a'; this.style.color='var(--cream)'; this.style.transform='translateY(0)'">⭐ LEAVE A REVIEW</button>
-</div>
-
 <script>
-  // Add spacing at bottom of home section so fixed buttons don't cover content
-  (function() {
-    const homeSection = document.getElementById('homeSection');
-    if (homeSection) homeSection.style.paddingBottom = '280px';
-  })();
+function go(id,e){if(e)e.preventDefault();showSection(id);closeMenu();}
+function bookPackage(p){showSection('bookingSection');document.getElementById('ageGroup').value='package';onAgeGroupChange();document.getElementById('packageService').value=p;onServiceChange();}
+try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
+try{db.collection('reviews').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));const t=r=>r.timestamp&&r.timestamp.toDate?r.timestamp.toDate().getTime():0;d.sort((a,c)=>t(c)-t(a));const el=document.getElementById('homeReviews'),e=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const s=d.filter(r=>r.rating>=4&&r.comment).slice(0,3);if(!s.length){el.closest('.sec').style.display='none';return}el.innerHTML=s.map(r=>`<div class="rc"><div class="st">${'★'.repeat(r.rating)}</div><p>${e(r.comment)}</p><b>${e(r.name)}</b></div>`).join('')}).catch(()=>{})}catch(x){}
+(function(){
+const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,700',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
+const html=T.map(t=>`<div class="tier ${t[1]}"><div class="tier-top"><h3>${t[0]}</h3><b>${t[2]}</b></div><ul>${t[3].map(i=>`<li>${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${i}</li>`).join('')}</ul><button class="btn btn-chrome" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div>`).join('');
+document.getElementById('homeTiers').innerHTML=html;document.getElementById('priceTiers').innerHTML=html;
+const L={Adults:'Trim n Shave|$1,500;Trim|$1,200;Shave Only|$800;Scissors Kut|$2,000+;Line Up Only|$800;Line Up and Shave|$1,000;Hot Towel Only|$500;Trim & Shave + Hot Towel & Beard Oil|$2,000;Trim & Shave + Spray Tint Hair Line & Hot Towel|$2,500;Eyebrow Tinting|$1,200;Eyebrow|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Designs|$800+;Spray Tint Hair Line|$500;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
+Teens:'Trim n Shave|$1,200;Trim|$1,000;Shave Only|$700;Scissors Kut|$2,000+;Line Up Only|$700;Line Up and Shave|$1,000;Hot Towel Only|$500;Eyebrow|$500;Eyebrow Tinting|$1,200;Designs|$800+;Spray Tint Hair Line|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
+Kids:'Boyz Kut|$1,000;Scissors Kut|$2,000+;Designs|$800+'};
+const rows=s=>s.split(';').map(r=>{const p=r.split('|');return `<div class="row"><span>${p[0].replace(/&/g,'&amp;')}</span><i></i><b>${p[1]}</b></div>`}).join('');
+document.getElementById('priceLists').innerHTML=Object.keys(L).map(k=>`<div><h3>${k}</h3>${rows(L[k])}</div>`).join('');
+window.svcTab=function(k,btn){document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===btn));document.getElementById('svcList').innerHTML=rows(L[k])};svcTab('Adults',document.querySelector('.tabs button'));
+})();
 </script>
 </body>
 </html>
