@@ -256,6 +256,15 @@ footer{padding-bottom:34px!important}
 #barberBookingModal{z-index:9990}.bbox{width:min(94%,680px);max-height:92vh;padding:30px 28px;border-radius:14px}.bbox .barber-avatar{width:104px;height:104px;margin:0 auto}.bbox h3{margin-top:16px;letter-spacing:.1em;text-transform:uppercase}.bbhead{text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line)}.bbhead p{margin:4px 0 0;color:var(--dim);font-size:13.5px}
 #bbBody>.box{border:0;background:none;padding:0}
 .svc{grid-template-columns:1fr!important;max-width:860px;margin:0 auto}
+
+.gr{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.gc{display:flex;flex-direction:column;padding:24px;background:linear-gradient(180deg,#1a1a1d,#121214);border:1px solid var(--line);border-top:2px solid var(--accent);transition:transform .35s,box-shadow .35s,border-color .35s}.gc:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.5);border-color:rgba(217,42,55,.5)}
+.gc-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}.gc-av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;font:700 18px 'Barlow';color:#fff}
+.gc-nm{font:600 13px 'Barlow';letter-spacing:.12em;text-transform:uppercase;color:#fff}.gc-mt{font-size:12px;color:var(--dim);margin-top:2px}
+.gc-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.gc-st{color:#f5b301;letter-spacing:3px;font-size:15px}.gc-dt{font-size:12px;color:var(--dim)}
+.gc-tx{margin:0;flex:1;font-size:14.5px;line-height:1.7;color:#d6d8df}.gc-pr{display:inline-block;margin-top:10px;font-size:12px;color:var(--dim)}
+.gc-rp{display:flex;gap:10px;margin-top:18px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:2px solid var(--accent);font-size:13px;line-height:1.55;color:var(--dim)}.gc-rp img{width:24px;height:24px;border-radius:50%;flex:none;object-fit:cover;background:#000}.gc-rp b{color:#fff;font-weight:600}.gc-rp small{display:block;font-size:11px;margin-top:4px;opacity:.75}
+@media(max-width:1000px){.gr{grid-template-columns:1fr 1fr}}@media(max-width:700px){.gr{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -314,7 +323,7 @@ footer{padding-bottom:34px!important}
 <div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2></div><div class="pks" id="homeTiers"></div></div></div>
 
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
-<div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
+<div class="sec"><div class="wrap"><div class="sh"><h2>What Clients Say</h2><p class="lead" style="margin:0">Straight from our Google Business Profile</p><a onclick="showSection('reviewsSection')">Write a review</a></div><div class="gr" id="homeReviews"></div></div></div>
 
 </section>
 <section class="content-section" id="aboutUsSection"><div class="wrap"><h1 class="page-h">Services</h1><p class="lead">Every kut gets the same care, whoever sits in the chair.</p>
@@ -1956,7 +1965,6 @@ setInterval(()=>{if(els.length>1&&!document.hidden)show((cur+1)%els.length)},650
 function go(id,e){if(e)e.preventDefault();showSection(id);closeMenu();}
 function bookPackage(p){showSection('bookingSection');document.getElementById('ageGroup').value='package';onAgeGroupChange();document.getElementById('packageService').value=p;onServiceChange();}
 try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
-try{db.collection('reviews').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));const t=r=>r.timestamp&&r.timestamp.toDate?r.timestamp.toDate().getTime():0;d.sort((a,c)=>t(c)-t(a));const el=document.getElementById('homeReviews'),e=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const s=d.filter(r=>r.rating>=4&&r.comment).slice(0,3);if(!s.length){el.closest('.sec').style.display='none';return}el.innerHTML=s.map(r=>`<div class="rc"><div class="st">${'★'.repeat(r.rating)}</div><p>${e(r.comment)}</p><b>${e(r.name)}</b></div>`).join('')}).catch(()=>{})}catch(x){}
 (function(){
 const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,800',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
 const IC={plat:'<path d=\"M6 4h12l4 5-10 11L2 9z\"/><path d=\"M2 9h20M9 4l-2 5 5 11 5-11-2-5\"/>',gold:'<path d=\"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z\"/>',silv:'<path d=\"M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5 5-5\"/>'};
@@ -2034,6 +2042,24 @@ window.closeBarber=function(){modal.style.display='none'};
 const _cb=closeBookingModal;window.closeBookingModal=function(){_cb();closeBarber()};
 /* every "book" button now leads to barber picking */
 const _s2=showSection;window.showSection=function(id){if(id==='bookingSection'){_s2('homeSection');closeMenu();setTimeout(()=>{const e=document.getElementById('sec-barbers');if(e)e.scrollIntoView({behavior:'smooth',block:'center'})},80);return}_s2(id)};
+})();
+</script>
+
+<script>
+/* Google reviews. Dates are real dates, so the "x months ago" text keeps updating by itself. */
+(function(){
+const LOGO='https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg';
+const R=[
+['Romario Johnson','2 reviews','2025-12-26','','Top barber! Very efficient and neat…always satisfied 💯','2025-12-26','Thank you Romario, happy you were satisfied!','#E91E63'],
+['Kurdane Eccleston','1 review','2026-02-26','','The service was a solid 10/10. Exceptional quality, a calm and peaceful environment, and outstanding customer service. The atmosphere was clean, professional, and welcoming. Definitely one of the best barber experiences I’ve had.','2026-02-26','Happy that your experience was a good one, thank you for supporting us!','#3F51B5'],
+['Carl Budhoo','2 reviews','2026-03-26','','The Shop was clean and quiet, barber was very professional and detailed in his services. It’s located a bit away from the busy town but still can access some areas while waiting in line.','2026-03-26','Happy you were satisfied, please visit us again!','#009688'],
+['Michael Thompson','Local Guide · 5 reviews','2026-01-26','','I visited a few weeks ago and the experience was good, the environment was quiet and clean. Visited again with my son and he was so pleased with his haircut that he gave the baber a high five and told him 5 stars. My haircut was just as good as the last time.','2026-01-26','Thank you for your patronage as always🙏🏾','#FF5722'],
+['D’Andre Lawrence','1 review','2026-01-26','','The best barbershop i’ve been to, my experience is always a pleasant one. 10/10 customer service and 10/10 haircuts all around, the best!','2026-02-26','Thanks for your continued support my brother.🙏🏾','#7B1FA2'],
+['c’jay Jackson','1 review','2026-05-26','','Very quiet and peaceful environment met with a quality haircut.','2026-05-26','Appreciate bro! our work is to please everyone that walks in with a heaviness to feel rejuvenated and leave with a sharp hairkut.','#00796B']];
+function ago(iso){const n=new Date(),d=new Date(iso+'T12:00:00');const days=Math.floor((n-d)/864e5);if(days<1)return 'Today';if(days<7)return days+(days>1?' days':' day')+' ago';if(days<30){const w=Math.floor(days/7);return w+(w>1?' weeks':' week')+' ago'}
+let m=(n.getFullYear()-d.getFullYear())*12+n.getMonth()-d.getMonth()-(n.getDate()<d.getDate()?1:0);if(m<1)m=1;if(m<12)return m===1?'a month ago':m+' months ago';const y=Math.floor(m/12);return y===1?'a year ago':y+' years ago'}
+function draw(){const el=document.getElementById('homeReviews');if(!el)return;el.innerHTML=R.map(r=>'<div class="gc"><div class="gc-top"><div class="gc-av" style="background:'+r[7]+'">'+esc(r[0][0])+'</div><div><div class="gc-nm">'+esc(r[0])+'</div><div class="gc-mt">'+esc(r[1])+'</div></div></div><div class="gc-row"><span class="gc-st">★★★★★</span><span class="gc-dt">'+ago(r[2])+'</span></div><p class="gc-tx">'+esc(r[4])+'</p>'+(r[3]?'<span class="gc-pr">'+esc(r[3])+' per person</span>':'')+'<div class="gc-rp"><img src="'+LOGO+'" alt="House of Kutz"><div><b>Owner reply:</b> '+esc(r[6])+'<small>'+ago(r[5])+'</small></div></div></div>').join('')}
+draw();setInterval(draw,36e5);
 })();
 </script>
 </body>
