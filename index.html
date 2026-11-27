@@ -67,13 +67,13 @@
 <!-- Google Sign-In -->
 <meta name="google-signin-client_id" content="345703317013.apps.googleusercontent.com">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"/>
 <meta name="theme-color" content="#15131a">
 <style>
 :root{--ink:#0e0d11;--panel:#17151b;--line:rgba(255,255,255,.1);--text:#eceef2;--dim:#a6a9b5;--accent:#e23a47;--accent2:#a3121d;--primary:#0e0d11;--gold:#c8ccd6;--cream:#f4f5f8;--white:#fff;--metal:linear-gradient(180deg,#fff,#c8ccd6 45%,#8d919d 55%,#e4e6ec)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:400 15.5px/1.6 'Barlow',system-ui,sans-serif;color:var(--text);min-height:100vh;background:radial-gradient(70% 35% at 0 0,rgba(52,40,104,.38),transparent 70%),radial-gradient(60% 35% at 100% 100%,rgba(110,24,66,.3),transparent 70%),var(--ink);background-attachment:fixed}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;margin:0}a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.1;margin:0}a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
 :focus-visible{outline:2px solid #fff;outline-offset:3px}
 .btn{font:600 12px 'Barlow',sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:13px 24px;border-radius:2px;border:1px solid;cursor:pointer;display:inline-block;text-decoration:none;text-align:center;transition:background .2s,color .2s,border-color .2s}
 .btn.sm{padding:10px 18px}.btn.wide{width:100%;margin-top:20px}
@@ -81,7 +81,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 .btn-chrome{background:transparent;color:var(--text);border-color:#9a9eaa}.btn-chrome:hover{background:var(--text);color:#111}
 .top{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;align-items:center;gap:26px;padding:0 clamp(16px,4vw,40px);background:rgba(14,13,17,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;cursor:pointer}.brand img{width:34px;height:34px;border-radius:50%;border:1px solid #c8ccd6}
-.brand span{font:600 19px 'Cormorant Garamond',serif;letter-spacing:.2em;text-transform:uppercase;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand span{font:600 19px 'Playfair Display',serif;letter-spacing:.2em;text-transform:uppercase;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
 .links{display:flex;gap:28px}.links a{font:500 12px 'Barlow';letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--dim);cursor:pointer;transition:color .2s}.links a:hover{color:#fff}
 .menu-button{width:40px;height:40px;border:1px solid var(--line);border-radius:2px;background:none;cursor:pointer;display:grid;place-content:center;gap:5px}.menu-button span{display:block;width:18px;height:1.5px;background:#dfe1e8}
 .menu{position:fixed;top:0;right:0;bottom:0;width:min(86vw,320px);z-index:1100;padding:76px 24px 24px;background:#131116;border-left:1px solid var(--line);transform:translateX(105%);transition:transform .3s;overflow-y:auto}.menu.show{transform:none}
@@ -124,24 +124,56 @@ footer{margin-top:64px;padding:34px 0 24px;border-top:1px solid var(--line);back
 .rule{width:44px;height:2px;background:var(--metal);margin-bottom:18px}
 .hero{min-height:calc(86svh - 70px)}.hero-wrap .hero-bg{background-position:center}
 .dock{background:rgba(14,13,17,.74);backdrop-filter:blur(10px);border-top:1px solid var(--line)}.dock .sw{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}.dock .sw>div{padding:16px 22px;border-right:1px solid var(--line)}.dock .sw>div:last-child{border:0}.dock p{margin:0;font-size:14.5px}.dock a{text-decoration:underline;text-underline-offset:3px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--panel)}.step{padding:26px 22px;border-right:1px solid var(--line)}.step:last-child{border:0}.step em{display:block;font:500 46px/1 'Cormorant Garamond',serif;font-style:normal;margin-bottom:14px;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}.step h3{font-size:22px}.step p{margin:6px 0 0;color:var(--dim);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--panel)}.step{padding:26px 22px;border-right:1px solid var(--line)}.step:last-child{border:0}.step em{display:block;font:500 46px/1 'Playfair Display',serif;font-style:normal;margin-bottom:14px;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}.step h3{font-size:22px}.step p{margin:6px 0 0;color:var(--dim);font-size:14px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.frame{position:relative;isolation:isolate;margin:0 16px 16px 0}.frame::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid #9a9eaa;z-index:-1}.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:saturate(.8)}
-.big{font-size:clamp(34px,4.4vw,54px);font-weight:500}.split .lead{margin:14px 0 0}.facts{list-style:none;margin:22px 0 0;padding:0}.facts li{display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.facts b{font:600 20px 'Cormorant Garamond';min-width:86px}.facts span{color:var(--dim);font-size:14.5px}
+.big{font-size:clamp(34px,4.4vw,54px);font-weight:500}.split .lead{margin:14px 0 0}.facts{list-style:none;margin:22px 0 0;padding:0}.facts li{display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.facts b{font:600 20px 'Playfair Display';min-width:86px}.facts span{color:var(--dim);font-size:14.5px}
 .tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:12px}.tabs button{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--dim);font:600 12px 'Barlow';letter-spacing:.16em;text-transform:uppercase;padding:12px 22px;cursor:pointer}.tabs button.on{color:#fff;border-color:var(--accent)}.menu2{columns:2;column-gap:56px}.menu2 .row{break-inside:avoid}
 .mosaic{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}.mosaic div{aspect-ratio:auto}.mosaic div:first-child{grid-column:span 2;grid-row:span 2}
 .rv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.rc{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:22px}.rc .st{color:#e9b949;letter-spacing:3px}.rc p{margin:10px 0 14px;font-size:15px;color:#d6d9e2}.rc b{font-weight:600}
 .hrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}.hrow b{font-weight:600}.split .sh{margin-bottom:6px}
-details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font:600 21px 'Cormorant Garamond',serif}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--dim)}details[open] summary::after{content:"–"}details p{margin:8px 0 0;color:var(--dim);font-size:14.5px}
+details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font:600 21px 'Playfair Display',serif}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--dim)}details[open] summary::after{content:"–"}details p{margin:8px 0 0;color:var(--dim);font-size:14.5px}
 .band{margin-top:70px;padding:58px 22px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}.band h2{font-size:clamp(32px,4.4vw,52px);font-weight:500}.band p{color:var(--dim);margin:8px 0 22px}
 @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}.split,.rv{grid-template-columns:1fr}.split{gap:34px}.menu2{columns:1}.dock .sw{grid-template-columns:1fr}.dock .sw>div{border-right:0;border-bottom:1px solid var(--line)}.mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.tabs button{padding:12px 14px}.hero{min-height:0}}
 @media(max-width:900px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:92px;gap:26px}.medal{order:-1;margin:0;width:150px}.tiers,.cols,.cols.two,.book,.foot{grid-template-columns:1fr}.cols{gap:26px}.strip{grid-template-columns:1fr}.strip>div{border-right:0;border-bottom:1px solid var(--line)}.mosaic{grid-template-columns:repeat(3,1fr)}.sec{padding-top:42px}}
+.top{height:72px;transition:background .3s,box-shadow .3s}.top.sc{background:rgba(11,10,13,.96);box-shadow:0 12px 32px rgba(0,0,0,.5)}
+.brand img{width:40px;height:40px}.brand small{display:block;font:500 9px 'Barlow';letter-spacing:.38em;text-transform:uppercase;color:var(--dim);margin-top:1px}.brand span{font-size:18px}
+.top .btn-red{padding:12px 24px!important;box-shadow:0 8px 24px rgba(179,18,31,.35)}.menu-button span{transition:transform .3s,opacity .2s}.menu-button.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.menu-button.open span:nth-child(2){opacity:0}.menu-button.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.content-section{padding-top:112px}.content-section.active:not(#homeSection)>.wrap{animation:up .6s both}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}@keyframes kb{to{transform:scale(1.09)}}
+.cine{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}
+.cine .bg{position:absolute;inset:0;z-index:-2;background:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg) center/cover;animation:kb 26s ease-in-out infinite alternate}
+.cine::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,10,13,.6),rgba(11,10,13,.35) 38%,rgba(11,10,13,.94) 94%),radial-gradient(70% 55% at 15% 100%,rgba(122,15,28,.55),transparent 70%)}
+.cine-in{width:100%;max-width:1180px;margin:0 auto;padding:130px 24px 52px;display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:end}
+.cine h1{font-size:clamp(40px,6.4vw,94px);font-weight:700;line-height:1.02;letter-spacing:-.015em}.cine h1 i{font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cine p{max-width:30em;color:#c9ccd6;font-size:17px;margin:20px 0 0}.cm>*,.cmedal{animation:up .9s both}.cm>:nth-child(2){animation-delay:.12s}.cm>:nth-child(3){animation-delay:.24s}.cm>:nth-child(4){animation-delay:.36s}.cmedal{animation-delay:.45s}
+.cmedal{justify-self:end;width:230px;aspect-ratio:1;padding:5px;border-radius:50%;background:linear-gradient(145deg,#f4f5f9,#767a86 45%,#dadde5 70%,#686c77);box-shadow:0 28px 70px rgba(0,0,0,.7)}.cmedal img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;transform:scale(1.03);box-shadow:0 0 0 1px #000}
+.btn{transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-2px)}.btn-red:hover{box-shadow:0 12px 30px rgba(179,18,31,.5)}
+.js .rev{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}.js .rev.in{opacity:1;transform:none}.sec{scroll-margin-top:76px;padding-top:80px}.sh h2{font-size:clamp(28px,3.4vw,42px)}
+.pi{position:absolute;inset:0;background:var(--img) var(--pos,center)/cover;transition:transform .9s ease}.ph,.pan{position:relative;overflow:hidden;border-radius:3px;background:var(--panel);border:1px solid var(--line)}.ph:hover .pi,.pan:hover .pi{transform:scale(1.07)}
+.svc{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}.ph{min-height:560px;position:sticky;top:96px}.ph::after,.pan::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,10,13,.92))}.cap{position:absolute;left:22px;bottom:20px;right:22px;z-index:1;font:italic 500 22px 'Playfair Display'}
+.svc-t{font-size:30px;margin:22px 0 4px}.menu2{columns:1;animation:up .5s both}.tabs button{transition:color .25s,border-color .25s}
+.tiers{gap:22px;align-items:stretch}.tier{border-radius:4px;transition:transform .4s,box-shadow .4s;position:relative}.tier:hover{transform:translateY(-8px);box-shadow:0 30px 64px rgba(0,0,0,.6)}
+.tier-top{display:block;text-align:center;padding:34px 22px 16px}.tier-top h3{font-size:34px}.pr{font:700 40px 'Playfair Display';margin-top:8px}.plat .pr{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}.gold .pr{color:#e3bd62}.silv .pr{color:#c8ccd6}
+.tag{display:block;font:600 10px 'Barlow';letter-spacing:.3em;text-transform:uppercase;color:#d9dce4;min-height:14px;margin-bottom:10px}.plat{background:linear-gradient(180deg,#2c1119,#160a0f);border-color:rgba(200,204,214,.45);box-shadow:0 24px 60px rgba(122,15,28,.28)}
+.tier li:not(.opt)::before{content:"✓";color:#c8ccd6;margin-right:10px}.tier ul{padding:10px 24px 18px}.tier .btn{margin:0 24px 24px}
+.split{grid-template-columns:1fr 1fr;gap:64px}.pans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}.pan{height:400px}.pt{position:absolute;left:22px;right:22px;bottom:20px;z-index:1}.pt h3{font-size:30px}.pt p{margin:6px 0 0;color:#cfd2dc;font-size:14.5px}
+.bk{background:linear-gradient(135deg,rgba(122,15,28,.28),rgba(20,18,23,.9) 60%);border:1px solid var(--line);border-radius:4px;padding:40px 36px}.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;margin-top:10px}.tl::before{content:"";position:absolute;top:27px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,#9a9eaa,transparent)}
+.s4{text-align:center;position:relative}.n{width:54px;height:54px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font:600 22px 'Playfair Display';background:#15121a;border:1px solid #9a9eaa;box-shadow:0 0 0 6px #14121a}.s4 h3{font-size:21px}.s4 p{margin:6px 0 0;color:var(--dim);font-size:14px}.bk .cta.c{margin-top:30px}
+.info2{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}.box{padding:28px}.hrow.today{border-left:2px solid var(--accent);padding-left:12px;color:#fff}.mapc{border:1px solid var(--line);border-radius:3px;overflow:hidden;min-height:400px}.mapc iframe{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(1) invert(.92) contrast(.9) brightness(.9)}.faq{columns:2;column-gap:48px;margin-top:40px}.faq details{break-inside:avoid}
+@media(max-width:900px){.top{height:64px}.brand small{display:none}.cine-in{grid-template-columns:1fr;padding:96px 22px 34px;gap:22px}.cmedal{order:-1;justify-self:start;width:92px}.cine h1{font-size:clamp(38px,11vw,54px)}.cine p{font-size:15.5px}.cine .cta .btn{flex:1}
+.sec{padding-top:56px}.svc{grid-template-columns:1fr;gap:22px}.ph{min-height:190px;position:relative;top:0}.tiers{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -22px;padding:6px 22px 14px;scrollbar-width:none}.tier{flex:0 0 82%;scroll-snap-align:center}.tier:hover{transform:none}
+.split{grid-template-columns:1fr;gap:30px}.pans{grid-template-columns:1fr;margin-top:34px}.pan{height:210px}.bk{padding:26px 20px}.tl{grid-template-columns:1fr;gap:22px}.tl::before{top:0;bottom:0;left:26px;right:auto;width:1px;height:auto;background:linear-gradient(180deg,transparent,#9a9eaa,transparent)}.s4{display:grid;grid-template-columns:54px 1fr;gap:16px;text-align:left;align-items:center}.n{margin:0}
+.info2{grid-template-columns:1fr}.mapc,.mapc iframe{min-height:300px}.faq{columns:1}}
+@media(min-width:1280px){.cine-in{padding-bottom:70px}.pan{height:460px}}
+@media(prefers-reduced-motion:reduce){.cine .bg,.cm>*,.cmedal{animation:none}.js .rev{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><span>House of Kutz</span></a>
-<nav class="links" aria-label="Main"><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a></nav>
+<script>document.documentElement.classList.add("js")</script>
+<header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><div><span>House of Kutz</span><small>Barbershop</small></div></a>
+<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="jump('sec-about')">About</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('sec-visit')">Contact</a></nav>
 <button class="btn btn-red sm" onclick="go('bookingSection')">Book now</button>
 <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
 <aside class="menu" id="menu" aria-label="Menu">
@@ -171,37 +203,42 @@ details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointe
   </div></div></aside>
 <main>
 <section class="content-section active" id="homeSection">
-<div class="hero-wrap"><div class="hero-bg"></div><div class="hero"><div><div class="rule"></div><h1>Precision kutz,<br>finished with care.</h1>
+<div class="cine"><div class="bg"></div><div class="cine-in"><div class="cm"><div class="rule"></div><h1>Precision Kutz.<br><i>Finished With Care.</i></h1>
 <p>Fades, shaves and beard work for men, women and children. Book a chair online or walk in any day.</p>
-<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button><button class="btn btn-chrome" onclick="showSection('walkInPriceSection')">Price list</button></div></div>
-<div class="medal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
+<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button><button class="btn btn-chrome" onclick="jump('sec-services')">View our services</button></div></div>
+<div class="cmedal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
 <div class="dock"><div class="sw"><div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM<br>Sunday 11:00 AM – 6:30 PM</p></div><div><div class="k">Location</div><p>Upper West Henderson Blvd, St. Catherine<br><a href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Open in Maps</a></p></div><div><div class="k">Appointments</div><p>Appointments and walk-ins, every day.<br>10-minute grace period.</p></div></div></div></div>
 
-<div class="sec"><div class="wrap"><div class="sh"><h2>Booking made easy</h2></div><div class="steps">
-<div class="step"><em>1</em><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div>
-<div class="step"><em>2</em><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div>
-<div class="step"><em>3</em><h3>Sign in and confirm</h3><p>Sign in with Google and you get a booking number straight away.</p></div>
-<div class="step"><em>4</em><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div></div>
+<div class="sec" id="sec-services"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div>
+<div class="svc"><div class="ph"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg)"></div><div class="cap">Appointments and walk-ins, every day</div></div>
+<div><div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><h3 id="svcTitle" class="svc-t"></h3><div class="menu2" id="svcList"></div>
+<div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book a service</button></div></div></div></div></div>
 
-<div class="sec"><div class="wrap split"><div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg" alt="Inside House of Kutz" loading="lazy"></div>
-<div><div class="rule"></div><h2 class="big">A chair for everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p>
-<ul class="facts"><li><b>Men</b><span>Fades, tapers, line ups, classic shaves and beard grooming</span></li><li><b>Women</b><span>Hairkuts and styling for any occasion</span></li><li><b>Children</b><span>Gentle kuts, including first hairkuts</span></li></ul>
-<div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div></div></div>
+<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="tiers" id="homeTiers"></div></div></div>
 
-<div class="sec"><div class="wrap"><div class="sh"><h2>Packages</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div><div class="tiers" id="homeTiers"></div></div></div>
+<div class="sec" id="sec-about"><div class="wrap"><div class="split"><div><div class="rule"></div><h2 class="big">A Chair for Everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p><div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div>
+<div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg" alt="House of Kutz barbershop" loading="lazy"></div></div>
+<div class="pans"><div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg);--pos:20% 40%"></div><div class="pt"><h3>Men</h3><p>Fades, tapers, line ups, classic shaves and beard grooming.</p></div></div>
+<div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg);--pos:80% 50%"></div><div class="pt"><h3>Women</h3><p>Hairkuts and styling for any occasion.</p></div></div>
+<div class="pan"><div class="pi" style="--img:url(https://res.cloudinary.com/dqqr9udcs/image/upload/v1776984381/WhatsApp_Image_2026-04-23_at_5.36.06_AM_1_c4wwel.jpg);--pos:70% 75%"></div><div class="pt"><h3>Children</h3><p>Gentle kuts, including first hairkuts.</p></div></div></div></div></div>
 
-<div class="sec"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">All services</a></div>
-<div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><div class="menu2" id="svcList"></div></div></div>
+<div class="sec" id="sec-booking"><div class="wrap"><div class="bk"><div class="sh"><h2>Booking made easy</h2></div><div class="tl">
+<div class="s4"><div class="n">1</div><div><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div></div>
+<div class="s4"><div class="n">2</div><div><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div></div>
+<div class="s4"><div class="n">3</div><div><h3>Sign in and confirm</h3><p>Sign in with Google and get your booking number straight away.</p></div></div>
+<div class="s4"><div class="n">4</div><div><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div>
+<div class="cta c"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></div></div>
 
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
-
 <div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
 
-<div class="sec"><div class="wrap split"><div><div class="sh"><h2>Visit us</h2></div>
-<div class="hrow"><span>Monday to Saturday</span><b>8:00 AM – 9:00 PM</b></div><div class="hrow"><span>Sunday</span><b>11:00 AM – 6:30 PM</b></div>
-<p class="lead">Upper West Henderson Blvd, St. Catherine, Jamaica</p><div class="cta"><a class="btn btn-chrome" href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Get directions</a><a class="btn btn-chrome" href="tel:+18762086156">Call the shop</a></div></div>
-<div><div class="sh"><h2>Questions</h2></div>
-<details><summary>Do you take walk-ins?</summary><p>Yes. Walk-ins and appointments are both open every day during opening hours.</p></details>
+<div class="sec" id="sec-visit"><div class="wrap"><div class="sh"><h2>Visit House of Kutz</h2></div>
+<div class="info2"><div class="box"><div class="k">Opening hours</div><div class="hrow" data-d="mon"><span>Monday to Saturday</span><b>8:00 AM – 9:00 PM</b></div><div class="hrow" data-d="sun"><span>Sunday</span><b>11:00 AM – 6:30 PM</b></div>
+<div class="k" style="margin-top:22px">Appointments</div><p class="lead" style="margin:0">Appointments and walk-ins are open every day. Arrive within 10 minutes of your slot or it is released.</p>
+<div class="k" style="margin-top:22px">Find us</div><p class="lead" style="margin:0">Upper West Henderson Blvd, St. Catherine, Jamaica</p>
+<div class="cta"><a class="btn btn-red" href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Get directions</a><a class="btn btn-chrome" href="tel:+18762086156">Call the shop</a></div></div>
+<div class="mapc"><iframe title="Map of House of Kutz" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Upper+West+Henderson+Blvd,+St.+Catherine,+Jamaica&output=embed"></iframe></div></div>
+<div class="faq"><details><summary>Do you take walk-ins?</summary><p>Yes. Walk-ins and appointments are both open every day during opening hours.</p></details>
 <details><summary>What if I am late?</summary><p>There is a 10-minute grace period. After that the slot is released to the next client.</p></details>
 <details><summary>How do I pay?</summary><p>Bank transfer details are under Payment info in the menu. Use your booking number as the reference.</p></details>
 <details><summary>Can I cancel a booking?</summary><p>Call +1 (876) 208-6156, or cancel from My bookings in the menu.</p></details></div></div></div>
@@ -1825,20 +1862,27 @@ const firebaseConfig = {
   }
 </script>
 <script>
+function jump(id){showSection('homeSection');closeMenu();setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'})},60)}
+(function(){const tp=document.querySelector('.top'),mb=document.querySelector('.menu-button'),mn=document.getElementById('menu');
+addEventListener('scroll',()=>tp.classList.toggle('sc',scrollY>20),{passive:true});
+new MutationObserver(()=>mb.classList.toggle('open',mn.classList.contains('show'))).observe(mn,{attributes:true,attributeFilter:['class']});
+const els=document.querySelectorAll('#homeSection .sec>.wrap,#homeSection .band');
+if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});els.forEach(e=>{e.classList.add('rev');io.observe(e)})}
+const d=new Date().getDay();document.querySelectorAll('.hrow[data-d]').forEach(r=>{if(r.dataset.d==='sun'?d===0:d>0)r.classList.add('today')})})();
 function go(id,e){if(e)e.preventDefault();showSection(id);closeMenu();}
 function bookPackage(p){showSection('bookingSection');document.getElementById('ageGroup').value='package';onAgeGroupChange();document.getElementById('packageService').value=p;onServiceChange();}
-try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
+try{db.collection('gallery').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));d.sort((a,c)=>(a.sortOrder??9e9)-(c.sortOrder??9e9));const h=document.getElementById('homeGallery');const s=d.filter(i=>i.url).slice(0,5);const t3=d.filter(i=>i.url).slice(5,8);if(t3.length===3)document.querySelectorAll('.pan .pi').forEach((p,n)=>p.style.setProperty('--img','url('+t3[n].url+')'));if(!s.length){h.closest('.sec').style.display='none';return}h.innerHTML=s.map(i=>`<div><img loading="lazy" src="${i.url}" alt="Fresh kut"></div>`).join('')}).catch(()=>{})}catch(e){}
 try{db.collection('reviews').get().then(q=>{const d=[];q.forEach(x=>d.push(x.data()));const t=r=>r.timestamp&&r.timestamp.toDate?r.timestamp.toDate().getTime():0;d.sort((a,c)=>t(c)-t(a));const el=document.getElementById('homeReviews'),e=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const s=d.filter(r=>r.rating>=4&&r.comment).slice(0,3);if(!s.length){el.closest('.sec').style.display='none';return}el.innerHTML=s.map(r=>`<div class="rc"><div class="st">${'★'.repeat(r.rating)}</div><p>${e(r.comment)}</p><b>${e(r.name)}</b></div>`).join('')}).catch(()=>{})}catch(x){}
 (function(){
 const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Eyebrow','Hair products'],['Colour beard only, $800','Colour hair only, $800']],['Gold','gold','$1,700',['Trim n Shave','Beard oil','Hair products'],[]],['Silver','silv','$1,500',['Trim n Shave','Beard oil'],[]]];
-const html=T.map(t=>`<div class="tier ${t[1]}"><div class="tier-top"><h3>${t[0]}</h3><b>${t[2]}</b></div><ul>${t[3].map(i=>`<li>${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${i}</li>`).join('')}</ul><button class="btn btn-chrome" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div>`).join('');
+const html=T.map(t=>`<div class="tier ${t[1]}"><div class="tier-top"><span class="tag">${t[1]=='plat'?'Signature':''}</span><h3>${t[0]}</h3><div class="pr">${t[2]}</div></div><ul>${t[3].map(i=>`<li>${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${i}</li>`).join('')}</ul><button class="btn ${t[1]=='plat'?'btn-red':'btn-chrome'}" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div>`).join('');
 document.getElementById('homeTiers').innerHTML=html;document.getElementById('priceTiers').innerHTML=html;
 const L={Adults:'Trim n Shave|$1,500;Trim|$1,200;Shave Only|$800;Scissors Kut|$2,000+;Line Up Only|$800;Line Up and Shave|$1,000;Hot Towel Only|$500;Trim & Shave + Hot Towel & Beard Oil|$2,000;Trim & Shave + Spray Tint Hair Line & Hot Towel|$2,500;Eyebrow Tinting|$1,200;Eyebrow|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Designs|$800+;Spray Tint Hair Line|$500;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
 Teens:'Trim n Shave|$1,200;Trim|$1,000;Shave Only|$700;Scissors Kut|$2,000+;Line Up Only|$700;Line Up and Shave|$1,000;Hot Towel Only|$500;Eyebrow|$500;Eyebrow Tinting|$1,200;Designs|$800+;Spray Tint Hair Line|$500;Ladies Kut|$1,200+;Ladies Scissors Kut|$2,000+;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
 Kids:'Boyz Kut|$1,000;Scissors Kut|$2,000+;Designs|$800+'};
 const rows=s=>s.split(';').map(r=>{const p=r.split('|');return `<div class="row"><span>${p[0].replace(/&/g,'&amp;')}</span><i></i><b>${p[1]}</b></div>`}).join('');
 document.getElementById('priceLists').innerHTML=Object.keys(L).map(k=>`<div><h3>${k}</h3>${rows(L[k])}</div>`).join('');
-window.svcTab=function(k,btn){document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===btn));document.getElementById('svcList').innerHTML=rows(L[k])};svcTab('Adults',document.querySelector('.tabs button'));
+const N={Adults:'Adult services',Teens:'Teen services',Kids:'Kids services'};window.svcTab=function(k,btn){document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===btn));const l=document.getElementById('svcList');l.style.animation='none';l.offsetHeight;l.style.animation='';l.innerHTML=rows(L[k]);document.getElementById('svcTitle').textContent=N[k]};svcTab('Adults',document.querySelector('.tabs button'));
 })();
 </script>
 </body>
