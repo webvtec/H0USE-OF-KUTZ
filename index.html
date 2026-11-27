@@ -286,6 +286,29 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 :root{--wvh:22px}.wvbar{padding:0 10px!important}#selectionSummary{bottom:34px!important}
 .vac-badge{margin:12px 16px 0;padding:6px 12px;border:1px solid rgba(217,42,55,.45);background:rgba(217,42,55,.12);color:#ff9aa2;font:600 11px 'Barlow';letter-spacing:.1em;text-transform:uppercase}
 .bbhead .vac-badge{display:inline-block;margin:12px 0 0}
+/* barbers: horizontal scroll, metallic black cards */
+.barbers{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:24px;padding:14px 4px 28px;scrollbar-width:thin;scrollbar-color:#3a3a40 transparent}
+.barbers::-webkit-scrollbar{height:8px}.barbers::-webkit-scrollbar-track{background:transparent}.barbers::-webkit-scrollbar-thumb{background:#3a3a40;border-radius:4px;border:0}
+.barber-profile{flex:0 0 260px;scroll-snap-align:center}.barber-profile:first-child{margin-left:auto}.barber-profile:last-child{margin-right:auto}
+.barber-profile{background:linear-gradient(145deg,#2a2a2e 0%,#151518 26%,#0a0a0c 50%,#161619 76%,#242428 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),inset 0 -1px 0 rgba(0,0,0,.6),0 12px 30px rgba(0,0,0,.45)}
+.barber-profile h3{margin-bottom:26px}.barber-profile .vac-badge{margin:-10px 16px 22px}
+.bbox{width:min(94%,780px);background:linear-gradient(160deg,#242428 0%,#111113 30%,#0a0a0c 55%,#151518 80%,#202024 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.65)}
+.bbh{margin:6px 0 16px;text-align:center;font:600 12px 'Barlow',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#cfd2da}
+.bbox .pks{gap:14px;margin:0 0 30px;padding-top:14px}.bbox .pks .plat,.bbox .pks .plat:hover{transform:none}.bbox .pk:hover{transform:translateY(-4px)}
+.bbox .pk-in{padding:28px 14px 18px}.bbox .pk-ic{width:46px;height:46px;margin-bottom:12px}.bbox .pk h3{font-size:22px}.bbox .pk-pr{font-size:42px;margin-top:12px}.bbox .pk-pr span{font-size:18px;top:6px}.bbox .pk-sub{margin:6px 0 16px}.bbox .pk li{font-size:13px;padding:5px 0;gap:9px}.bbox .pk .btn{padding:13px 8px!important;letter-spacing:.14em!important;font-size:11px!important}
+.bbox .pk-badge{top:8px;right:8px;font-size:8px;padding:4px 8px}
+@media(max-width:900px){.bbox .pks{margin:0 -10px 26px;padding:14px 10px 16px}.bbox .pk{flex:0 0 76%}}
+/* gold package: real gold */
+.pk.gold{--c:#e3b53f;--glow:rgba(227,181,63,.32);background:linear-gradient(160deg,#fff1b8,#d4a017 35%,rgba(255,225,130,.25) 70%,#8a6410);box-shadow:0 24px 70px rgba(212,160,23,.22)}
+.pk.gold .pk-in{background:linear-gradient(180deg,#2a2209,#110f08)}
+.pk.gold .pk-pr{color:#f1c75b}.pk.gold h3{color:#f6d56e}
+.pk.gold .btn-chrome{border-color:#e3b53f;color:#f1c75b}.pk.gold .btn-chrome:hover{background:#e3b53f;color:#1a1405;border-color:#e3b53f}
+/* page background: rich solid black with a soft metallic shine */
+body{background:radial-gradient(90% 38% at 50% 0,rgba(255,255,255,.055),transparent 70%),linear-gradient(115deg,#060607 0%,#121214 20%,#09090b 36%,#19191d 52%,#09090b 68%,#111113 84%,#050506 100%);background-attachment:fixed;background-color:#09090b}
+body::after{opacity:.025}
+.top{background:rgba(9,9,11,.5)}.top.sc{background:rgba(7,7,9,.92)}
+footer{background:linear-gradient(180deg,#0c0c0e,#050506)}
+.band{background:radial-gradient(60% 130% at 50% 0,rgba(217,42,55,.18),transparent 70%),linear-gradient(115deg,#070708,#151518 50%,#070708)}
 .hrs-banner{width:100%;padding:7px 12px;background:rgba(217,42,55,.12);border-bottom:1px solid rgba(217,42,55,.25);color:#ff8d96;font:600 10px 'Barlow';letter-spacing:.14em;text-transform:uppercase;text-align:center}
 </style>
 </head>
@@ -293,7 +316,7 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 
 <script>document.documentElement.classList.add("js")</script>
 <header class="top"><a class="brand" onclick="go('homeSection')"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt=""><div><span>House of Kutz</span><small>Barbershop</small></div></a>
-<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="jump('sec-packages')">Packages</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
+<nav class="links" aria-label="Main"><a onclick="jump('sec-services')">Services</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="jump('contact')">Contact</a></nav>
 <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button></header>
 <aside class="menu" id="menu" aria-label="Menu">
 <a onclick="go('bookingSection')" style="color:#fff;font-weight:600">Book now</a><a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
@@ -329,10 +352,10 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 </div>
 
 <div class="sec" id="sec-booking"><div class="wrap"><div class="bk"><div class="sh"><h2>Booking made easy</h2></div><div class="tl">
-<div class="s4"><div class="n">1</div><div><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div></div>
-<div class="s4"><div class="n">2</div><div><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div></div>
-<div class="s4"><div class="n">3</div><div><h3>Sign in and confirm</h3><p>Sign in with Google and get your booking number straight away.</p></div></div>
-<div class="s4"><div class="n">4</div><div><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div>
+<div class="s4"><div class="n">1</div><div><h3>Choose your service</h3></div></div>
+<div class="s4"><div class="n">2</div><div><h3>Pick a date and time</h3></div></div>
+<div class="s4"><div class="n">3</div><div><h3>Sign in and confirm</h3></div></div>
+<div class="s4"><div class="n">4</div><div><h3>Arrive and sit down</h3></div></div></div>
 <div class="cta c"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></div></div>
 
 <div class="sec" id="sec-barbers"><div class="wrap"><div class="sh"><h2>Barbers</h2></div><div class="barbers" id="barbersGrid"></div></div></div>
@@ -341,8 +364,6 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 <div class="svc">
 <div><div class="tabs"><button class="on" onclick="svcTab('Adults',this)">Adults</button><button onclick="svcTab('Teens',this)">Teens</button><button onclick="svcTab('Kids',this)">Kids</button></div><h3 id="svcTitle" class="svc-t"></h3><div class="menu2" id="svcList"></div>
 <div class="cta"><button class="btn btn-red" onclick="showSection('bookingSection')">Book a service</button></div></div></div></div></div>
-
-<div class="sec" id="sec-packages"><div class="wrap"><div class="sh"><h2>Packages</h2></div><div class="pks" id="homeTiers"></div></div></div>
 
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
 <div class="sec"><div class="wrap"><div class="sh"><h2>What Clients Say</h2><p class="lead" style="margin:0">Straight from our Google Business Profile</p><a onclick="showSection('reviewsSection')">Write a review</a></div><div class="gr" id="homeReviews"></div></div></div>
@@ -1926,7 +1947,7 @@ const T=[['Platinum','plat','$2,000',['Trim n Shave','Hot towel','Beard oil','Ey
 const IC={plat:'<path d=\"M6 4h12l4 5-10 11L2 9z\"/><path d=\"M2 9h20M9 4l-2 5 5 11 5-11-2-5\"/>',gold:'<path d=\"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z\"/>',silv:'<path d=\"M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5 5-5\"/>'};
 const CK='<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9"/><path d="M6 10.5l2.8 2.8L14 7.5"/></svg>',PL='<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9"/><path d="M10 6v8M6 10h8"/></svg>';
 const html=T.map(t=>`<div class="pk ${t[1]}"><div class="pk-in">${t[1]=='plat'?'<span class="pk-badge">Most complete</span>':''}<div class="pk-ic"><svg viewBox="0 0 24 24">${IC[t[1]]}</svg></div><h3>${t[0]}</h3><div class="pk-pr"><span>$</span>${t[2].slice(1)}</div><div class="pk-sub">30-minute visit</div><ul>${t[3].map(i=>`<li>${CK}${i}</li>`).join('')}${t[4].map(i=>`<li class="opt">${PL}${i}</li>`).join('')}</ul><button class="btn ${t[1]=='plat'?'btn-red':'btn-chrome'}" onclick="bookPackage('${t[0]} Package')">Book ${t[0]}</button></div></div>`).join('');
-document.getElementById('homeTiers').innerHTML=html;document.getElementById('priceTiers').innerHTML=html;
+window.PKHTML=html;document.getElementById('priceTiers').innerHTML=html;
 const L={Adults:'Trim n Shave|$1,800;Trim|$1,500;Shave Only|$800;Scissors Kut|$2,500;Line Up Only|$800;Line Up and Shave|$1,200;Hot Towel Only|$500;Trim & Shave + Hot Towel & Beard Oil|$2,000;Trim & Shave + Spray Tint Hair Line & Hot Towel|$2,500;Eyebrow Tinting|$1,200;Eyebrow|$500;Ladies Kut|$1,500;Ladies Scissors Kut|$2,000+;Designs|$800;Spray Tint Hair Line|$500;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
 Teens:'Trim n Shave|$1,200;Trim|$1,200;Shave Only|$700;Scissors Kut|$2,500;Line Up Only|$700;Line Up and Shave|$1,000;Hot Towel Only|$500;Eyebrow|$500;Eyebrow Tinting|$1,200;Designs|$800;Spray Tint Hair Line|$500;Ladies Kut|$1,500;Ladies Scissors Kut|$2,000+;Color Hair Only|$800;Color Beard Only|$800;Color Hair and Beard|$1,500',
 Kids:'Boyz Kut|$1,000;Scissors Kut|$2,500;Designs|$800'};
@@ -1979,7 +2000,7 @@ if(e.key==='Escape'){lb.classList.remove('on');closeMenu();document.querySelecto
 })();
 </script>
 
-<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><p id="bbSpec"></p><div id="bbNotice"></div></div><div id="bbBody"></div></div></div>
+<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><div id="bbNotice"></div></div><h4 class="bbh">Packages</h4><div class="pks" id="bbPackages"></div><h4 class="bbh">Book your kut</h4><div id="bbBody"></div></div></div>
 <script>
 (function(){
 const LOGO='https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg';
@@ -2001,14 +2022,20 @@ function hoursBanner(id){
  const bo=convertToMinutes(base.open),bc=convertToMinutes(base.close),oo=convertToMinutes(normalizeTimeStr(ov.open)),oc=convertToMinutes(normalizeTimeStr(ov.close));
  const early=oo<bo,late=oc>bc;if(!early&&!late)return '';
  return '<div class="hrs-banner">'+(early&&late?'Extended today: '+f12(ov.open)+' – '+f12(ov.close):late?'Working late today until '+f12(ov.close):'Starting early today at '+f12(ov.open))+'</div>'}
-function render(){grid.innerHTML=list().map(b=>'<div class="barber-profile"><div class="certified-badge">'+SH+'Licensed Professional</div>'+hoursBanner(b.id)+'<img class="barber-avatar" src="'+esc(pic(b))+'" alt="'+esc(b.name)+'" loading="lazy"><h3>'+esc(b.name)+'</h3><p class="specialty">'+esc(b.specialty||'')+'</p>'+vacHtml(b.id)+'<button class="btn-book" onclick="openBarber(\''+esc(b.id)+'\')">Book now</button></div>').join('')}
+function render(){grid.innerHTML=list().map(b=>'<div class="barber-profile"><div class="certified-badge">'+SH+'Licensed Professional</div>'+hoursBanner(b.id)+'<img class="barber-avatar" src="'+esc(pic(b))+'" alt="'+esc(b.name)+'" loading="lazy"><h3>'+esc(b.name)+'</h3>'+vacHtml(b.id)+'<button class="btn-book" onclick="openBarber(\''+esc(b.id)+'\')">Book now</button></div>').join('')}
 window.renderBarbersGrid=render;render();
 db.collection('barbers').where('active','==',true).onSnapshot(q=>{hokBarbers=q.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.name);render()},()=>render());
 body.appendChild(document.getElementById('bkFormBox'));
+document.getElementById('bbPackages').innerHTML=window.PKHTML||'';
+window.bookPackage=function(p){
+ if(modal.style.display!=='flex'){showSection('bookingSection');return}
+ document.getElementById('ageGroup').value='package';onAgeGroupChange();
+ document.getElementById('packageService').value=p;onServiceChange();
+ document.getElementById('bkFormBox').scrollIntoView({behavior:'smooth',block:'start'})};
 window.openBarber=function(id){
  const b=list().find(x=>x.id===id);if(!b)return;
  window.selectedBarber={id:b.id,name:b.name};
- document.getElementById('bbAvatar').src=pic(b);document.getElementById('bbName').textContent=b.name;document.getElementById('bbSpec').textContent=b.specialty||'';
+ document.getElementById('bbAvatar').src=pic(b);document.getElementById('bbName').textContent=b.name;
  document.getElementById('bbNotice').innerHTML=vacHtml(b.id);
  document.getElementById('selectedTime').value='';
  modal.style.display='flex';modal.querySelector('.mbox').scrollTop=0;loadAvailableSlots()};
