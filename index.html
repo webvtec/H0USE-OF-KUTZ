@@ -284,6 +284,9 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 :root{--wvh:28px}.wvbar{font-size:12.5px!important;letter-spacing:.16em!important;padding:0 10px!important;line-height:1}#selectionSummary{bottom:40px!important}
 @media(max-width:600px){.wvbar{font-size:10.5px!important;letter-spacing:.05em!important}}
 :root{--wvh:22px}.wvbar{padding:0 10px!important}#selectionSummary{bottom:34px!important}
+.vac-badge{margin:12px 16px 0;padding:6px 12px;border:1px solid rgba(217,42,55,.45);background:rgba(217,42,55,.12);color:#ff9aa2;font:600 11px 'Barlow';letter-spacing:.1em;text-transform:uppercase}
+.bbhead .vac-badge{display:inline-block;margin:12px 0 0}
+.hrs-banner{width:100%;padding:7px 12px;background:rgba(217,42,55,.12);border-bottom:1px solid rgba(217,42,55,.25);color:#ff8d96;font:600 10px 'Barlow';letter-spacing:.14em;text-transform:uppercase;text-align:center}
 </style>
 </head>
 <body>
@@ -295,7 +298,7 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 <aside class="menu" id="menu" aria-label="Menu">
 <a onclick="go('bookingSection')" style="color:#fff;font-weight:600">Book now</a><a onclick="go('homeSection')">Home</a><a onclick="go('walkInPriceSection')">Price list</a><a onclick="go('gallerySection')">Gallery</a><a onclick="go('reviewsSection')">Reviews</a><a onclick="go('aboutUsSection')">Services</a>
 <h4>Hours</h4><p>Mon–Sat: 8:00 AM – 9:00 PM</p><p>Sunday: 11:00 AM – 6:30 PM</p>
-<a class="acct" onclick="showUserBookings(); closeMenu();">My bookings</a><a class="acct" onclick="showPaymentInfo(); closeMenu();">Payment info</a><a class="acct" id="authMenuBtn" onclick="handleAuthButtonClick(); closeMenu();">Log in</a><a class="acct admin-button" onclick="login(); closeMenu();">Admin</a>
+<a class="acct" onclick="showUserBookings(); closeMenu();">My bookings</a><a class="acct" onclick="showPaymentInfo(); closeMenu();">Payment info</a><a class="acct" id="authMenuBtn" onclick="handleAuthButtonClick(); closeMenu();">Log in</a><a class="acct admin-button" href="dashboard.html">Staff login</a>
 <div style="margin-top:20px"><div style="display:flex; justify-content:center; gap:28px; margin-top:18px;">
     <a href="https://www.instagram.com/barbalario?igsh=MWtka3oxa3V1eGZ5ZA==" style="display:inline-block;" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
@@ -465,7 +468,6 @@ background:linear-gradient(180deg,#f3f4f7 0%,#c9ccd5 46%,#9da2ae 52%,#c4c8d0 78%
 <div id="bookingModal" class="modal" style="display:none"><div class="mbox clear"><h3 id="bookingModalTitle">Booking confirmation</h3><p id="bookingModalContent"></p></div></div>
 <div id="myBookingsModal" class="modal" style="display:none"><div class="mbox" id="myBookingsBox"><button class="x" aria-label="Close" onclick="closeMyBookings()">✕</button><h3>My last 5 bookings</h3><div id="myBookingsContent"></div></div></div>
 <div id="paymentInfoModal" class="modal" style="display:none"><div class="mbox" id="paymentInfoBox"><button class="x" aria-label="Close" onclick="closePaymentInfo()">✕</button><h3>Payment info</h3><p><b>Bank:</b> Scotiabank</p><p><b>First name:</b> RICHARD</p><p><b>Last name:</b> CUNNINGHAM</p><p><b>Branch/Transit:</b> 95505</p><p><b>Account type:</b> CHEQUING</p><p><b>Account number:</b> 95505 000305129 <button class="copy" onclick="copyAcct(this)">Copy</button></p><p><b>Currency:</b> JMD</p></div></div>
-<div id="adminLoginModal" class="modal" style="display:none"><div class="mbox" style="text-align:center"><button class="x" aria-label="Close" onclick="closeAdminModal()">✕</button><h3>Admin access</h3><p>Sign in with the authorised Google account to continue.</p><button class="gbtn" onclick="adminGoogleSignIn()" style="margin-top:14px"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Sign in with Google</button><p id="adminLoginMsg" style="color:#ff7676;display:none"></p></div></div>
 
 <script>
 
@@ -491,46 +493,8 @@ const firebaseConfig = {
   });
 
   // ========== AUTH ==========
-  // AUTHORISED ADMIN UID — set this to the Google account UID of your admin
-  // Find it in Firebase Console → Authentication → Users after first login
+  // Owner account. The owner is always listed as a barber on the site.
   const ADMIN_UID = "EDRMIZM2LGhAHRxylh0rMMDEBFy2";
-
-  function login() {
-    document.getElementById('adminLoginModal').style.display = 'flex';
-  }
-
-  function closeAdminModal() {
-    document.getElementById('adminLoginModal').style.display = 'none';
-    document.getElementById('adminLoginMsg').style.display = 'none';
-  }
-
-  function adminGoogleSignIn() {
-    const msg = document.getElementById('adminLoginMsg');
-    msg.style.display = 'none';
-
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: 'select_account' });
-
-    firebase.auth().signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
-        if (user.uid !== ADMIN_UID) {
-          // UID doesn't match — force sign out, block all access
-          return firebase.auth().signOut().then(() => {
-            msg.textContent = "Access denied. This Google account is not authorised as admin.";
-            msg.style.display = "block";
-          });
-        }
-        // UID confirmed — only now allow dashboard access
-        closeAdminModal();
-        window.location.href = 'dashboard.html';
-      })
-      .catch((error) => {
-        if (error.code === 'auth/popup-closed-by-user') return;
-        msg.textContent = "Sign-in failed: " + error.message;
-        msg.style.display = "block";
-      });
-  }
 
   function logoutUser() {
     firebase.auth().signOut()
@@ -1367,105 +1331,155 @@ const firebaseConfig = {
     return `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
   }
 
+  // ========== LIVE BARBER SCHEDULE DATA ==========
+  const OWNER_BARBER_ID = "owner";
+  let hokBarbers = [], hokUnavailable = [], hokVacations = [], hokHourOverrides = [];
+
+  function refreshScheduleUI() {
+    if (typeof window.renderBarbersGrid === 'function') window.renderBarbersGrid();
+    const m = document.getElementById('barberBookingModal');
+    if (window.selectedBarber && document.getElementById('date').value && m && m.style.display === 'flex') loadAvailableSlots();
+  }
+  db.collection("unavailableDays").onSnapshot(snap => {
+    const all = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    hokUnavailable = all.filter(u => u.type !== "vacation");
+    hokVacations = all.filter(u => u.type === "vacation");
+    refreshScheduleUI();
+  }, () => {});
+  db.collection("hourOverrides").onSnapshot(snap => {
+    hokHourOverrides = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    refreshScheduleUI();
+  }, () => {});
+
+  function isOwnerBarberId(id) {
+    const b = hokBarbers.find(x => x.id === id);
+    return id === OWNER_BARBER_ID || (b && b.uid === ADMIN_UID);
+  }
+
+  // Everything that decides whether a barber can be booked at a given time.
+  async function getAvailability(barberId, date) {
+    const dayName = new Date(date + "T00:00:00").toLocaleDateString('en-US', { weekday: 'long' });
+    const vac = hokVacations.find(v => (v.barberId === barberId || v.barberId === 'global') && v.start <= date && v.end >= date);
+    if (vac) return { closed: true, reason: 'vacation', vac };
+
+    const ov = hokHourOverrides.find(o => o.barberId === barberId && o.date === date);
+    const base = businessHours[dayName];
+    if (!ov && !base) return { closed: true, reason: 'closed' };
+    const openMin = ov ? convertToMinutes(normalizeTimeStr(ov.open)) : convertToMinutes(base.open);
+    const closeMin = ov ? convertToMinutes(normalizeTimeStr(ov.close)) : convertToMinutes(base.close);
+
+    const blocked = [];
+    hokUnavailable.forEach(u => {
+      if (u.date !== date) return;
+      // unavailable days with no barberId are old shop-wide entries
+      if (u.barberId && u.barberId !== 'global' && u.barberId !== barberId) return;
+      if (u.allDay) { blocked.push([0, 24 * 60]); return; }
+      const a = convertToMinutes(normalizeTimeStr(u.startTime));
+      const b = convertToMinutes(normalizeTimeStr(u.endTime));
+      if (!isNaN(a) && !isNaN(b) && b > a) blocked.push([a, b]);
+    });
+
+    const snap = await db.collection('slots').where('barberId', '==', barberId).where('date', '==', date).get();
+    snap.forEach(d => {
+      const x = d.data();
+      const m = convertToMinutes(normalizeTimeStr(x.time));
+      blocked.push([m, m + (x.duration || 30)]);
+    });
+
+    // Bookings made before barbers existed have no barberId; they belong to the owner.
+    if (isOwnerBarberId(barberId)) {
+      try {
+        const legacy = await db.collection('bookings').where('date', '==', date).get();
+        legacy.forEach(d => {
+          const x = d.data();
+          if (x.barberId || x.status === 'Cancelled') return;
+          const m = convertToMinutes(normalizeTimeStr(x.time));
+          blocked.push([m, m + 30]);
+        });
+      } catch (e) { /* not readable: dashboard migration covers these */ }
+    }
+    return { closed: false, openMin, closeMin, blocked };
+  }
+
+  function awayMessage(name, vac) {
+    const d = new Date(vac.end + 'T12:00:00'); d.setDate(d.getDate() + 1);
+    return name + ' is away until ' + d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+
   // ========== SLOT LOADING ==========
+  let loadSeq = 0;
   async function loadAvailableSlots() {
+    const seq = ++loadSeq;
     const date = document.getElementById('date').value;
     const haircut = document.getElementById('haircutType')?.value || "NONE";
-
     const timeSelect = document.getElementById('selectedTime');
+    const prev = timeSelect.value;
+    const msg = t => { timeSelect.innerHTML = "<option value=''>" + t + "</option>"; };
+
+    if (!date || haircut === "NONE") { msg("COMPLETE FORM TO SEE AVAILABLE SLOTS"); return; }
+    const barber = window.selectedBarber;
+    if (!barber) { msg("Pick a barber first"); return; }
+
     timeSelect.innerHTML = "<option value=''>-- Select a time --</option>";
-
-    const hasService = haircut !== "NONE";
-    if (!date || !hasService) {
-      timeSelect.innerHTML = "<option value=''>COMPLETE FORM TO SEE AVAILABLE SLOTS</option>";
-      return;
-    }
-
-    const duration = getSelectedServiceDuration();
-    const dayName = new Date(date + "T00:00:00").toLocaleDateString('en-US', { weekday: 'long' });
-    const business = businessHours[dayName];
-
-    if (walkInDays.includes(dayName)) {
-      timeSelect.innerHTML = "<option value=''>Walk-ins only on " + dayName + "s — no online booking</option>";
-      return;
-    }
-
-    if (!business) {
-      timeSelect.innerHTML = "<option value=''>Closed this day</option>";
-      return;
-    }
-
-    const openMinutes = convertToMinutes(business.open);
-    const closeMinutes = convertToMinutes(business.close);
-
     try {
-      const SLOT_INTERVAL = 30; // fixed 30-minute slot intervals
-      const snapshot = await db.collection("bookings").where("date", "==", date).get();
-      const bookings = snapshot.docs.filter(doc => !window.selectedBarber || !doc.data().barber || doc.data().barber === window.selectedBarber.name).map(doc => {
-        const bookedTime = convertToMinutes(normalizeTimeStr(doc.data().time));
-        return { start: bookedTime, end: bookedTime + SLOT_INTERVAL };
-      });
-
-      const unavailableSnapshot = await db.collection("unavailableDays").where("date", "==", date).get();
-      let unavailableRanges = [];
-      unavailableSnapshot.forEach(doc => {
-        const data = doc.data();
-        if (data.allDay) {
-          unavailableRanges.push({ start: openMinutes, end: closeMinutes });
-        } else {
-          const start = convertToMinutes(normalizeTimeStr(data.startTime));
-          const end = convertToMinutes(normalizeTimeStr(data.endTime));
-          if (!isNaN(start) && !isNaN(end) && end > start) unavailableRanges.push({ start, end });
-        }
-      });
-
+      const av = await getAvailability(barber.id, date);
+      if (seq !== loadSeq) return;
+      if (av.closed) {
+        msg(av.reason === 'vacation' ? awayMessage(barber.name, av.vac) : 'Closed this day');
+        return;
+      }
       const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const selectedDate = new Date(date + "T00:00:00");
-      const isToday = selectedDate.getTime() === today.getTime();
+      const isToday = date === now.toLocaleDateString('en-CA');
       const currentMinutes = isToday ? now.getHours() * 60 + now.getMinutes() : 0;
-
-      function formatMins(m) {
-        const h = Math.floor(m / 60);
-        const min = m % 60;
-        const ampm = h >= 12 ? "PM" : "AM";
-        const displayH = ((h + 11) % 12 + 1);
-        return `${displayH}:${min.toString().padStart(2, "0")} ${ampm}`;
+      const fmt = m => {
+        const h = Math.floor(m / 60), min = m % 60;
+        return `${((h + 11) % 12 + 1)}:${String(min).padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}`;
+      };
+      const STEP = 30;
+      for (let t = av.openMin; t + STEP <= av.closeMin + 1; t += STEP) {
+        if (isToday && t <= currentMinutes) continue;
+        if (av.blocked.some(([a, b]) => !(t + STEP <= a || t >= b))) continue;
+        const o = document.createElement("option");
+        o.value = fmt(t);
+        o.textContent = `${fmt(t)} - ${fmt(t + STEP)}`;
+        timeSelect.appendChild(o);
       }
-
-      const SLOT_DISPLAY_DURATION = 30; // always show 30-min window on label
-      let t = openMinutes;
-      while (t + SLOT_INTERVAL <= closeMinutes + 1) {
-        const slotEnd = t + SLOT_DISPLAY_DURATION;
-        const bookingEnd = t + duration; // used only for conflict checking
-
-        if (isToday && t <= currentMinutes) { t += SLOT_INTERVAL; continue; }
-
-        const blockingRange = unavailableRanges.find(r => !(bookingEnd <= r.start || t >= r.end));
-        if (blockingRange) { t = blockingRange.end; continue; }
-
-        const bookedConflict = bookings.some(b => !(bookingEnd <= b.start || t >= b.end));
-        if (bookedConflict) { t += SLOT_INTERVAL; continue; }
-
-        const label = `${formatMins(t)} - ${formatMins(slotEnd)}`;
-        let option = document.createElement("option");
-        option.value = formatMins(t);
-        option.textContent = label;
-        timeSelect.appendChild(option);
-
-        t += SLOT_INTERVAL;
-      }
-
       if (timeSelect.options.length === 1) {
-        let option = document.createElement("option");
-        option.value = "";
-        option.textContent = "No available slots";
-        timeSelect.appendChild(option);
+        msg("No available slots");
+        return;
       }
+      if (prev && [...timeSelect.options].some(o => o.value === prev)) timeSelect.value = prev;
     } catch (err) {
       console.error("Error loading slots:", err);
-      timeSelect.innerHTML = "<option value=''>Error loading slots</option>";
+      if (seq === loadSeq) msg("Error loading slots");
     }
+  }
+
+  // Reserves the barber's slot and creates the booking in ONE transaction,
+  // so two people can never take the same barber at the same time.
+  async function createBooking(o) {
+    const b = o.barber;
+    const av = await getAvailability(b.id, o.date);
+    const t = convertToMinutes(o.time);
+    if (av.closed || t < av.openMin || t + 30 > av.closeMin + 1) throw new Error('UNAVAILABLE');
+    if (av.blocked.some(([a, z]) => !(t + 30 <= a || t >= z))) throw new Error('SLOT_TAKEN');
+
+    const slotRef = db.collection('slots').doc(b.id + '_' + o.date + '_' + o.time.replace(/\s/g, ''));
+    const bookingRef = db.collection('bookings').doc();
+    await db.runTransaction(async tx => {
+      const snap = await tx.get(slotRef);
+      if (snap.exists) throw new Error('SLOT_TAKEN');
+      tx.set(slotRef, { barberId: b.id, date: o.date, time: o.time, duration: 30, bookingId: bookingRef.id, uid: o.user.uid, createdAt: new Date().toISOString() });
+      tx.set(bookingRef, {
+        uid: o.user.uid, userEmail: o.user.email || "", bookingNumber: o.bookingNumber,
+        name: o.name, phone: o.phone, date: o.date, time: o.time,
+        service: o.services, duration: o.duration, total: o.total,
+        deposit: "No", status: "Active", cancelledBy: null,
+        barberId: b.id, barber: b.name,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    });
+    return bookingRef;
   }
 
   // ========== BOOKING ==========
@@ -1473,67 +1487,6 @@ const firebaseConfig = {
     const initials = name.trim().substring(0, 2).toUpperCase();
     const digits = Math.floor(1000 + Math.random() * 9000);
     return initials + digits;
-  }
-
-  function validateTimeSlot(date, selectedTime) {
-    const dayName = new Date(date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long' });
-    const business = businessHours[dayName];
-
-    if (walkInDays.includes(dayName)) {
-      alert(`We are closed on ${dayName}s. Please select another day.`);
-      return Promise.resolve(false);
-    }
-
-    if (!business) {
-      alert(`We are closed on ${dayName}s. Please select another day.`);
-      return Promise.resolve(false);
-    }
-
-    const selectedMinutes = convertToMinutes(selectedTime);
-    const openMinutes = convertToMinutes(business.open);
-    const closeMinutes = convertToMinutes(business.close);
-
-    if (selectedMinutes < openMinutes || selectedMinutes >= closeMinutes) {
-      alert(`Please choose a time within business hours (${business.open} – ${business.close})`);
-      return Promise.resolve(false);
-    }
-
-    return db.collection('unavailableDays').where('date', '==', date).get()
-      .then((unavailableSnapshot) => {
-        let isUnavailable = false;
-        unavailableSnapshot.forEach((doc) => {
-          const data = doc.data();
-          if (data.allDay) {
-            isUnavailable = true;
-          } else {
-            const startMinutes = convertToMinutes(normalizeTimeStr(data.startTime));
-            const endMinutes = convertToMinutes(normalizeTimeStr(data.endTime));
-            if (selectedMinutes >= startMinutes && selectedMinutes <= endMinutes) isUnavailable = true;
-          }
-        });
-
-        if (isUnavailable) return false;
-
-        return db.collection('bookings').where('date', '==', date).get()
-          .then((querySnapshot) => {
-            const SLOT_INTERVAL = 30;
-            const newServiceEndTime = selectedMinutes + SLOT_INTERVAL;
-
-            for (let doc of querySnapshot.docs) {
-              if (window.selectedBarber && doc.data().barber && doc.data().barber !== window.selectedBarber.name) continue;
-              let bookedTime = doc.data().time.trim().replace(/\s+/g, ' ');
-              let bookedMinutes = convertToMinutes(bookedTime);
-              let bookedEndTime = bookedMinutes + SLOT_INTERVAL;
-
-              if (selectedMinutes < bookedEndTime && bookedMinutes < newServiceEndTime) return false;
-            }
-            return true;
-          });
-      })
-      .catch(error => {
-        console.error("Error validating time slot:", error);
-        return false;
-      });
   }
 
   function submitBooking(event) {
@@ -1573,28 +1526,9 @@ const firebaseConfig = {
     const duration = getSelectedServiceDuration();
     const total = getSelectedTotal();
 
-    validateTimeSlot(date, time)
-      .then((isAvailable) => {
-        if (!isAvailable) {
-          alert('This time is not available. Please choose another time.');
-          return Promise.reject('Time slot not available');
-        }
+    if (!window.selectedBarber) { alert('Please choose a barber first.'); return; }
 
-        return db.collection('bookings').add({
-          uid: user.uid,
-          bookingNumber,
-          name,
-          phone,
-          date: date,
-          time,
-          service: services,
-          duration,
-          total,
-          deposit: "No",
-          barber: (window.selectedBarber && window.selectedBarber.name) || "",
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-      })
+    createBooking({ user, bookingNumber, name, phone, date, time, services, duration, total, barber: window.selectedBarber })
       .then((docRef) => {
         if (!docRef) return;
 
@@ -1647,7 +1581,8 @@ const firebaseConfig = {
         document.getElementById('bookingModal').style.display = 'flex';
       })
       .catch((err) => {
-        if (err === 'Time slot not available') return;
+        if (err && err.message === 'SLOT_TAKEN') { alert('Sorry, that time was just booked. Please pick another.'); loadAvailableSlots(); return; }
+        if (err && err.message === 'UNAVAILABLE') { alert('That barber is not available then. Please pick another time.'); loadAvailableSlots(); return; }
         if (err.code === 'permission-denied') alert("Permission denied. Please contact support.");
         else if (err.code === 'unavailable') alert("Service temporarily unavailable. Please try again.");
         else if (err.code === 'network-request-failed') alert("Network error. Check your connection.");
@@ -1788,7 +1723,6 @@ const firebaseConfig = {
     }
 
     document.getElementById('bookingModal').style.display = 'none';
-    document.getElementById('adminLoginModal').style.display = 'none';
     document.getElementById('myBookingsContent').innerHTML = '<p style="text-align:center; color:#9a9ca8;">Loading your bookings...</p>';
     document.getElementById('myBookingsModal').style.display = 'flex';
 
@@ -1833,6 +1767,7 @@ const firebaseConfig = {
               <h3 style="margin-top:0; color:#eceef3; font-size:17px; font-family:'Bebas Neue',cursive; letter-spacing:1px;">Booking #: ${b.bookingNumber || "N/A"}</h3>
               <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>👤 Name:</strong> ${b.name || "N/A"}</p>
               <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>📞 Phone:</strong> ${b.phone || "N/A"}</p>
+              ${b.barber ? `<p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>💈 Barber:</strong> ${esc(b.barber)}</p>` : ''}
               <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>📅 Date:</strong> ${bookingDate}</p>
               <p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>⏰ Time:</strong> ${b.time || "N/A"}</p>
               ${cleanService ? `<p style="margin:4px 0; font-size:14px; color:#eceef3;"><strong>✂ Services:</strong> ${cleanService}</p>` : ''}
@@ -1890,6 +1825,7 @@ const firebaseConfig = {
         if (doc.data().uid !== user.uid) { Swal.fire('Denied', 'You can only cancel your own bookings.', 'error'); return; }
 
         db.collection('bookings').doc(bookingId).update({ status: 'Cancelled', cancelledBy: 'client' })
+          .then(() => { const bd = doc.data(); if (bd.barberId && bd.date && bd.time) { return db.collection('slots').doc(bd.barberId + '_' + bd.date + '_' + String(bd.time).replace(/\s/g, '')).delete().catch(() => {}); } })
           .then(() => {
             Swal.fire({
               title: 'Booking Cancelled',
@@ -2009,7 +1945,7 @@ function copyAcct(b){const t=document.getElementById('paymentInfoBox').innerText
 const _ss=showSection;window.showSection=function(id){_ss(id);document.body.classList.toggle('nobar',id==='bookingSection')};
 /* time chips */
 const sel=document.getElementById('selectedTime'),tc=document.getElementById('timeChips');
-function chips(){const o=[...sel.options].filter(x=>x.value);if(!o.length){const m=(sel.options[sel.options.length-1]||{}).textContent||'';tc.innerHTML='<p class="hint">'+(/COMPLETE|Pick date/i.test(m)?'Choose a service and a date to see open times.':/^--/.test(m)?'Loading times…':esc(m))+'</p>';return}tc.innerHTML=o.map(x=>'<button type="button" class="chip" data-v="'+esc(x.value)+'">'+esc(x.value)+'</button>').join('')}
+function chips(){const o=[...sel.options].filter(x=>x.value);if(!o.length){const m=(sel.options[sel.options.length-1]||{}).textContent||'';tc.innerHTML='<p class="hint">'+(/COMPLETE|Pick date/i.test(m)?'Choose a service and a date to see open times.':/^--/.test(m)?'Loading times…':esc(m))+'</p>';return}tc.innerHTML=o.map(x=>'<button type="button" class="chip'+(x.value===sel.value?' on':'')+'" data-v="'+esc(x.value)+'">'+esc(x.value)+'</button>').join('')}
 new MutationObserver(chips).observe(sel,{childList:true});chips();
 tc.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;sel.value=b.dataset.v;tc.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b))});
 /* date chips */
@@ -2043,21 +1979,39 @@ if(e.key==='Escape'){lb.classList.remove('on');closeMenu();document.querySelecto
 })();
 </script>
 
-<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><p id="bbSpec"></p></div><div id="bbBody"></div></div></div>
+<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><p id="bbSpec"></p><div id="bbNotice"></div></div><div id="bbBody"></div></div></div>
 <script>
-/* ===== EDIT YOUR BARBERS HERE (or add active docs to the Firestore "barbers" collection: name, specialty, photoURL) ===== */
-const HOK_BARBERS=[
- {name:'Head Barber',specialty:'Fades · Line Ups · Beard Work',photo:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=70'},
- {name:'Barber',specialty:'Scissor Kuts · Kids Kutz · Designs',photo:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=70'}
-];
 (function(){
-let B=HOK_BARBERS.slice();const grid=document.getElementById('barbersGrid'),modal=document.getElementById('barberBookingModal'),body=document.getElementById('bbBody');
+const LOGO='https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg';
+// Shown only until the owner's barber profile exists in Firestore, so the site is never empty.
+const OWNER_FALLBACK={id:OWNER_BARBER_ID,name:'House of Kutz',specialty:'Fades · Line Ups · Beard Work',photoURL:LOGO,uid:ADMIN_UID};
+const grid=document.getElementById('barbersGrid'),modal=document.getElementById('barberBookingModal'),body=document.getElementById('bbBody');
 const SH='<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#0b0b0d" stroke-width="2"/></svg>';
-function render(){grid.innerHTML=B.map((b,i)=>'<div class="barber-profile"><div class="certified-badge">'+SH+'Licensed Professional</div><img class="barber-avatar" src="'+esc(b.photo||HOK_BARBERS[0].photo)+'" alt="'+esc(b.name)+'" loading="lazy"><h3>'+esc(b.name)+'</h3><p class="specialty">'+esc(b.specialty||'')+'</p><button class="btn-book" onclick="openBarber('+i+')">Book now</button></div>').join('')}
-render();
-try{db.collection('barbers').where('active','==',true).get().then(q=>{const d=q.docs.map(x=>x.data()).filter(x=>x.name);if(d.length){B=d.map(x=>({name:x.name,specialty:x.specialty||'',photo:x.photoURL||x.photo||''}));render()}}).catch(()=>{})}catch(e){}
+const isOwner=b=>b.id===OWNER_BARBER_ID||b.uid===ADMIN_UID;
+const list=()=>{const l=hokBarbers.slice();if(!l.some(isOwner))l.unshift(OWNER_FALLBACK);return l.sort((a,b)=>(isOwner(a)?0:1)-(isOwner(b)?0:1))};
+const pic=b=>b.photoURL||b.photo||LOGO;
+const today=()=>new Date().toLocaleDateString('en-CA');
+const vacNow=id=>{const t=today();return hokVacations.find(v=>(v.barberId===id||v.barberId==='global')&&v.start<=t&&v.end>=t)};
+const backDate=v=>{const d=new Date(v.end+'T12:00:00');d.setDate(d.getDate()+1);return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})};
+function vacHtml(id){const v=vacNow(id);if(!v||!v.showReturnDate)return '';return '<div class="vac-badge">On vacation, back '+backDate(v)+(v.message?' · '+esc(v.message):'')+'</div>'}
+function f12(t){const p=t.split(':').map(Number),h=p[0],m=p[1]||0;return ((h+11)%12+1)+(m?':'+String(m).padStart(2,'0'):'')+' '+(h>=12?'PM':'AM')}
+function hoursBanner(id){
+ const t=today(),ov=hokHourOverrides.find(o=>o.date===t&&o.barberId===id);if(!ov)return '';
+ const base=businessHours[new Date(t+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'})];if(!base)return '';
+ const bo=convertToMinutes(base.open),bc=convertToMinutes(base.close),oo=convertToMinutes(normalizeTimeStr(ov.open)),oc=convertToMinutes(normalizeTimeStr(ov.close));
+ const early=oo<bo,late=oc>bc;if(!early&&!late)return '';
+ return '<div class="hrs-banner">'+(early&&late?'Extended today: '+f12(ov.open)+' – '+f12(ov.close):late?'Working late today until '+f12(ov.close):'Starting early today at '+f12(ov.open))+'</div>'}
+function render(){grid.innerHTML=list().map(b=>'<div class="barber-profile"><div class="certified-badge">'+SH+'Licensed Professional</div>'+hoursBanner(b.id)+'<img class="barber-avatar" src="'+esc(pic(b))+'" alt="'+esc(b.name)+'" loading="lazy"><h3>'+esc(b.name)+'</h3><p class="specialty">'+esc(b.specialty||'')+'</p>'+vacHtml(b.id)+'<button class="btn-book" onclick="openBarber(\''+esc(b.id)+'\')">Book now</button></div>').join('')}
+window.renderBarbersGrid=render;render();
+db.collection('barbers').where('active','==',true).onSnapshot(q=>{hokBarbers=q.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.name);render()},()=>render());
 body.appendChild(document.getElementById('bkFormBox'));
-window.openBarber=function(i){const b=B[i];window.selectedBarber={name:b.name};document.getElementById('bbAvatar').src=b.photo||HOK_BARBERS[0].photo;document.getElementById('bbName').textContent=b.name;document.getElementById('bbSpec').textContent=b.specialty||'';modal.style.display='flex';modal.querySelector('.mbox').scrollTop=0;loadAvailableSlots()};
+window.openBarber=function(id){
+ const b=list().find(x=>x.id===id);if(!b)return;
+ window.selectedBarber={id:b.id,name:b.name};
+ document.getElementById('bbAvatar').src=pic(b);document.getElementById('bbName').textContent=b.name;document.getElementById('bbSpec').textContent=b.specialty||'';
+ document.getElementById('bbNotice').innerHTML=vacHtml(b.id);
+ document.getElementById('selectedTime').value='';
+ modal.style.display='flex';modal.querySelector('.mbox').scrollTop=0;loadAvailableSlots()};
 window.closeBarber=function(){modal.style.display='none'};
 const _cb=closeBookingModal;window.closeBookingModal=function(){_cb();closeBarber()};
 /* every "book" button now leads to barber picking */
