@@ -240,6 +240,21 @@ input,select,textarea{border-radius:0}input:focus,select:focus,textarea:focus{bo
 footer{padding-bottom:34px!important}
 @media(prefers-reduced-motion:reduce){.tick>div{animation:none}}
 @media(max-width:900px){.sec{padding-top:72px}#sec-packages{margin-top:40px;padding:60px 0 70px}.eyebrow{letter-spacing:.3em;font-size:10px}.sh{margin-bottom:30px}.pk-pr{font-size:54px}.tick>div{font-size:18px}.band{margin-top:72px;padding:64px 22px}}
+
+/* header see-through, single-line buttons */
+.top{background:rgba(13,13,15,.34);backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3)}.top.sc{background:rgba(13,13,15,.6)}
+.top *,.cine .cta .btn{white-space:nowrap}.cine .cta{flex-wrap:nowrap}
+@media(max-width:900px){.brand span{font-size:16px;letter-spacing:.16em}.cine .cta{gap:10px}.cine .cta .btn{padding:14px 10px!important;letter-spacing:.12em!important;font-size:11px!important;min-width:0}}
+/* barbers */
+.barbers{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
+.barber-profile{width:260px;display:flex;flex-direction:column;align-items:center;text-align:center;background:linear-gradient(180deg,#1a1a1d,#0f0f11);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .4s,border-color .4s,box-shadow .4s}
+.barber-profile:hover{transform:translateY(-8px);border-color:rgba(217,42,55,.6);box-shadow:0 22px 54px rgba(0,0,0,.6),0 0 34px rgba(217,42,55,.15)}
+.certified-badge{width:100%;display:flex;gap:8px;justify-content:center;align-items:center;padding:11px 12px;background:#0b0b0d;border-bottom:1px solid var(--line);font:600 10px 'Barlow';letter-spacing:.22em;text-transform:uppercase;color:#cfd2da}.certified-badge svg{width:15px;height:15px;fill:var(--accent)}
+.barber-avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-top:30px;border:3px solid rgba(217,42,55,.65);box-shadow:0 0 26px rgba(217,42,55,.4),0 0 70px rgba(217,42,55,.12);transition:.4s;background:#111}.barber-profile:hover .barber-avatar{box-shadow:0 0 38px rgba(217,42,55,.6)}
+.barber-profile h3{font-size:22px;letter-spacing:.1em;text-transform:uppercase;margin-top:20px}.barber-profile .specialty{color:var(--dim);font-size:13px;margin:6px 0 0;padding:0 20px 24px;flex:1}
+.btn-book{width:100%;margin-top:auto;padding:16px;border:0;cursor:pointer;color:#fff;font:700 12px 'Barlow';letter-spacing:.3em;text-transform:uppercase;background:linear-gradient(180deg,#d01e2b,#a00d18);transition:background .3s,box-shadow .3s}.btn-book:hover{background:linear-gradient(180deg,#ee3d4a,#b8121f);box-shadow:0 -6px 26px rgba(217,42,55,.45)}
+#barberBookingModal{z-index:9990}.bbox{width:min(94%,680px);max-height:92vh;padding:30px 28px;border-radius:14px}.bbox .barber-avatar{width:104px;height:104px;margin:0 auto}.bbox h3{margin-top:16px;letter-spacing:.1em;text-transform:uppercase}.bbhead{text-align:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line)}.bbhead p{margin:4px 0 0;color:var(--dim);font-size:13.5px}
+#bbBody>.box{border:0;background:none;padding:0}
 </style>
 </head>
 <body>
@@ -281,6 +296,15 @@ footer{padding-bottom:34px!important}
 <div class="cmedal"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776902739/IMG-20260422-WA0049_cju7wv.jpg" alt="House of Kutz Barbershop logo"></div></div>
 <div class="dock"><div class="sw"><div><div class="k">Hours</div><p>Mon–Sat 8:00 AM – 9:00 PM<br>Sunday 11:00 AM – 6:30 PM</p></div><div><div class="k">Location</div><p>Upper West Henderson Blvd, St. Catherine<br><a href="https://maps.app.goo.gl/YuDnPRUrxBcQqV4c9" target="_blank" rel="noopener">Open in Maps</a></p></div><div><div class="k">Appointments</div><p>Appointments and walk-ins, every day.<br>10-minute grace period.</p></div></div></div></div>
 
+<div class="sec" id="sec-booking"><div class="wrap"><div class="bk"><div class="sh"><h2>Booking made easy</h2></div><div class="tl">
+<div class="s4"><div class="n">1</div><div><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div></div>
+<div class="s4"><div class="n">2</div><div><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div></div>
+<div class="s4"><div class="n">3</div><div><h3>Sign in and confirm</h3><p>Sign in with Google and get your booking number straight away.</p></div></div>
+<div class="s4"><div class="n">4</div><div><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div>
+<div class="cta c"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></div></div>
+
+<div class="sec" id="sec-barbers"><div class="wrap"><div class="sh"><h2>Barbers</h2></div><div class="barbers" id="barbersGrid"></div></div></div>
+
 <div class="tick" aria-hidden="true"><div><span>Fades</span><i>◆</i><span>Skin Fades</span><i>◆</i><span>Beard Work</span><i>◆</i><span>Line Ups</span><i>◆</i><span>Hot Towel Shaves</span><i>◆</i><span>Kids Kutz</span><i>◆</i><span>Designs</span><i>◆</i><span>Ladies Kuts</span><i>◆</i><span>Fades</span><i>◆</i><span>Skin Fades</span><i>◆</i><span>Beard Work</span><i>◆</i><span>Line Ups</span><i>◆</i><span>Hot Towel Shaves</span><i>◆</i><span>Kids Kutz</span><i>◆</i><span>Designs</span><i>◆</i><span>Ladies Kuts</span><i>◆</i></div></div>
 
 <div class="sec" id="sec-services"><div class="wrap"><div class="sh"><h2>Services and pricing</h2><a onclick="showSection('walkInPriceSection')">Full price list</a></div>
@@ -293,13 +317,6 @@ footer{padding-bottom:34px!important}
 <div class="sec" id="sec-about"><div class="wrap"><div class="split"><div><div class="rule"></div><h2 class="big">A Chair for Everyone</h2><p class="lead">House of Kutz is a barbershop built on sharp lines and steady hands. Whether it is a quick line up or a full trim and shave, every client gets the same attention to detail.</p><div class="cta"><button class="btn btn-chrome" onclick="showSection('aboutUsSection')">Our services</button></div></div>
 <div class="frame"><img src="https://res.cloudinary.com/dqqr9udcs/image/upload/v1776958138/WhatsApp_Image_2026-04-23_at_5.36.06_AM_eeki34.jpg" alt="House of Kutz barbershop" loading="lazy"></div></div>
 </div></div>
-
-<div class="sec" id="sec-booking"><div class="wrap"><div class="bk"><div class="sh"><h2>Booking made easy</h2></div><div class="tl">
-<div class="s4"><div class="n">1</div><div><h3>Choose your service</h3><p>Pick a package or an individual service for adults, teens or kids.</p></div></div>
-<div class="s4"><div class="n">2</div><div><h3>Pick a date and time</h3><p>Open slots show up live, in 30-minute windows.</p></div></div>
-<div class="s4"><div class="n">3</div><div><h3>Sign in and confirm</h3><p>Sign in with Google and get your booking number straight away.</p></div></div>
-<div class="s4"><div class="n">4</div><div><h3>Arrive and sit down</h3><p>Show up within 10 minutes of your slot and we take it from there.</p></div></div></div>
-<div class="cta c"><button class="btn btn-red" onclick="showSection('bookingSection')">Book your kut</button></div></div></div></div>
 
 <div class="sec"><div class="wrap"><div class="sh"><h2>Fresh from the chair</h2><a onclick="showSection('gallerySection')">Full gallery</a></div><div class="mosaic" id="homeGallery"></div></div></div>
 <div class="sec"><div class="wrap"><div class="sh"><h2>What clients say</h2><a onclick="showSection('reviewsSection')">Read and review</a></div><div class="rv" id="homeReviews"></div></div></div>
@@ -320,7 +337,7 @@ footer{padding-bottom:34px!important}
 <section class="content-section" id="gallerySection"><div class="wrap"><h1 class="page-h">Gallery</h1><p class="lead">Recent work from the chair.</p><div id="galleryDisplay"></div></div></section>
 <section class="content-section" id="bookingSection"><div class="wrap"><h1 class="page-h">Book your kutz</h1><p class="lead">Choose a service, a date and a time. You will sign in with Google to confirm.</p>
 <div class="book"><aside class="box"><div class="k">Appointments and walk-ins</div><p><b>Every day</b></p><div class="k">Hours</div><p><b>Mon–Sat</b> 8:00 AM – 9:00 PM<br><b>Sunday</b> 11:00 AM – 6:30 PM</p><div class="k">Grace period</div><p>Arrive within 10 minutes of your time or the slot is released.</p></aside>
-<div class="box"><form onsubmit="submitBooking(event)">
+<div class="box" id="bkFormBox"><form onsubmit="submitBooking(event)">
     <label for="name">Name</label>
     <input id="name" required type="text" placeholder="Your full name"/>
 
@@ -1366,7 +1383,7 @@ const firebaseConfig = {
     try {
       const SLOT_INTERVAL = 30; // fixed 30-minute slot intervals
       const snapshot = await db.collection("bookings").where("date", "==", date).get();
-      const bookings = snapshot.docs.map(doc => {
+      const bookings = snapshot.docs.filter(doc => !window.selectedBarber || !doc.data().barber || doc.data().barber === window.selectedBarber.name).map(doc => {
         const bookedTime = convertToMinutes(normalizeTimeStr(doc.data().time));
         return { start: bookedTime, end: bookedTime + SLOT_INTERVAL };
       });
@@ -1485,6 +1502,7 @@ const firebaseConfig = {
             const newServiceEndTime = selectedMinutes + SLOT_INTERVAL;
 
             for (let doc of querySnapshot.docs) {
+              if (window.selectedBarber && doc.data().barber && doc.data().barber !== window.selectedBarber.name) continue;
               let bookedTime = doc.data().time.trim().replace(/\s+/g, ' ');
               let bookedMinutes = convertToMinutes(bookedTime);
               let bookedEndTime = bookedMinutes + SLOT_INTERVAL;
@@ -1555,6 +1573,7 @@ const firebaseConfig = {
           duration,
           total,
           deposit: "No",
+          barber: (window.selectedBarber && window.selectedBarber.name) || "",
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
       })
@@ -1567,7 +1586,7 @@ const firebaseConfig = {
         });
 
         const totalStr = total > 0 ? `\n💰 Total: $${total.toLocaleString()}` : '';
-        const message = `✂️ NEW BOOKING\n\n🔢 Booking #: ${bookingNumber}\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Date: ${formattedDate}\n⏰ Time: ${time}\n💈 Service: ${services}${totalStr}`;
+        const message = `✂️ NEW BOOKING\n\n🔢 Booking #: ${bookingNumber}\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Date: ${formattedDate}\n⏰ Time: ${time}\n💈 Service: ${services}${totalStr}${window.selectedBarber ? '\n✂️ Barber: ' + window.selectedBarber.name : ''}`;
 
         const telegramBotToken = "8693721031:AAHMRcrqCQ05jWoqY70hcZD_WhiHFpg-oIc";
         const telegramChatId = "-1003986761913";
@@ -1939,7 +1958,7 @@ const d=new Date().getDay();document.querySelectorAll('.hrow[data-d]').forEach(r
 (function(){const ad=[['Hot Towel','$500'],['Beard Oil','$500'],['Eyebrow','$500'],['Eyebrow Tinting','$1,200'],['Spray Tint Hair Line','$500'],['Designs','$800'],['Color Hair Only','$800'],['Color Beard Only','$800'],['Color Hair and Beard','$1,500']];
 ['Adult','Teen','Kids'].forEach(g=>{const it=(g==='Kids'?[['Designs','$800']]:ad).map(a=>({name:a[0],price:a[1],isAddon:true}));pricingCardDefs[g+' Scissors Kut']={label:g+' — Scissors Kut ($2,500)',basePrice:2500,html:()=>buildPricingCard(g.toUpperCase()+' — SCISSORS KUT &nbsp;|&nbsp; $2,500 &nbsp;|&nbsp; 30 mins',[{title:'Optional Add-Ons (tick what you want):',items:it}])}})})();
 (function(){const box=document.getElementById('slides');if(!box)return;
-const ids=['photo-1503951914875-452162b0f3f1','photo-1585747860715-2ba37e788b70','photo-1621605815971-fbc98d665033','photo-1599351431202-1e0f0137899a','photo-1622286342621-4bd786c2447c','photo-1605497788044-5a32c7078486','photo-1532710093739-9470acff878f'];
+const ids=['photo-1621607512022-6aecc4fed814','photo-1621607512214-68297480165e','photo-1622288432450-277d0fef5ed6','photo-1512690459411-b9245aed614b','photo-1517832606299-7ae9b720a186','photo-1519699047748-de8e457a634e','photo-1580618672591-eb180b1a973f','photo-1567894340315-735d7c361db0'];
 const els=[];let cur=-1,done=0;
 function show(n){const o=els[cur],e=els[n];if(o&&o!==e){o.classList.remove('on');o.classList.add('prev');setTimeout(()=>o.classList.remove('prev'),2000)}e.classList.remove('prev');e.classList.add('on');cur=n}
 function add(u){const d=document.createElement('div');d.className='sl';d.style.backgroundImage='url('+u+')';box.appendChild(d);els.push(d);if(els.length===1)show(0)}
@@ -2004,6 +2023,28 @@ if(e.target.classList&&e.target.classList.contains('modal'))e.target.style.displ
 /* keyboard */
 document.addEventListener('keydown',e=>{if(lb.classList.contains('on')){if(e.key==='ArrowLeft')show(ix-1);if(e.key==='ArrowRight')show(ix+1)}
 if(e.key==='Escape'){lb.classList.remove('on');closeMenu();document.querySelectorAll('.modal').forEach(x=>x.style.display='none')}});
+})();
+</script>
+
+<div id="barberBookingModal" class="modal" style="display:none"><div class="mbox bbox"><button class="x" aria-label="Close" onclick="closeBarber()">✕</button><div class="bbhead"><img id="bbAvatar" class="barber-avatar" alt=""><h3 id="bbName"></h3><p id="bbSpec"></p></div><div id="bbBody"></div></div></div>
+<script>
+/* ===== EDIT YOUR BARBERS HERE (or add active docs to the Firestore "barbers" collection: name, specialty, photoURL) ===== */
+const HOK_BARBERS=[
+ {name:'Head Barber',specialty:'Fades · Line Ups · Beard Work',photo:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=70'},
+ {name:'Barber',specialty:'Scissor Kuts · Kids Kutz · Designs',photo:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=70'}
+];
+(function(){
+let B=HOK_BARBERS.slice();const grid=document.getElementById('barbersGrid'),modal=document.getElementById('barberBookingModal'),body=document.getElementById('bbBody');
+const SH='<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#0b0b0d" stroke-width="2"/></svg>';
+function render(){grid.innerHTML=B.map((b,i)=>'<div class="barber-profile"><div class="certified-badge">'+SH+'Licensed Professional</div><img class="barber-avatar" src="'+esc(b.photo||HOK_BARBERS[0].photo)+'" alt="'+esc(b.name)+'" loading="lazy"><h3>'+esc(b.name)+'</h3><p class="specialty">'+esc(b.specialty||'')+'</p><button class="btn-book" onclick="openBarber('+i+')">Book now</button></div>').join('')}
+render();
+try{db.collection('barbers').where('active','==',true).get().then(q=>{const d=q.docs.map(x=>x.data()).filter(x=>x.name);if(d.length){B=d.map(x=>({name:x.name,specialty:x.specialty||'',photo:x.photoURL||x.photo||''}));render()}}).catch(()=>{})}catch(e){}
+body.appendChild(document.getElementById('bkFormBox'));
+window.openBarber=function(i){const b=B[i];window.selectedBarber={name:b.name};document.getElementById('bbAvatar').src=b.photo||HOK_BARBERS[0].photo;document.getElementById('bbName').textContent=b.name;document.getElementById('bbSpec').textContent=b.specialty||'';modal.style.display='flex';modal.querySelector('.mbox').scrollTop=0;loadAvailableSlots()};
+window.closeBarber=function(){modal.style.display='none'};
+const _cb=closeBookingModal;window.closeBookingModal=function(){_cb();closeBarber()};
+/* every "book" button now leads to barber picking */
+const _s2=showSection;window.showSection=function(id){if(id==='bookingSection'){_s2('homeSection');closeMenu();setTimeout(()=>{const e=document.getElementById('sec-barbers');if(e)e.scrollIntoView({behavior:'smooth',block:'center'})},80);return}_s2(id)};
 })();
 </script>
 </body>
